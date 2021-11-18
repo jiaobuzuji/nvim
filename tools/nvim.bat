@@ -1,4 +1,6 @@
 :: "administrator permission"
-mklink "d:\Program Files\Neovim\share\nvim\sysinit.vim" "d:\repos\nvim.git\tools\sysinit.vim"
+mklink "d:\Program Files\Neovim\share\nvim\sysinit.vim" "d:\repos\nvim\tools\sysinit.vim"
+:: md "%LOCALAPPDATA%\nvim\"
+:: copy "d:\repos\nvim\ginit.vim" "%LOCALAPPDATA%\nvim\ginit.vim"
 
 pause

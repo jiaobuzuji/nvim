@@ -3,20 +3,7 @@
 *.swo
 *.log
 
-/.viminfo
 /.netrwhist
 /.github_token
 
-/test/
-/pack/
-/bundle/
-/autoload/plug.vim
-/vim-lsp-settings/servers
-/coc/
-
-/session/
-/undodir/
-/spell/
-/backup/
-/swap/
-/.fzf-history/
+/nvim-data/
