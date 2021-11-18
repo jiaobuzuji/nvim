@@ -5,5 +5,7 @@
 
 /.netrwhist
 /.github_token
+/tmp/
 
 /nvim-data/
+/plugin/
