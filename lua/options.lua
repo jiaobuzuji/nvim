@@ -52,50 +52,38 @@ opt.matchtime = 2 -- tenth of a second to show a match for 'showmatch'
 opt.tabstop = 2 -- number of spaces a <Tab> in the text stands for
 opt.shiftwidth = 2 -- number of spaces used for each step of (auto)indent
 opt.softtabstop = 2 -- if non-zero, number of spaces to insert for a <Tab>
+opt.shiftround = true --	round to 'shiftwidth' for "<<" and ">>"
+opt.expandtab = true -- expand <Tab> to spaces in Insert mode
+opt.smartindent = true -- do clever autoindenting
+opt.cindent = true -- enable specific indenting for C code
 
 -- 15 folding {1
+opt.foldenable = false --	unset to display all folds open
+opt.foldopen = "block,hor,insert,jump,mark,percent,quickfix,search,tag,undo" -- specifies for which commands a fold will be opened
+opt.foldmethod = "syntax" -- folding type: "manual", "indent", "expr", "marker", "syntax" or "diff"
+
 -- 16 diff mode {1
+opt.diffopt:appended "vertical" -- options for using diff mode
+
 -- 17 mapping {1
+opt.timeoutlen = 650 -- time in msec for 'timeout'
+opt.ttimeoutlen = 50 -- time in msec for 'ttimeout'
+
 -- 18 reading and writing files {1
+opt.fileformats = "unix,dos,mac" -- list of file formats to look for when editing a file
+opt.writebackup = false -- write a backup file before overwriting a file
+opt.autowrite = true -- automatically write a file when leaving a modified buffer
+opt.autoread = true -- automatically read a file when it was modified outside of Vim
+
 -- 19 the swap file {1
 -- 20 command line editing {1
+opt.wildignore = "*.swp,*.bak,*.jpg,*.png,*.gif" -- list of patterns to ignore files for file name completion
+opt.wildignorecase = true -- ignore case when completing file names
+
 -- 21 executing external commands {1
 -- 22 running make and jumping to errors (quickfix) {1
 -- 23 system specific {1
 -- 24 language specific {1
 -- 25 multi-byte characters {1
 -- 26 various {1
-
-
--- opt.cul = true -- cursor line
-
--- -- Indentline
--- opt.expandtab = options.expandtab
--- opt.shiftwidth = options.shiftwidth
--- opt.smartindent = options.smartindent
-
--- opt.ignorecase = options.ignorecase
--- opt.smartcase = options.smartcase
-
--- -- Numbers
--- opt.number = options.number
--- opt.numberwidth = options.numberwidth
--- opt.relativenumber = options.relativenumber
--- opt.ruler = options.ruler
-
--- -- disable nvim intro
--- opt.shortmess:append "sI"
-
--- opt.signcolumn = "yes"
--- opt.splitbelow = true
--- opt.splitright = true
--- opt.tabstop = options.tabstop
--- opt.timeoutlen = options.timeoutlen
--- opt.undofile = options.undofile
-
--- -- interval for writing swap file to disk, also used by gitsigns
--- opt.updatetime = options.updatetime
-
--- opt.whichwrap:append "<>[]hl"
-
 
