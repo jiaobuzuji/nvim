@@ -29,6 +29,7 @@ set packpath^=$XDG_DATA_HOME\nvim-data\site
 set directory=$XDG_DATA_HOME\nvim-data\swap//
 set undodir=$XDG_DATA_HOME\nvim-data\undo//
 set backupdir=$XDG_DATA_HOME\nvim-data\backup//
+set viewdir=$XDG_DATA_HOME\nvim-data\view//
 
 autocmd VimEnter * GuiFont! Hack Nerd Font Mono:h12
 autocmd VimEnter * GuiTabline 0

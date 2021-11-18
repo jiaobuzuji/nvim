@@ -63,7 +63,7 @@ opt.foldopen = "block,hor,insert,jump,mark,percent,quickfix,search,tag,undo" -- 
 opt.foldmethod = "syntax" -- folding type: "manual", "indent", "expr", "marker", "syntax" or "diff"
 
 -- 16 diff mode {1
-opt.diffopt:appended "vertical" -- options for using diff mode
+opt.diffopt:append "vertical" -- options for using diff mode
 
 -- 17 mapping {1
 opt.timeoutlen = 650 -- time in msec for 'timeout'
@@ -85,5 +85,12 @@ opt.wildignorecase = true -- ignore case when completing file names
 -- 23 system specific {1
 -- 24 language specific {1
 -- 25 multi-byte characters {1
+opt.encoding = "utf-8" -- character encoding used in Nvim: "utf-8"
+opt.fileencoding = "utf-8" -- character encoding for the current file
+
 -- 26 various {1
+opt.virtualedit = "block" -- when to use virtual editing: "block", "insert", "all" and/or "onemore"
+opt.sessionoptions = "curdir,unix,slash,tabpages,terminal,winsize,resize"
+opt.viewoptions = "cursor,unix,slash" -- Better Unix / Windows compatibility
+opt.signcolumn = "yes" -- whether to show the signcolumn
 
