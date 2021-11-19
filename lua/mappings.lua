@@ -1,4 +1,4 @@
-local utils = require "core.utils"
+local utils = require "utils"
 local hooks = require "core.hooks"
 
 local config = utils.load_config()
