@@ -13,6 +13,9 @@ local cmd = vim.cmd
 local M = {}
 
 -- these mappings will only be called during initialization
+
+vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+
 M.misc = function()
    local function non_config_mappings()
       -- Don't copy the replaced text after pasting in visual mode

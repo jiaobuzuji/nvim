@@ -1,5 +1,6 @@
 local packer = require('packer')
 packer.init {
+  opt_default = true, -- Default to using opt (as opposed to start) plugins
   git = {
     clone_timeout = 600, -- Timeout, in seconds, for git clones
     default_url_format = 'https://github.com.cnpmjs.org/%s' -- Lua format string used for "aaa/bbb" style plugins

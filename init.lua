@@ -28,6 +28,6 @@ end
 
 -- load options,mappings,plugins ...
 require('options')
--- require('mappings')
+require('mappings')
 require('plugins')
 
