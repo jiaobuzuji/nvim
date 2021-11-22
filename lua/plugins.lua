@@ -18,6 +18,8 @@ return packer.startup(function()
 
   use {'nvim-treesitter/nvim-treesitter', opt = true}
 
+  use {'yianwillis/vimcdoc', opt = true}
+
   -- -- Lazy loading:
   -- -- Load on specific commands
   -- use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
