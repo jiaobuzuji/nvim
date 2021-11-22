@@ -26,10 +26,11 @@ local disabled_built_ins = {
 for _, plugin in pairs(disabled_built_ins) do
   vim.g["loaded_" .. plugin] = 1
 end
-
+-- }
 
 -------------------------------------------------------------------------------
-local opt = vim.opt -- {1
+-- options -- {1
+local opt = vim.opt
 --  2 moving around, searching and patterns {2
 opt.whichwrap:append "<>[]hl" -- list of flags specifying which commands wrap to another line
 opt.startofline = true -- many jump commands move the cursor to the first non-blank
@@ -137,17 +138,20 @@ m('i','<m-j>','<down>',ns)
 m('i','<m-k>','<up>',ns)
 m('i','<c-a>','<c-o>^',ns) -- jump to "start"
 m('i','<c-x><c-a>','<c-a>',ns)
-m('i','<c-e>','col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<Lt>C-E>":"\<Lt>End>"',ns.insert(ns,{expr = true})) -- jump to "end"
+-- TODO m('i','<c-e>','col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<Lt>C-E>":"\<Lt>End>"',ns.insert(ns,{expr = true})) -- jump to "end"
 -- misc
 m('n','Y','y$',ns)
-m('n','<leader>/',':nohlsearch<CR>',ns)
+m('n','<leader>/',':nohlsearch<cr>',ns)
 -- Don't copy the replaced text after pasting in visual mode
-map("v", "p", '"_dP')
--- vnoremap  *  y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
--- vnoremap  #  y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
+m('v','p','"_dP',ns)
+-- TODO m('v','*','y/<C-R>=escape(@", '\\/.*$^~[]')<cr><cr>',ns)
+-- TODO m('v','#','y?<C-R>=escape(@", '\\/.*$^~[]')<cr><cr>',ns)
 -- replace
-m('n','ss',':%s/<C-R>//',ns)
-m('v','ss',':s/<C-R>//',ns)
+m('n','ss',':%s/<c-r>//',ns)
+m('v','ss',':s/<c-r>//',ns)
+-- Quit Vim
+m('n','<leader>qa',':qa<cr>',ns)
+m('n','<leader>wd','<c-w>q',ns)
 -- tab windows
 m('n','<leader>1','1gt',ns)
 m('n','<leader>2','2gt',ns)
