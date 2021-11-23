@@ -1,4 +1,4 @@
--- Vim options setting
+-- Vim basic configurations
 -- Author: jiaobuzuji@163.com
 -- Github: https://github.com/jiaobuzuji
 -------------------------------------------------------------------------------
@@ -155,7 +155,7 @@ m('n','<leader>qa',':qa<cr>',ns)
 m('n','<leader>wd','<c-w>q',ns)
 -- tab,windows, cursor move
 m('n','<leader>1','1gt',ns)
-m('n','<leader>2','2gt',ns)
+m('n','<leader>2','2gt',ns) -- tab 2
 m('n','<leader>3','3gt',ns)
 m('n','<leader>4','4gt',ns)
 m('n','<leader>5','5gt',ns)

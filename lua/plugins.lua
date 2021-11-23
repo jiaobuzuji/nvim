@@ -1,3 +1,4 @@
+vim.cmd "packadd packer.nvim"
 local packer = require('packer')
 packer.init {
   opt_default = true, -- Default to using opt (as opposed to start) plugins
@@ -11,14 +12,14 @@ packer.init {
 }
 
 return packer.startup(function()
-  use {'wbthomason/packer.nvim', opt = false} -- Packer can manage itself as an optional plugin
+  use {'wbthomason/packer.nvim'} -- Packer can manage itself as an optional plugin
 
   -- Load on an autocommand event
   use {'andymass/vim-matchup', event = 'VimEnter *'}
 
   use {'nvim-treesitter/nvim-treesitter', opt = true}
 
-  use {'yianwillis/vimcdoc', opt = true}
+  use {'yianwillis/vimcdoc'}
 
   -- -- Lazy loading:
   -- -- Load on specific commands
