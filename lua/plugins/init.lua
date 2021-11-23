@@ -13,15 +13,39 @@ packer.init {
 
 return packer.startup(function()
   use {'wbthomason/packer.nvim'} -- Packer can manage itself as an optional plugin
-
-  -- Load on an autocommand event
-  use {'andymass/vim-matchup', event = 'VimEnter *'}
-
-  use {'nvim-treesitter/nvim-treesitter', opt = true}
-
   use {'yianwillis/vimcdoc'}
+  -- theme
+  use {'folke/tokyonight.nvim',
+    event = 'VimEnter *',
+    config = function()
+      vim.g.tokyonight_style = "night"
+      vim.g.tokyonight_italic_functions = true
+      vim.cmd[[colorscheme tokyonight]]
+    end,
+  }
 
-  -- -- Lazy loading:
+  -- use {'navarasu/onedark.nvim',
+  --   event = 'VimEnter *',
+  --   config = function()
+  --     -- vim.g.onedark_style = 'warm'
+  --     vim.g.onedark_italic_comment = false
+  --     vim.g.onedark_toggle_style_keymap = '<nop>'
+  --     require('onedark').setup()
+  --   end,
+  -- }
+  -- awesome
+  use {'andymass/vim-matchup', opt=false}
+  use {'windwp/nvim-autopairs', opt=false}
+  use {"norcalli/nvim-colorizer.lua",
+    event = "BufRead",
+    ft = {'lua','vim'}, -- vim config colors
+    config = function()
+      require("colorizer").setup()
+    end,
+  }
+  -- lsp dap treesitter
+  use {'nvim-treesitter/nvim-treesitter'}
+
   -- -- Load on specific commands
   -- use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
 

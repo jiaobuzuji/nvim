@@ -49,6 +49,7 @@ opt.relativenumber = true -- show the relative line number for each line
 
 --  5 syntax, highlighting and spelling {2
 opt.background = "dark" -- "dark" or "light"; the background color brightness
+opt.termguicolors = true -- use GUI colors for the terminal
 opt.cursorline = true -- highlight the screen line of the cursor
 opt.spell = true -- highlight spelling mistakes
 
