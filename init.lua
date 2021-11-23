@@ -6,5 +6,5 @@
 
 -- load options,mappings,plugins ...
 require('config')
-require('plugins')
+-- require('plugins')
 
