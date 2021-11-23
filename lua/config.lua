@@ -48,6 +48,7 @@ opt.listchars = "tab:> ,extends:>,precedes:<,nbsp:.,trail:-" -- list of strings 
 opt.relativenumber = true -- show the relative line number for each line
 
 --  5 syntax, highlighting and spelling {2
+opt.background = "dark" -- "dark" or "light"; the background color brightness
 opt.cursorline = true -- highlight the screen line of the cursor
 opt.spell = true -- highlight spelling mistakes
 
@@ -64,6 +65,7 @@ opt.mouse = "a" -- list of flags for using the mouse
 -- 10 printing {2
 -- 11 messages and info {2
 opt.report = 0 -- threshold for reporting number of changed lines
+opt.confirm = true  -- start a dialog when a command fails
 opt.helplang = "en,cn" -- list of preferred languages for finding help
 
 -- 12 selecting text {2
@@ -126,33 +128,32 @@ opt.signcolumn = "yes" -- whether to show the signcolumn
 local m = vim.api.nvim_set_keymap
 local ns = {noremap = true, silent = true}
 
--- Don't use Ex mode, use Q for formatting.  Revert with ":unmap Q".
-m('n','Q','gq',ns)
--- CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
--- so that you can undo CTRL-U after inserting a line break.  Revert with ":iunmap <C-U>".
-m('i','<c-u>','<c-g>u<c-u>',ns)
-m('i','<c-w>','<c-g>u<c-w>',ns)
-m('i','<m-h>','<left>',ns)
-m('i','<m-l>','<right>',ns)
-m('i','<m-j>','<down>',ns)
-m('i','<m-k>','<up>',ns)
-m('i','<c-a>','<c-o>^',ns) -- jump to "start"
-m('i','<c-x><c-a>','<c-a>',ns)
--- TODO m('i','<c-e>','col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<Lt>C-E>":"\<Lt>End>"',ns.insert(ns,{expr = true})) -- jump to "end"
 -- misc
+m('n','Q','gq',ns) -- Don't use Ex mode, use Q for formatting.  Revert with ":unmap Q".
 m('n','Y','y$',ns)
+m('i','<c-u>','<c-g>u<c-u>',ns) -- CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+m('i','<c-w>','<c-g>u<c-w>',ns)
 m('n','<leader>/',':nohlsearch<cr>',ns)
--- Don't copy the replaced text after pasting in visual mode
-m('v','p','"_dP',ns)
--- TODO m('v','*','y/<C-R>=escape(@", '\\/.*$^~[]')<cr><cr>',ns)
--- TODO m('v','#','y?<C-R>=escape(@", '\\/.*$^~[]')<cr><cr>',ns)
+m('n','tt','o<space><c-u><c-[>',ns) -- Insert new line in normal mode
+m('v','p','"_dP',ns) -- Don't copy the replaced text after pasting in visual mode
+m('v','<','"<gv',ns) -- Reselect visual block after indent/outdent.
+m('v','>','">gv',ns)
+m('v','*',"y/<c-r>=escape(@\",'\\\\/.*$^~[]')<cr><cr>",ns)
+m('v','#',"y?<c-r>=escape(@\",'\\\\/.*$^~[]')<cr><cr>",ns)
+-- 'Save' and 'Esc'
+m('i', 'jj', '<c-[>',            ns)
+m('n', 'vv', ':update<cr>',      ns)
+m('v', 'vv', '<C-C>:update<cr>', ns)
+m('i', 'vv', '<C-[>:update<cr>', ns)
+m('i', 'j<Space>', 'j ', ns)
+m('i', 'v<Space>', 'v ', ns)
 -- replace
 m('n','ss',':%s/<c-r>//',ns)
 m('v','ss',':s/<c-r>//',ns)
 -- Quit Vim
 m('n','<leader>qa',':qa<cr>',ns)
 m('n','<leader>wd','<c-w>q',ns)
--- tab windows
+-- tab,windows, cursor move
 m('n','<leader>1','1gt',ns)
 m('n','<leader>2','2gt',ns)
 m('n','<leader>3','3gt',ns)
@@ -166,7 +167,19 @@ m('n','<m-h>','<c-w>h',ns)
 m('n','<m-l>','<c-w>l',ns)
 m('n','<m-j>','<c-w>j',ns)
 m('n','<m-k>','<c-w>k',ns)
-
+m('i','<m-h>','<left>',ns)
+m('i','<m-l>','<right>',ns)
+m('i','<m-j>','<down>',ns)
+m('i','<m-k>','<up>',ns)
+m('i','<c-a>','<c-o>^',ns) -- jump to "start"
+m('i','<c-x><c-a>','<c-a>',ns)
+m('i','<c-e>',"col('.')>strlen(getline('.'))<bar><bar>pumvisible()?\"\\<lt>c-e>\":\"\\<lt>end>\"",{noremap = true, silent = true, expr = true}) -- jump to "end"
+m('c','<m-h>','<s-left>',ns)
+m('c','<m-l>','<s-right>',ns)
+m('c','<m-j>','<down>',ns)
+m('c','<m-k>','<up>',ns)
+m('c','<c-a>','<home>',ns) -- jump to "start"
+m('c','<c-x><c-a>','<c-a>',ns)
 
 -------------------------------------------------------------------------------
 -- autocmd {1
