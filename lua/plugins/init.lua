@@ -1,3 +1,8 @@
+-- Packer
+-- Author: jiaobuzuji@163.com
+-- Github: https://github.com/jiaobuzuji
+-------------------------------------------------------------------------------
+
 vim.cmd "packadd packer.nvim"
 local packer = require('packer')
 packer.init {
