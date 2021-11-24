@@ -51,7 +51,7 @@ opt.relativenumber = true -- show the relative line number for each line
 opt.background = "dark" -- "dark" or "light"; the background color brightness
 opt.termguicolors = true -- use GUI colors for the terminal
 opt.cursorline = true -- highlight the screen line of the cursor
-opt.spell = true -- highlight spelling mistakes
+-- opt.spell = true -- highlight spelling mistakes
 
 --  6 multiple windows {2
 opt.winminheight = 0 -- minimal number of lines used for any window

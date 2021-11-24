@@ -15,14 +15,50 @@ return packer.startup(function()
   use {'wbthomason/packer.nvim'} -- Packer can manage itself as an optional plugin
   use {'yianwillis/vimcdoc'}
   -- theme
-  use {'folke/tokyonight.nvim', event = 'VimEnter *', config = function() vim.g.tokyonight_style = "night" vim.g.tokyonight_italic_functions = true vim.cmd[[colorscheme tokyonight]] end}
-  -- use {'navarasu/onedark.nvim', event = 'VimEnter *', config = function() vim.g.onedark_style = 'warm' vim.g.onedark_italic_comment = false vim.g.onedark_toggle_style_keymap = '<nop>' require('onedark').setup() end}
-  -- use {'NLKNguyen/papercolor-theme',
+  -- use {'projekt0n/github-nvim-theme',
   --   event = 'VimEnter *',
   --   config = function()
-  --     vim.cmd[[colorscheme PaperColor]]
+  --     require("github-theme").setup({
+  --       theme_style = "dark_default",
+  --       transparent = true,
+  --     })
   --   end,
   -- }
+  -- use {'folke/tokyonight.nvim',
+  --   event = 'VimEnter *',
+  --   config = function()
+  --     vim.g.tokyonight_style = "night"
+  --     vim.g.tokyonight_transparent = true
+  --     vim.g.tokyonight_italic_functions = false
+  --     vim.cmd[[colorscheme tokyonight]]
+  --   end,
+  -- }
+  -- use {'navarasu/onedark.nvim',
+  --   event = 'VimEnter *',
+  --   config = function()
+  --     -- vim.g.onedark_style = 'warm'
+  --     -- vim.g.onedark_italic_comment = false
+  --     vim.g.onedark_transparent_background = true
+  --     vim.g.onedark_toggle_style_keymap = '<nop>'
+  --     require('onedark').setup() 
+  --   end,
+  -- }
+  use {'NLKNguyen/papercolor-theme',
+    event = 'VimEnter *',
+    config = function()
+      vim.g.PaperColor_Theme_Options = {
+        theme = {
+          default = {
+            override = {
+              color00 = { '#080808', '232' },
+              linenumber_bg = { '#080808', '232' }
+            }
+          }
+        }
+      }
+      vim.cmd[[colorscheme PaperColor]]
+    end,
+  }
 
   -- awesome
   use {'andymass/vim-matchup',
@@ -40,6 +76,15 @@ return packer.startup(function()
   -- lsp dap treesitter
   use {'nvim-treesitter/nvim-treesitter',
     event = "BufRead",
+    config = function()
+      require('nvim-treesitter.configs').setup {
+        ensure_installed = { "lua","c","cpp","verilog"},
+        highlight = {
+          enable = true,
+          use_languagetree = true,
+        },
+      }
+    end,
   }
 
   -- -- Load on specific commands
