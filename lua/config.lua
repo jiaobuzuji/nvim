@@ -139,8 +139,8 @@ m('n','tt','o<space><c-u><c-[>',ns) -- Insert new line in normal mode
 m('v','p','"_dP',ns) -- Don't copy the replaced text after pasting in visual mode
 m('v','<','"<gv',ns) -- Reselect visual block after indent/outdent.
 m('v','>','">gv',ns)
-m('v','*',"y/<c-r>=escape(@\",'\\\\/.*$^~[]')<cr><cr>",ns)
-m('v','#',"y?<c-r>=escape(@\",'\\\\/.*$^~[]')<cr><cr>",ns)
+m('v','*',[[y/<c-r>=escape(@",'\\/.*$^~[]')<cr><cr>]],ns) -- m('v','*',"y/<c-r>=escape(@\",'\\\\/.*$^~[]')<cr><cr>",ns)
+m('v','#',[[y?<c-r>=escape(@",'\\/.*$^~[]')<cr><cr>]],ns) -- m('v','#',"y?<c-r>=escape(@\",'\\\\/.*$^~[]')<cr><cr>",ns)
 -- 'Save' and 'Esc'
 m('i', 'jj', '<c-[>',            ns)
 m('n', 'vv', ':update<cr>',      ns)
@@ -174,7 +174,7 @@ m('i','<m-j>','<down>',ns)
 m('i','<m-k>','<up>',ns)
 m('i','<c-a>','<c-o>^',ns) -- jump to "start"
 m('i','<c-x><c-a>','<c-a>',ns)
-m('i','<c-e>',"col('.')>strlen(getline('.'))<bar><bar>pumvisible()?\"\\<lt>c-e>\":\"\\<lt>end>\"",{noremap = true, silent = true, expr = true}) -- jump to "end"
+m('i','<c-e>',[[col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<lt>c-e>":"\<lt>end>"]],{noremap = true, silent = true, expr = true}) -- jump to "end"
 m('c','<m-h>','<s-left>',ns)
 m('c','<m-l>','<s-right>',ns)
 m('c','<m-j>','<down>',ns)

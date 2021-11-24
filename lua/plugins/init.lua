@@ -15,36 +15,32 @@ return packer.startup(function()
   use {'wbthomason/packer.nvim'} -- Packer can manage itself as an optional plugin
   use {'yianwillis/vimcdoc'}
   -- theme
-  use {'folke/tokyonight.nvim',
-    event = 'VimEnter *',
-    config = function()
-      vim.g.tokyonight_style = "night"
-      vim.g.tokyonight_italic_functions = true
-      vim.cmd[[colorscheme tokyonight]]
-    end,
-  }
-
-  -- use {'navarasu/onedark.nvim',
+  use {'folke/tokyonight.nvim', event = 'VimEnter *', config = function() vim.g.tokyonight_style = "night" vim.g.tokyonight_italic_functions = true vim.cmd[[colorscheme tokyonight]] end}
+  -- use {'navarasu/onedark.nvim', event = 'VimEnter *', config = function() vim.g.onedark_style = 'warm' vim.g.onedark_italic_comment = false vim.g.onedark_toggle_style_keymap = '<nop>' require('onedark').setup() end}
+  -- use {'NLKNguyen/papercolor-theme',
   --   event = 'VimEnter *',
   --   config = function()
-  --     -- vim.g.onedark_style = 'warm'
-  --     vim.g.onedark_italic_comment = false
-  --     vim.g.onedark_toggle_style_keymap = '<nop>'
-  --     require('onedark').setup()
+  --     vim.cmd[[colorscheme PaperColor]]
   --   end,
   -- }
+
   -- awesome
-  use {'andymass/vim-matchup', opt=false}
-  use {'windwp/nvim-autopairs', opt=false}
-  use {"norcalli/nvim-colorizer.lua",
+  use {'andymass/vim-matchup',
     event = "BufRead",
+  }
+  use {'windwp/nvim-autopairs',
+    event = "BufRead",
+  }
+  use {"norcalli/nvim-colorizer.lua",
     ft = {'lua','vim'}, -- vim config colors
     config = function()
       require("colorizer").setup()
     end,
   }
   -- lsp dap treesitter
-  use {'nvim-treesitter/nvim-treesitter'}
+  use {'nvim-treesitter/nvim-treesitter',
+    event = "BufRead",
+  }
 
   -- -- Load on specific commands
   -- use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
