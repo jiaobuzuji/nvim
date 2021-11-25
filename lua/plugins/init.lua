@@ -83,7 +83,7 @@ return packer.startup(function()
     event = "BufRead",
     config = function()
       require('nvim-treesitter.configs').setup {
-        ensure_installed = { "lua","c","cpp","verilog"},
+        -- ensure_installed = { "lua","c","cpp","verilog"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
         highlight = {
           enable = true,
           use_languagetree = true,
