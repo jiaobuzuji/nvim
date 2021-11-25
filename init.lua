@@ -150,8 +150,8 @@ m('i', 'vv', '<C-[>:update<cr>', ns)
 m('i', 'j<Space>', 'j ', ns)
 m('i', 'v<Space>', 'v ', ns)
 -- replace
-m('n','ss',':%s/<c-r>//',ns)
-m('v','ss',':s/<c-r>//',ns)
+m('n','ss',':%s/<c-r>//',{noremap=true})
+m('v','ss',':s/<c-r>//',{noremap=true})
 -- Quit Vim
 m('n','<leader>qa',':qa<cr>',ns)
 m('n','<leader>wd','<c-w>q',ns)
@@ -175,15 +175,15 @@ m('i','<m-j>','<down>',ns)
 m('i','<m-k>','<up>',ns)
 m('i','<c-a>','<c-o>^',ns) -- jump to "start"
 m('i','<c-x><c-a>','<c-a>',ns)
-m('i','<c-e>',[[col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<lt>c-e>":"\<lt>end>"]],{noremap = true, silent = true, expr = true}) -- jump to "end"
+m('i','<c-e>',[[col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<lt>c-e>":"\<lt>end>"]],{noremap=true, silent=true, expr=true}) -- jump to "end"
 m('c','<m-h>','<s-left>',ns)
 m('c','<m-l>','<s-right>',ns)
 m('c','<m-j>','<down>',ns)
 m('c','<m-k>','<up>',ns)
 m('c','<c-a>','<home>',ns) -- jump to "start"
 m('c','<c-x><c-a>','<c-a>',ns)
-m('c','<c-p>','<up>',ns) -- <up> instead of c_CTRL-P
-m('c','<c-n>','<down>',ns) -- <down> instead of c_CTRL-N
+m('c','<c-p>','<up>',{noremap=true}) -- <up> instead of c_CTRL-P
+m('c','<c-n>','<down>',{noremap=true}) -- <down> instead of c_CTRL-N
 
 -------------------------------------------------------------------------------
 -- autocmd {1
