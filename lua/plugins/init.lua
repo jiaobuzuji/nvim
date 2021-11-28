@@ -19,6 +19,8 @@ packer.init {
 return packer.startup(function()
   use {'wbthomason/packer.nvim'} -- Packer can manage itself as an optional plugin
   use {'yianwillis/vimcdoc'}
+  use {'Iron-E/nvim-highlite'} -- colorscheme template
+
   -- theme
   -- use {'projekt0n/github-nvim-theme',
   --   event = 'VimEnter *',
@@ -48,24 +50,25 @@ return packer.startup(function()
   --     require('onedark').setup() 
   --   end,
   -- }
-  use {'NLKNguyen/papercolor-theme',
-    event = 'VimEnter *',
-    config = function()
-      vim.g.PaperColor_Theme_Options = {
-        theme = {
-          default = {
-            override = {
-              color00 = { '#080808', '232' },
-              linenumber_bg = { '#080808', '232' }
-            }
-          }
-        }
-      }
-      vim.cmd[[colorscheme PaperColor]]
-    end,
-  }
+  -- use {'NLKNguyen/papercolor-theme',
+  --   event = 'VimEnter *',
+  --   config = function()
+  --     vim.g.PaperColor_Theme_Options = {
+  --       theme = {
+  --         default = {
+  --           override = {
+  --             color00 = { '#080808', '232' },
+  --             linenumber_bg = { '#080808', '232' }
+  --           }
+  --         }
+  --       }
+  --     }
+  --     vim.cmd[[colorscheme PaperColor]]
+  --   end,
+  -- }
 
   -- awesome
+  use {'mhinz/vim-startify',opt=false}
   use {'andymass/vim-matchup',
     event = "BufRead",
   }

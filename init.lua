@@ -135,7 +135,7 @@ m('n','Q','gq',ns) -- Don't use Ex mode, use Q for formatting.  Revert with ":un
 m('n','Y','y$',ns)
 m('i','<c-u>','<c-g>u<c-u>',ns) -- CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 m('i','<c-w>','<c-g>u<c-w>',ns)
-m('n','<leader>/',':nohlsearch<cr>',ns)
+m('n','<leader>/','<cmd>nohlsearch<cr>',ns)
 m('n','tt','o<space><c-u><c-[>',ns) -- Insert new line in normal mode
 m('v','p','"_dP',ns) -- Don't copy the replaced text after pasting in visual mode
 m('v','<','"<gv',ns) -- Reselect visual block after indent/outdent.
@@ -144,16 +144,16 @@ m('v','*',[[y/<c-r>=escape(@",'\\/.*$^~[]')<cr><cr>]],ns) -- m('v','*',"y/<c-r>=
 m('v','#',[[y?<c-r>=escape(@",'\\/.*$^~[]')<cr><cr>]],ns) -- m('v','#',"y?<c-r>=escape(@\",'\\\\/.*$^~[]')<cr><cr>",ns)
 -- 'Save' and 'Esc'
 m('i', 'jj', '<c-[>',            ns)
-m('n', 'vv', ':update<cr>',      ns)
-m('v', 'vv', '<C-C>:update<cr>', ns)
-m('i', 'vv', '<C-[>:update<cr>', ns)
+m('n', 'vv', '<cmd>update<cr>',      ns)
+m('v', 'vv', '<C-C><cmd>update<cr>', ns)
+m('i', 'vv', '<C-[><cmd>update<cr>', ns)
 m('i', 'j<Space>', 'j ', ns)
 m('i', 'v<Space>', 'v ', ns)
 -- replace
-m('n','ss',':%s/<c-r>//',{noremap=true})
-m('v','ss',':s/<c-r>//',{noremap=true})
+m('n','ss','<cmd>%s/<c-r>//',{noremap=true})
+m('v','ss','<cmd>s/<c-r>//',{noremap=true})
 -- Quit Vim
-m('n','<leader>qa',':qa<cr>',ns)
+m('n','<leader>qa','<cmd>qa<cr>',ns)
 m('n','<leader>wd','<c-w>q',ns)
 -- tab,windows, cursor move
 m('n','<leader>1','1gt',ns)
@@ -185,6 +185,7 @@ m('c','<c-x><c-a>','<c-a>',ns)
 m('c','<c-p>','<up>',{noremap=true}) -- <up> instead of c_CTRL-P
 m('c','<c-n>','<down>',{noremap=true}) -- <down> instead of c_CTRL-N
 
+
 -------------------------------------------------------------------------------
 -- autocmd {1
 local cmd = vim.cmd
@@ -195,4 +196,10 @@ cmd "silent! command PackerInstall lua require 'plugins' require('packer').insta
 cmd "silent! command PackerStatus lua require 'plugins' require('packer').status()"
 cmd "silent! command PackerSync lua require 'plugins' require('packer').sync()"
 cmd "silent! command PackerUpdate lua require 'plugins' require('packer').update()"
+
+
+-------------------------------------------------------------------------------
+-- colorscheme
+require('highlite')
+vim.cmd 'colorscheme highlite'
 

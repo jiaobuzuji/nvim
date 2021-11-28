@@ -1,0 +1,12 @@
+highlite	highlite.txt	/*highlite*
+highlite-faq	highlite.txt	/*highlite-faq*
+highlite-group()	highlite.txt	/*highlite-group()*
+highlite-highlight()	highlite.txt	/*highlite-highlight()*
+highlite-highlight_terminal()	highlite.txt	/*highlite-highlight_terminal()*
+highlite-requirements	highlite.txt	/*highlite-requirements*
+highlite-toc	highlite.txt	/*highlite-toc*
+highlite-usage	highlite.txt	/*highlite-usage*
+highlite.group()	highlite.txt	/*highlite.group()*
+highlite.highlight()	highlite.txt	/*highlite.highlight()*
+highlite.txt	highlite.txt	/*highlite.txt*
+highlite:highlight_terminal()	highlite.txt	/*highlite:highlight_terminal()*
