@@ -68,7 +68,20 @@ return packer.startup(function()
   -- }
 
   -- awesome
-  use {'mhinz/vim-startify',opt=false}
+  use {'mhinz/vim-startify',opt=false,
+    config = function()
+      vim.g.startify_lists = {
+          {type='sessions',  header={'   Sessions; [b]uffer, [s]plit, [v]ertical, [t]ab'}},
+          {type='files',     header={'   MRU; Uppercase of b/s/v/t enable the batchmode.'}},
+          {type='dir',       header={'   MRU; [e]mpty, [q]uit; '}},
+          {type='bookmarks', header={'   Bookmarks'}},
+          {type='commands',  header={'   Commands' }},
+        }
+      vim.g.startify_enable_special = 0 -- Show <empty buffer> and <quit>.
+      vim.api.nvim_set_keymap('n','<leader>sl','<cmd>Startify<cr>',{noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n','<leader>ss','<cmd>SSave<cr>',{noremap = true, silent = true})
+    end,
+  }
   use {'andymass/vim-matchup',
     event = "BufRead",
   }

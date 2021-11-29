@@ -150,50 +150,51 @@ vim.g.colors_name = 'highlite'
 ]]
 
 -- ANSI color, 16 colors
-local black       = {'#000000', 0,'black'      }
-local darkred     = {'#800000', 1,'darkred'    }
-local darkgreen   = {'#008000', 2,'darkgreen'  }
-local darkyellow  = {'#808000', 3,'darkyellow' }
-local darkblue    = {'#000080', 4,'darkblue'   }
-local darkmagenta = {'#800080', 5,'darkmagenta'}
-local darkcyan    = {'#008080', 6,'darkcyan'   }
-local gray        = {'#c0c0c0', 7,'gray'       }
-local darkgray    = {'#808080', 8,'darkgray'   }
-local red         = {'#ff0000', 9,'red'        }
-local green       = {'#00ff00',10,'green'      }
-local yellow      = {'#ffff00',11,'yellow'     }
-local blue        = {'#0000ff',12,'blue'       }
-local magenta     = {'#ff00ff',13,'magenta'    }
-local cyan        = {'#00ffff',14,'cyan'       }
-local white       = {'#ffffff',15,'white'      }
+local black       = {'#000000',  0,'black'      }
+local darkred     = {'#800000',  1,'darkred'    }
+local darkgreen   = {'#008000',  2,'darkgreen'  }
+local darkyellow  = {'#808000',  3,'darkyellow' }
+local darkblue    = {'#000080',  4,'darkblue'   }
+local darkmagenta = {'#800080',  5,'darkmagenta'}
+local darkcyan    = {'#008080',  6,'darkcyan'   }
+local gray        = {'#c0c0c0',  7,'gray'       }
+local darkgray    = {'#808080',  8,'darkgray'   }
+local red         = {'#ff0000',  9,'red'        }
+local green       = {'#00ff00', 10,'green'      }
+local yellow      = {'#ffff00', 11,'yellow'     }
+local blue        = {'#0000ff', 12,'blue'       }
+local magenta     = {'#ff00ff', 13,'magenta'    }
+local cyan        = {'#00ffff', 14,'cyan'       }
+local white       = {'#ffffff', 15,'white'      }
 
 -- Customize colors
-local black0      = {'#080808',232,'black'} -- Background
-local black1      = {'#303030',236,'black'}
-local black2      = {'#585858',240,'black'}
-local gray0       = {'#bcbcbc',250,'gray'} -- Comment
-local gray1       = {'#949494',246,'darkgray'}
-local gray2       = {'#6c6c6c',242,'darkgray'}
-local white0      = {'#e4e4e4',254,'white'} -- Foreground
+local black0      = {'#080808',232,'black'      } -- Background
+local black1      = {'#303030',236,'black'      }
+local black2      = {'#585858',240,'black'      }
+local gray0       = {'#bcbcbc',250,'gray'       } -- Comment
+local gray1       = {'#949494',246,'darkgray'   }
+local gray2       = {'#6c6c6c',242,'darkgray'   }
+local white0      = {'#e4e4e4',254,'white'      } -- Foreground
+local white1      = {'#dadada',253,'white'      }
 
-local darkred0    = {'#870000', 88,'darkred'}
-local darkyellow0 = {'#ffd700',220,'darkyellow'}
-local darkgreen0  = {'#87d75f',113,'darkgreen'}
-local darkblue0   = {'#000087', 18,'darkblue'}
-local darkcyan0   = {'#0087af', 31,'darkcyan'}
+local darkred0    = {'#870000', 88,'darkred'    }
+local darkyellow0 = {'#ffd700',220,'darkyellow' }
+local darkgreen0  = {'#87d75f',113,'darkgreen'  }
+local darkblue0   = {'#000087', 18,'darkblue'   }
+local darkcyan0   = {'#0087af', 31,'darkcyan'   }
 
-local red0        = {'#ff005f',197,'red'} -- Error
-local magenta0    = {'#d700d7',164,'magenta'}
-local pink        = {'#ffafff',219,'magenta'}
-local orange      = {'#ff8700',208,'darkyellow'}
-local tan         = {'#ffd75f',221,'darkyellow'}
-local yellow0     = {'#ffff5f',227,'yellow'}
-local green0      = {'#5fff00', 82,'green'}
+local red0        = {'#ff005f',197,'red'        } -- Error
+local magenta0    = {'#d700d7',164,'magenta'    }
+local pink        = {'#ffafff',219,'magenta'    }
+local orange      = {'#ff8700',208,'darkyellow' }
+local tan         = {'#ffd75f',221,'darkyellow' }
+local yellow0     = {'#ffff5f',227,'yellow'     }
+local green0      = {'#5fff00', 82,'green'      }
 local blue0       = {'#0000d7', 20,'blue'       }
-local cyan0       = {'#00ffaf', 49,'cyan'}
-local turquoise   = {'#00ff87', 48,'cyan'}
-local ice         = {'#87afff',111,'darkcyan'}
-local teal        = {'#5fafff', 75,'darkcyan'}
+local cyan0       = {'#00ffaf', 49,'cyan'       }
+local turquoise   = {'#00ff87', 48,'cyan'       }
+local ice         = {'#87afff',111,'darkcyan'   }
+local teal        = {'#5fafff', 75,'darkcyan'   }
 local purple      = {'#5f005f', 53,'darkmagenta'}
 
 --[[ Step 4: highlights
@@ -315,7 +316,7 @@ local NONE = {}
 
 --[[ These are the ones you should edit. ]]
 -- This is the only highlight that must be defined separately.
-local highlight_group_normal = {fg=white0, bg=black0}
+local highlight_group_normal = {fg=white, bg=black0}
 
 -- This is where the rest of your highlights should go.
 local highlight_groups = {
@@ -326,16 +327,16 @@ local highlight_groups = {
 	Whitespace  = 'NonText',
 
 	--[[ 4.1.1. Literals]]
-	Constant = {fg=orange},
-	String = {fg=darkgreen},
-	Character = {fg=magenta},
-	Number  = {fg=pink},
-	Boolean = {fg=yellow},
+	Constant = {fg=green0},
+	String = {fg=darkyellow0},
+	Character = 'String',
+	Number  = {fg=magenta},
+	Boolean = {fg=cyan},
 	Float   = 'Number',
 
 	--[[ 4.1.2. Identifiers]]
-	Identifier = {fg=FG},
-	Function = {fg=purple},
+	Identifier = {fg=FG, style='bold'},
+	Function = {fg=yellow0, style='bold'},
 
 	--[[ 4.1.3. Syntax]]
 	Statement   = {fg=ice},
