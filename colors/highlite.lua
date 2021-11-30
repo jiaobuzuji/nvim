@@ -82,7 +82,6 @@ vim.g.colors_name = 'highlite'
 	to work in GVim (Windows/Linux), MacVim (MacOS), and any properly set up terminal
 	emulator.
 
-	NOTE: |Replace-mode| will probably be useful here.
 '#000000',00   '#800000',01   '#008000',02   '#808000',03
 '#000080',04   '#800080',05   '#008080',06   '#c0c0c0',07
 '#808080',08   '#ff0000',09   '#00ff00',10   '#ffff00',11
@@ -147,6 +146,8 @@ vim.g.colors_name = 'highlite'
 '#808080',244  '#8a8a8a',245  '#949494',246  '#9e9e9e',247
 '#a8a8a8',248  '#b2b2b2',249  '#bcbcbc',250  '#c6c6c6',251
 '#d0d0d0',252  '#dadada',253  '#e4e4e4',254  '#eeeeee',255
+
+	NOTE: |Replace-mode| will probably be useful here.
 ]]
 
 -- ANSI color, 16 colors
@@ -167,35 +168,46 @@ local magenta     = {'#ff00ff', 13,'magenta'    }
 local cyan        = {'#00ffff', 14,'cyan'       }
 local white       = {'#ffffff', 15,'white'      }
 
--- Customize colors
-local black0      = {'#080808',232,'black'      } -- Background
-local black1      = {'#303030',236,'black'      }
-local black2      = {'#585858',240,'black'      }
-local gray0       = {'#bcbcbc',250,'gray'       } -- Comment
-local gray1       = {'#949494',246,'darkgray'   }
-local gray2       = {'#6c6c6c',242,'darkgray'   }
-local white0      = {'#e4e4e4',254,'white'      } -- Foreground
-local white1      = {'#dadada',253,'white'      }
+-- Customize Palette
+-- aqua olive navy tan orange pink teal purple turquoise
+local black0      = {'#080808',232,'black'      }
+local black1      = {'#121212',233,'black'      }
+local black2      = {'#1c1c1c',234,'black'      }
+local black3      = {'#262626',235,'black'      }
+local gray5       = {'#303030',236,'darkgray'   }
+local gray4       = {'#3a3a3a',237,'darkgray'   }
+local gray3       = {'#4e4e4e',239,'darkgray'   }
+local gray2       = {'#585858',240,'darkgray'   }
+local gray1       = {'#808080',244,'darkgray'   }
+local gray0       = {'#bcbcbc',250,'gray'       }
+local white1      = {'#c6c6c6',251,'white'      }
+local white0      = {'#d0d0d0',252,'white'      }
 
-local darkred0    = {'#870000', 88,'darkred'    }
-local darkyellow0 = {'#ffd700',220,'darkyellow' }
-local darkgreen0  = {'#87d75f',113,'darkgreen'  }
-local darkblue0   = {'#000087', 18,'darkblue'   }
-local darkcyan0   = {'#0087af', 31,'darkcyan'   }
-
-local red0        = {'#ff005f',197,'red'        } -- Error
-local magenta0    = {'#d700d7',164,'magenta'    }
-local pink        = {'#ffafff',219,'magenta'    }
-local orange      = {'#ff8700',208,'darkyellow' }
-local tan         = {'#ffd75f',221,'darkyellow' }
-local yellow0     = {'#ffff5f',227,'yellow'     }
-local green0      = {'#5fff00', 82,'green'      }
-local blue0       = {'#0000d7', 20,'blue'       }
-local cyan0       = {'#00ffaf', 49,'cyan'       }
-local turquoise   = {'#00ff87', 48,'cyan'       }
-local ice         = {'#87afff',111,'darkcyan'   }
-local teal        = {'#5fafff', 75,'darkcyan'   }
-local purple      = {'#5f005f', 53,'darkmagenta'}
+local red0        = {'#5f0000', 52,'darkred'    }
+local red1        = {'#5f005f', 53,'darkred'    }
+local red2        = {'#af005f',125,'red'        }
+local magenta0    = {'#ff5faf',205,'magenta'    }
+local magenta1    = {'#d787ff',177,'darkmagenta'}
+local magenta2    = {'#af87d7',140,'darkmagenta'}
+local magenta3    = {'#8787af',103,'darkmagenta'}
+local orange2     = {'#d7875f',173,'darkyellow' }
+local orange0     = {'#ff8700',208,'darkyellow' }
+local orange1     = {'#ffaf00',214,'darkyellow' }
+local yellow0     = {'#d7af5f',179,'darkyellow' }
+local yellow1     = {'#d7af00',178,'darkyellow' }
+local olive0      = {'#afd700',148,'darkgreen'  }
+local olive1      = {'#87d700',112,'darkgreen'  }
+local green0      = {'#005f00', 22,'green'      }
+local green1      = {'#5faf00', 70,'darkgreen'  }
+local green2      = {'#5faf5f', 71,'darkgreen'  }
+local blue0       = {'#00005f', 17,'darkblue'   }
+local cyan0       = {'#005f5f', 23,'darkblue'   }
+local cyan1       = {'#00875f', 29,'darkgreen'  }
+local cyan2       = {'#008787', 30,'darkcyan'   }
+local cyan3       = {'#00afaf', 37,'darkcyan'   }
+local cyan4       = {'#5fffff', 87,'cyan'       }
+local cyan5       = {'#5fafd7', 74,'darkcyan'   }
+local cyan6       = {'#5f8787', 66,'darkcyan'   }
 
 --[[ Step 4: highlights
 	You can define highlight groups like this:
@@ -316,134 +328,134 @@ local NONE = {}
 
 --[[ These are the ones you should edit. ]]
 -- This is the only highlight that must be defined separately.
-local highlight_group_normal = {fg=white, bg=black0}
+local highlight_group_normal = {fg=white0, bg=black0}
 
 -- This is where the rest of your highlights should go.
 local highlight_groups = {
 	--[[ 4.1. Text Analysis ]]
-	Comment = {fg=gray2},
+	Comment = {fg=gray1},
 	NonText = {fg=black0},
 	EndOfBuffer = 'NonText',
 	Whitespace  = 'NonText',
 
 	--[[ 4.1.1. Literals]]
-	Constant = {fg=green0},
-	String = {fg=darkyellow0},
+	Constant = {fg=magenta0},
+	String = {fg=yellow0},
 	Character = 'String',
-	Number  = {fg=magenta},
-	Boolean = {fg=cyan},
+	Number  = {fg=magenta0},
+	Boolean = {fg=yellow1, style='bold'},
 	Float   = 'Number',
 
 	--[[ 4.1.2. Identifiers]]
-	Identifier = {fg=FG, style='bold'},
-	Function = {fg=yellow0, style='bold'},
+	Identifier = {fg=orange2},
+	Function = {fg=white0},
 
 	--[[ 4.1.3. Syntax]]
-	Statement   = {fg=ice},
-	Conditional = {fg=ice},
-	Repeat   = {fg=turquoise},
-	Label    = {fg=pink, style='bold'},
-	Operator = {fg=green, style='bold'},
-	Keyword  = {fg=teal},
-	Exception = {fg=magenta, style='bold'},
+	Statement   = {fg=olive0,style='none'},
+	Conditional = {fg=magenta2,style='bold'},
+	Repeat   = {fg=magenta2,style='bold'},
+	Label    = {fg=cyan3},
+	Operator = {fg=cyan5, style='none'},
+	Keyword  = {fg=cyan3},
+	Exception = {fg=green2},
 	Noise = 'Delimiter',
 
 	--[[ 4.1.4. Metatextual Information]]
-	PreProc = {fg=tan},
-	Include = {fg=green0, style='nocombine'},
-	Define = {fg=blue, style='nocombine'},
-	Macro  = {fg=blue},
-	PreCondit = {fg=tan},
+	PreProc = {fg=cyan3},
+	Include = {fg=green2},
+	Define = {fg=cyan3},
+	Macro  = {fg=cyan3},
+	PreCondit = {fg=cyan5},
 
 	--[[ 4.1.5. Semantics]]
-	Type         = {fg=cyan},
-	StorageClass = {fg=orange, style='bold'},
-	Structure = {fg=blue, style='bold'},
-	Typedef = {fg=cyan},
+	Type         = {fg=olive0, style='bold'},
+	StorageClass = {fg=orange2, style='bold'},
+	Structure = {fg=cyan3, style='bold'},
+	Typedef = {fg=olive0, style='bold'},
 
 	--[[ 4.1.6. Edge Cases]]
-	Special = {fg=magenta, style='bold'},
-	SpecialChar = {fg=magenta},
+	Special = {fg=white0},
+	SpecialChar = {fg=white0},
 	SpecialKey = 'Character',
-	Tag = 'Underlined',
-	Delimiter = {fg=white},
-	SpecialComment = {fg=gray, style={'bold', 'nocombine'}},
+	Tag = {fg=yellow1},
+	Delimiter = {fg=cyan5},
+	SpecialComment = {fg=gray1, style={'bold', 'nocombine'}},
 	Debug = 'WarningMsg',
 
 	--[[ 4.1.7. Help Syntax]]
-	Underlined = {fg=turquoise, style='underline'},
-	Ignore = {fg=gray},
-	Error = {fg=white, bg=darkred, style='bold'},
-	Todo = {fg=yellow, style={'bold', 'underline'}},
+	Underlined = {fg=cyan4, style='underline'},
+	Ignore = {fg=gray0},
+	Error = {fg=white0, bg=red0},
+	Todo = {fg=orange0, bg=black2, style='bold'},
 	Hint = {fg=black, bg=magenta, style='bold'},
-	Info = function(self) return {fg=self.Hint.fg, bg=pink, style=self.Hint.style} end,
-	Warning = function(self) return {fg=self.Hint.fg, bg=orange, style=self.Hint.style} end,
+	Info = function(self) return {fg=self.Hint.fg, bg=red2, style=self.Hint.style} end,
+	Warning = function(self) return {fg=self.Hint.fg, bg=orange0, style=self.Hint.style} end,
 
 	--[[ 4.2... Editor UI  ]]
 	--[[ 4.2.1. Status Line]]
-	StatusLine = {fg=green0, bg=gray0},
-	StatusLineNC = function(self) return {fg=gray, bg=self.StatusLine.bg} end,
+	StatusLine = {fg=cyan6, bg=black2},
+	StatusLineNC = {fg=gray4, bg=gray0},
 	StatusLineTerm = 'StatusLine',
 	StatusLineTermNC = 'StatusLineNC',
 
 	--[[ 4.2.2. Separators]]
-	FloatBorder = {fg=gray},
-	TabLine = {fg=FG, bg=gray0},
-	TabLineFill = {fg=gray0, bg=black},
-	TabLineSel = {fg=FG, bg=highlight_group_normal.bg},
-	Title = {style='bold'},
-	VertSplit = {fg=white},
+	FloatBorder = {fg=gray0},
+	TabLine = {fg=gray0, bg=gray2,style='none'},
+	TabLineFill = {fg=black3, bg=black3,style='none'},
+	TabLineSel = {fg=black1, bg=cyan3,style='none'},
+	Title = {fg=gray1,style='bold'},
+	VertSplit = {fg=black2,style='none'},
 
 	--[[ 4.2.3. Conditional Line Highlighting]]
 	Conceal = 'NonText',
-	CursorLine   = {bg=black1},
-	CursorLineNr = function(self) return {fg=pink, bg=self.LineNr.bg} end,
+	CursorLine   = {bg=gray5,style='none'},
+	CursorLineNr = {fg=yellow, bg=black0,style='none'},
 	debugBreakpoint = 'ErrorMsg',
 	debugPC = 'ColorColumn',
-	LineNr  = {fg=gray},
+	LineNr  = {fg=gray2},
 	QuickFixLine = {bg=gray0},
-	Visual    = {style='inverse'},
+	Visual    = {fg=black,bg=magenta3},
 	VisualNOS = {bg=gray0},
 
 	--[[ 4.2.4. Popup Menu]]
-	Pmenu = {fg=FG, bg=black1},
+	Pmenu = {fg=white1, bg=gray5,style='none'},
 	PmenuSbar = {bg=gray0},
-	PmenuSel  = {fg=black, bg=gray},
-	PmenuThumb = {bg=white},
+	PmenuSel  = {style='inverse'},
+	PmenuThumb = {bg=black1},
 	WildMenu = 'PmenuSel',
 
 	--[[ 4.2.5. Folds]]
-	FoldColumn = {bg=gray0, style='bold'},
-	Folded = {fg=black,  bg=purple},
+	FoldColumn = {fg=magenta1,bg=BG, style='none'},
+	Folded = {fg=magenta1,bg=red1},
 
 	--[[ 4.2.6. Diffs]]
-	DiffAdd    = {fg=black, bg=darkgreen},
-	DiffChange = NONE,
-	DiffDelete = function(self) return {fg=self.DiffAdd.fg, bg=red} end,
-	DiffText   = function(self) return {fg=self.DiffAdd.fg, bg=yellow} end,
+	DiffAdd    = {fg=olive1, bg=green0,style='none'},
+	DiffChange = {fg=white0, bg=cyan0,style='none'},
+	DiffDelete = {fg=red2, bg=red0,style='none'}, -- function(self) return {fg=self.DiffAdd.fg, bg=red} end,
+	DiffText   = {fg=cyan4, bg=cyan2,style='none'}, -- function(self) return {fg=self.DiffAdd.fg, bg=yellow} end,
 
 	--[[ 4.2.7. Searching]]
 	IncSearch  = {style='inverse'},
-	MatchParen = {fg=green, style={'bold', 'underline'}},
-	Search = {style={'underline', color=white}},
+	MatchParen = {fg=gray3,bg=white1},
+	Search = {fg=black,bg=cyan1},
 
 	--[[ 4.2.8. Spelling]]
 	SpellBad   = {style={'undercurl', color=red}},
 	SpellCap   = {style={'undercurl', color=yellow}},
 	SpellLocal = {style={'undercurl', color=green}},
-	SpellRare  = {style={'undercurl', color=orange}},
+	SpellRare  = {style={'undercurl', color=orange0}},
 
 	--[[ 4.2.9. Conditional Column Highlighting]]
-	ColorColumn = {style='inverse'},
-	SignColumn  = NONE,
+	ColorColumn = {bg=gray5,style='none'},
+	SignColumn  = {fg=yellow1,bg=BG,style='none'},
 
 	--[[ 4.2.10. Messages]]
 	ErrorMsg = {fg=red, style='bold'},
 	HintMsg  = {fg=magenta},
-	InfoMsg  = {fg=pink},
-	ModeMsg  = {fg=yellow},
-	WarningMsg = {fg=orange, style='bold'},
-	Question   = {fg=orange, style='underline'},
+	InfoMsg  = {fg=magenta1},
+	ModeMsg  = {fg=yellow0},
+	WarningMsg = {fg=olive0},
+	Question   = {fg=yellow0, style='underline'},
 
 	--[[ 4.2.11. LSP / Diagnostics ]]
 	DiagnosticError = 'Error',
@@ -464,8 +476,8 @@ local highlight_groups = {
 
 	DiagnosticUnderlineError = {style={'undercurl', color=red}},
 	DiagnosticUnderlineHint  = {style={'undercurl', color=magenta}},
-	DiagnosticUnderlineInfo  = {style={'undercurl', color=pink}},
-	DiagnosticUnderlineWarn = {style={'undercurl', color=orange}},
+	DiagnosticUnderlineInfo  = {style={'undercurl', color=magenta1}},
+	DiagnosticUnderlineWarn = {style={'undercurl', color=orange0}},
 
 	LspDiagnosticsDefaultError = 'DiagnosticError',
 	LspDiagnosticsFloatingError = 'DiagnosticFloatingError',
@@ -489,12 +501,12 @@ local highlight_groups = {
 	LspDiagnosticsUnderlineWarning = 'DiagnosticUnderlineWarn',
 
 	--[[ 4.2.12. Cursor ]]
-	Cursor   = {style='inverse'},
+	Cursor   = {fg=black2,bg=white1},
 	CursorIM = 'Cursor',
-	CursorColumn = {bg=black1},
+	CursorColumn = {bg=gray5,style='none'},
 
 	--[[ 4.2.13. Misc ]]
-	Directory = {fg=ice, style='bold'},
+	Directory = {fg=cyan3, style='bold'},
 
 	--[[ 4.3. Programming Languages
 		Everything in this section is OPTIONAL. Feel free to remove everything
@@ -679,11 +691,11 @@ local highlight_groups = {
 	markdownCode = 'mkdCode',
 	markdownCodeDelimiter = 'mkdCodeDelimiter',
 	markdownH1 = {fg=red, style='bold'},
-	markdownH2 = {fg=orange, style='bold'},
+	markdownH2 = {fg=orange0, style='bold'},
 	markdownH3 = {fg=yellow, style='bold'},
 	markdownH4 = {fg=darkgreen, style='bold'},
 	markdownH5 = {fg=cyan, style='bold'},
-	markdownH6 = {fg=purple, style='bold'},
+	markdownH6 = {fg=red1, style='bold'},
 	markdownLinkDelimiter = 'Delimiter',
 	markdownLinkTextDelimiter = 'markdownLinkDelimiter',
 	markdownUrl = 'Underlined',
@@ -904,7 +916,7 @@ local highlight_groups = {
 	GitGutterAdd    = {fg = green},
 	GitGutterChange = {fg = yellow},
 	GitGutterDelete = {fg = red},
-	GitGutterChangeDelete = {fg=orange},
+	GitGutterChangeDelete = {fg=orange0},
 
 	SignifySignAdd    = 'GitGutterAdd',
 	SignifySignChange = 'GitGutterChange',
@@ -941,7 +953,7 @@ local highlight_groups = {
 	--[[ 4.4.9. barbar.nvim ]]
 	BufferCurrent       = 'TabLineSel',
 	BufferCurrentIndex  = function(self) return {fg=self.InfoMsg.fg, bg=self.BufferCurrent.bg} end,
-	BufferCurrentMod    = {fg=tan, bg=black, style='bold'},
+	BufferCurrentMod    = {fg=yellow0, bg=black, style='bold'},
 	BufferCurrentSign   = 'HintMsg',
 	BufferCurrentTarget = 'BufferCurrentSign',
 
@@ -1025,7 +1037,7 @@ local highlight_groups = {
 
 	--[[ 4.4.18. nvim-tree ]]
 	NvimTreeGitDeleted = function(self) return {fg=self.DiffDelete.bg, bg=NONE} end,
-	NvimTreeGitDirty = {fg=orange, bg=NONE},
+	NvimTreeGitDirty = {fg=orange0, bg=NONE},
 	NvimTreeGitIgnored = 'Ignore',
 	NvimTreeGitMerge = 'NvimTreeGitRenamed',
 	NvimTreeGitNew = function(self) return {fg=self.DiffAdd.bg, bg=NONE} end,
