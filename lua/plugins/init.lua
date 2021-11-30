@@ -17,77 +17,21 @@ packer.init {
 }
 
 return packer.startup(function()
+  -- opt = true
   use {'wbthomason/packer.nvim'} -- Packer can manage itself as an optional plugin
   use {'yianwillis/vimcdoc'}
   use {'Iron-E/nvim-highlite'} -- colorscheme template
 
   -- theme
-  -- use {'projekt0n/github-nvim-theme',
-  --   event = 'VimEnter *',
-  --   config = function()
-  --     require("github-theme").setup({
-  --       theme_style = "dark_default",
-  --       transparent = true,
-  --     })
-  --   end,
-  -- }
-  -- use {'folke/tokyonight.nvim',
-  --   event = 'VimEnter *',
-  --   config = function()
-  --     vim.g.tokyonight_style = "night"
-  --     vim.g.tokyonight_transparent = true
-  --     vim.g.tokyonight_italic_functions = false
-  --     vim.cmd[[colorscheme tokyonight]]
-  --   end,
-  -- }
-  -- use {'navarasu/onedark.nvim',
-  --   event = 'VimEnter *',
-  --   config = function()
-  --     -- vim.g.onedark_style = 'warm'
-  --     -- vim.g.onedark_italic_comment = false
-  --     vim.g.onedark_transparent_background = true
-  --     vim.g.onedark_toggle_style_keymap = '<nop>'
-  --     require('onedark').setup() 
-  --   end,
-  -- }
-  -- use {'NLKNguyen/papercolor-theme',
-  --   event = 'VimEnter *',
-  --   config = function()
-  --     vim.g.PaperColor_Theme_Options = {
-  --       theme = {
-  --         default = {
-  --           override = {
-  --             color00 = { '#080808', '232' },
-  --             linenumber_bg = { '#080808', '232' }
-  --           }
-  --         }
-  --       }
-  --     }
-  --     vim.cmd[[colorscheme PaperColor]]
-  --   end,
-  -- }
+  -- use {'projekt0n/github-nvim-theme', event='VimEnter *', config=function() require("github-theme").setup({ theme_style="dark_default", transparent=true, }) end, }
+  -- use {'folke/tokyonight.nvim', event='VimEnter *', config=function() vim.g.tokyonight_style="night" vim.g.tokyonight_transparent=true vim.g.tokyonight_italic_functions=false vim.cmd[[colorscheme tokyonight]] end, }
+  -- use {'navarasu/onedark.nvim', event='VimEnter *', config=function() -- vim.g.onedark_style='warm' vim.g.onedark_transparent_background=true vim.g.onedark_toggle_style_keymap='<nop>' require('onedark').setup() end, }
+  -- use {'NLKNguyen/papercolor-theme', event='VimEnter *', config=function() vim.g.PaperColor_Theme_Options={ theme={ default={ override={ color00={ '#080808', '232' }, linenumber_bg={ '#080808', '232' } } } } } vim.cmd[[colorscheme PaperColor]] end, }
 
   -- awesome
-  use {'mhinz/vim-startify',opt=false,
-    config = function()
-      vim.g.startify_lists = {
-          {type='sessions',  header={'   Sessions; [b]uffer, [s]plit, [v]ertical, [t]ab'}},
-          {type='files',     header={'   MRU; Uppercase of b/s/v/t enable the batchmode.'}},
-          {type='dir',       header={'   MRU; [e]mpty, [q]uit; '}},
-          {type='bookmarks', header={'   Bookmarks'}},
-          {type='commands',  header={'   Commands' }},
-        }
-      vim.g.startify_enable_special = 0 -- Show <empty buffer> and <quit>.
-      vim.api.nvim_set_keymap('n','<leader>sl','<cmd>Startify<cr>',{noremap = true, silent = true})
-      vim.api.nvim_set_keymap('n','<leader>ss','<cmd>SSave<cr>',{noremap = true, silent = true})
-    end,
-  }
-  use {'andymass/vim-matchup',
-    event = "BufRead",
-  }
-  use {'windwp/nvim-autopairs',
-    event = "BufRead",
-  }
+  use {'mhinz/vim-startify',opt=false, config = require('plugins.awesome').startify()}
+  use {'andymass/vim-matchup', event = "BufRead", }
+  use {'windwp/nvim-autopairs', event = "BufRead", }
   use {"norcalli/nvim-colorizer.lua",
     ft = {'lua','vim'}, -- vim config colors
     config = function()

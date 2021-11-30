@@ -202,5 +202,4 @@ cmd "silent! command PackerUpdate lua require 'plugins' require('packer').update
 -- colorscheme
 require('highlite')
 vim.cmd 'colorscheme highlite'
-m('n','<leader>j','<cmd>color highlite<cr>',ns)
 
