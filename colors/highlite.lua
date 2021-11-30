@@ -374,8 +374,8 @@ local highlight_groups = {
 	Typedef = {fg=olive0, style='bold'},
 
 	--[[ 4.1.6. Edge Cases]]
-	Special = {fg=white0},
-	SpecialChar = {fg=white0},
+	Special = {fg=magenta0, style='bold'},
+	SpecialChar = {fg=magenta0, style='italic'},
 	SpecialKey = 'Character',
 	Tag = {fg=yellow1},
 	Delimiter = {fg=cyan5},
