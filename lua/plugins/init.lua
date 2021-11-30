@@ -94,19 +94,19 @@ return packer.startup(function()
       require("colorizer").setup()
     end,
   }
-  -- -- lsp dap treesitter
-  -- use {'nvim-treesitter/nvim-treesitter',
-  --   event = "BufRead",
-  --   config = function()
-  --     require('nvim-treesitter.configs').setup {
-  --       -- ensure_installed = { "lua","c","cpp","verilog"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  --       highlight = {
-  --         enable = true,
-  --         use_languagetree = true,
-  --       },
-  --     }
-  --   end,
-  -- }
+  -- lsp dap treesitter
+  use {'nvim-treesitter/nvim-treesitter',
+    event = "BufRead",
+    config = function()
+      require('nvim-treesitter.configs').setup {
+        -- ensure_installed = { "lua","c","cpp","verilog"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+        highlight = {
+          enable = true,
+          use_languagetree = true,
+        },
+      }
+    end,
+  }
 
   -- -- Load on specific commands
   -- use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
