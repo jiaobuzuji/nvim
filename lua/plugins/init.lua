@@ -29,16 +29,27 @@ return packer.startup(function()
   -- use {'NLKNguyen/papercolor-theme', event='VimEnter *', config=function() vim.g.PaperColor_Theme_Options={ theme={ default={ override={ color00={ '#080808', '232' }, linenumber_bg={ '#080808', '232' } } } } } vim.cmd[[colorscheme PaperColor]] end, }
 
   -- awesome
-  use {'mhinz/vim-startify',opt=false, config = require('plugins.awesome').startify()}
-  use {'andymass/vim-matchup', event = "BufRead", }
-  use {'windwp/nvim-autopairs', event = "BufRead", }
+  use {'mhinz/vim-startify',opt=false, config = function() require('plugins.awesome').startify() end}
+  use {'andymass/vim-matchup', event = "BufRead"}
+  use {'windwp/nvim-autopairs', event = "BufRead"}
+  use {"terrortylor/nvim-comment",
+    cmd = "CommentToggle",
+    config = function() require('plugins.awesome').comment() end,
+  }
   use {"norcalli/nvim-colorizer.lua",
     ft = {'lua','vim'}, -- vim config colors
-    config = function()
-      require("colorizer").setup()
-    end,
+    config = function() require("colorizer").setup() end,
   }
-  -- lsp dap treesitter
+  use { "kyazdani42/nvim-tree.lua",
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    config = function() require('plugins.awesome').nvimtree() end,
+  }
+  -- use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+
+
+  -- lsp dap treesitter fuzzy snippet
+  use {"neovim/nvim-lspconfig"}
+  use {"nvim-lua/plenary.nvim",opt=false}
   use {'nvim-treesitter/nvim-treesitter',
     event = "BufRead",
     config = function()
@@ -52,20 +63,20 @@ return packer.startup(function()
     end,
   }
 
-  -- -- Load on specific commands
-  -- use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
+  use {"nvim-telescope/telescope.nvim",
+    module = "telescope",
+    cmd = "Telescope",
+    requires = {
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        run = "make",
+      },
+      {
+        "nvim-telescope/telescope-media-files.nvim",
+      },
+    },
+  }
 
-  -- -- Load on a combination of conditions: specific filetypes or commands
-  -- -- Also run code after load (see the "config" key)
-  -- use {
-  --   'w0rp/ale',
-  --   ft = {'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown', 'racket', 'vim', 'tex'},
-  --   cmd = 'ALEEnable',
-  --   config = 'vim.cmd[[ALEEnable]]'
-  -- }
-
-  -- -- Plugins can have post-install/update hooks
-  -- use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
-
+--------------------------------------------------------
 end)
 

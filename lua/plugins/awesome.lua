@@ -9,6 +9,7 @@ local m = vim.api.nvim_set_keymap
 local ns = {noremap = true, silent = true}
 local g = vim.g
 
+-- vim-startify
 M.startify = function()
   g.startify_lists = {
     {type='sessions',  header={'   Sessions; [b]uffer, [s]plit, [v]ertical, [t]ab'}},
@@ -30,4 +31,18 @@ M.startify = function()
   m('n','<leader>sc','<cmd>SClose<cr>',ns)
 end
 
+-- nvimtree
+M.nvimtree = function()
+end
+
+-- comment
+M.comment = function()
+end
+
+-- -- treesitter
+-- M.treesitter = function()
+-- end
+
+-- return
 return M
+
