@@ -59,8 +59,8 @@ return packer.startup(function()
     module = "telescope",
     cmd = "Telescope",
     requires = {
-      { "nvim-telescope/telescope-fzf-native.nvim", after="telescope.nvim", run="make" },
-      { "nvim-telescope/telescope-media-files.nvim", after="telescope.nvim"},
+      { "nvim-telescope/telescope-fzf-native.nvim",run="make" },
+      { "nvim-telescope/telescope-media-files.nvim",},
     },
   }
 

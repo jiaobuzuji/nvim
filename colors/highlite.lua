@@ -336,7 +336,7 @@ local highlight_groups = {
 	Comment = {fg=gray1},
 	NonText = {fg=black0},
 	EndOfBuffer = {fg=black3},
-	Whitespace  = 'NonText',
+	Whitespace  = {fg=black3},
 
 	--[[ 4.1.1. Literals]]
 	Constant = {fg=magenta0},
@@ -393,8 +393,8 @@ local highlight_groups = {
 
 	--[[ 4.2... Editor UI  ]]
 	--[[ 4.2.1. Status Line]]
-	StatusLine = {fg=cyan6, bg=black2},
-	StatusLineNC = {fg=gray4, bg=gray0},
+	StatusLine = {fg=white0, bg=gray5},
+	StatusLineNC = {fg=gray4, bg=black2},
 	StatusLineTerm = 'StatusLine',
 	StatusLineTermNC = 'StatusLineNC',
 
@@ -408,8 +408,8 @@ local highlight_groups = {
 
 	--[[ 4.2.3. Conditional Line Highlighting]]
 	Conceal = 'NonText',
-	CursorLine   = {bg=gray5,style='none'},
-	CursorLineNr = {fg=yellow, bg=black0,style='none'},
+	CursorLine   = {bg=black2,style='none'},
+	CursorLineNr = {fg=yellow, bg=black2,style='none'},
 	debugBreakpoint = 'ErrorMsg',
 	debugPC = 'ColorColumn',
 	LineNr  = {fg=gray2},
@@ -436,7 +436,7 @@ local highlight_groups = {
 
 	--[[ 4.2.7. Searching]]
 	IncSearch  = {style='inverse'},
-	MatchParen = {fg=gray3,bg=white1},
+	MatchParen = {fg=white0,bg=gray5},
 	Search = {fg=black,bg=cyan1},
 
 	--[[ 4.2.8. Spelling]]
@@ -455,7 +455,7 @@ local highlight_groups = {
 	InfoMsg  = {fg=magenta1},
 	ModeMsg  = {fg=yellow0},
 	WarningMsg = {fg=olive0},
-	Question   = {fg=yellow0, style='underline'},
+	Question   = {fg=yellow0},
 
 	--[[ 4.2.11. LSP / Diagnostics ]]
 	DiagnosticError = 'Error',
@@ -503,7 +503,7 @@ local highlight_groups = {
 	--[[ 4.2.12. Cursor ]]
 	Cursor   = {fg=black2,bg=white1},
 	CursorIM = 'Cursor',
-	CursorColumn = {bg=gray5,style='none'},
+	CursorColumn = 'CursorLine',
 
 	--[[ 4.2.13. Misc ]]
 	Directory = {fg=cyan3, style='bold'},
