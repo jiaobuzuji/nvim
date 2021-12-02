@@ -31,6 +31,16 @@ M.startify = function()
   m('n','<leader>sc','<cmd>SClose<cr>',ns)
 end
 
+-- undotree
+M.undotree = function()
+  g.undotree_WindowLayout=2
+  g.undotree_DiffpanelHeight=8
+  g.undotree_SetFocusWhenToggle=1
+  m('n','<leader>tu','<cmd>UndotreeToggle<cr>',ns)
+  -- autocmd BufWritePre $VIMFILES/undodir/* set noundofile
+  vim.cmd [[ autocmd FileType undotree setlocal rnu ]]
+end
+
 -- nvimtree
 M.nvimtree = function()
 end

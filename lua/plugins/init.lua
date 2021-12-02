@@ -30,22 +30,14 @@ return packer.startup(function()
 
   -- awesome
   use {'mhinz/vim-startify',opt=false, config = function() require('plugins.awesome').startify() end}
-  use {'andymass/vim-matchup', event = "BufRead"}
-  use {'windwp/nvim-autopairs', event = "BufRead"}
-  use {"terrortylor/nvim-comment",
-    cmd = "CommentToggle",
-    config = function() require('plugins.awesome').comment() end,
-  }
-  use {"norcalli/nvim-colorizer.lua",
-    ft = {'lua','vim'}, -- vim config colors
-    config = function() require("colorizer").setup() end,
-  }
-  use { "kyazdani42/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    config = function() require('plugins.awesome').nvimtree() end,
-  }
-  -- use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
-
+  use {'tpope/vim-surround', opt=false}
+  use {'andymass/vim-matchup', opt=false}
+  use {'windwp/nvim-autopairs', opt=false}
+  use {'mbbill/undotree', cmd = 'UndotreeToggle', setup=function() require('plugins.awesome').undotree() end}
+  use {"terrortylor/nvim-comment", cmd = "CommentToggle", setup = function() require('plugins.awesome').comment() end} -- TODO
+  use {"norcalli/nvim-colorizer.lua", ft = {'lua','vim'}, config = function() require("colorizer").setup() end}
+  use { "kyazdani42/nvim-tree.lua", cmd = { "NvimTreeToggle", "NvimTreeFocus" }, setup = function() require('plugins.awesome').nvimtree() end}
+  -- use {'iamcco/markdown-preview.nvim', cmd = 'MarkdownPreview', run = 'cd app && yarn install'}
 
   -- lsp dap treesitter fuzzy snippet
   use {"neovim/nvim-lspconfig"}
@@ -67,13 +59,8 @@ return packer.startup(function()
     module = "telescope",
     cmd = "Telescope",
     requires = {
-      {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        run = "make",
-      },
-      {
-        "nvim-telescope/telescope-media-files.nvim",
-      },
+      { "nvim-telescope/telescope-fzf-native.nvim", after="telescope.nvim", run="make" },
+      { "nvim-telescope/telescope-media-files.nvim", after="telescope.nvim"},
     },
   }
 

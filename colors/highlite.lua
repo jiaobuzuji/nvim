@@ -335,7 +335,7 @@ local highlight_groups = {
 	--[[ 4.1. Text Analysis ]]
 	Comment = {fg=gray1},
 	NonText = {fg=black0},
-	EndOfBuffer = 'NonText',
+	EndOfBuffer = {fg=black3},
 	Whitespace  = 'NonText',
 
 	--[[ 4.1.1. Literals]]

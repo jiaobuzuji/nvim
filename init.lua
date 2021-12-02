@@ -42,6 +42,8 @@ opt.smartcase = true -- override 'ignorecase' when pattern has upper case charac
 --  4 displaying text {2
 opt.scrolloff = 5 -- number of screen lines to show around the cursor
 opt.sidescrolloff = 5 -- minimal number of columns to keep left and right of the cursor
+opt.wrap = false -- long lines wrap
+
 -- opt.fillchars = { eob = " " } -- disable tilde on end of buffer: https://github.com/neovim/neovim/pull/8546#issuecomment-643643758
 opt.lazyredraw = true -- don't redraw while executing macros
 opt.list = true -- show <Tab> as ^I and end-of-line as $
