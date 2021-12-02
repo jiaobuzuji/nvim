@@ -43,10 +43,12 @@ end
 
 -- nvimtree
 M.nvimtree = function()
+  m('n','<leader>nf','<cmd>NvimTreeFocus<cr>',ns)
 end
 
 -- comment
 M.comment = function()
+  m('n','<leader>cc','<cmd>CommentToggle<cr>',ns)
 end
 
 -- -- treesitter
