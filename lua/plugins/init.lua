@@ -42,10 +42,9 @@ return packer.startup(function()
     setup = function() require('plugins.awesome').nvimtree() end,
     config = function() require('plugins.awesome').nvimtree_setup() end,
   }
-
-  -- lsp dap treesitter fuzzy snippet
-  use {"neovim/nvim-lspconfig"}
   use {"nvim-lua/plenary.nvim",opt=false}
+
+ -- treesitter
   use {'nvim-treesitter/nvim-treesitter',
     event = "BufRead",
     config = function()
@@ -59,6 +58,17 @@ return packer.startup(function()
     end,
   }
 
+  -- lsp dap
+  use {"neovim/nvim-lspconfig"}
+
+  -- Complete,  snippet
+  use {"rafamadriz/friendly-snippets", event = "InsertEnter"}
+  use {"hrsh7th/nvim-cmp", after = "friendly-snippets"}
+  use {"hrsh7th/cmp-nvim-lsp", after = "nvim-cmp"}
+  use {"hrsh7th/cmp-buffer", after = "cmp-nvim-lsp"}
+  use {"hrsh7th/cmp-path", after = "cmp-buffer"}
+
+  -- fuzzy finder
   use {"nvim-telescope/telescope.nvim",
     module = "telescope",
     cmd = "Telescope",
