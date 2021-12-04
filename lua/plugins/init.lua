@@ -32,11 +32,13 @@ return packer.startup(function()
   use {'mhinz/vim-startify',opt=false, config = function() require('plugins.awesome').startify() end}
   use {'tpope/vim-surround', opt=false}
   use {'andymass/vim-matchup', opt=false}
-  use {'windwp/nvim-autopairs', opt=false}
+  use {'windwp/nvim-autopairs', opt=false, config = function() require('nvim-autopairs').setup{} end}
   use {"norcalli/nvim-colorizer.lua", ft = {'lua','vim'}, config = function() require("colorizer").setup() end}
   use {'mbbill/undotree', cmd = 'UndotreeToggle', setup=function() require('plugins.awesome').undotree() end}
-  use {"terrortylor/nvim-comment", cmd = "CommentToggle", setup = function() require('plugins.awesome').comment() end} -- TODO
-  -- use {'iamcco/markdown-preview.nvim', cmd = 'MarkdownPreview', run = 'cd app && yarn install'}
+  use {"terrortylor/nvim-comment",
+    cmd = "CommentToggle",
+    setup = function() require('plugins.awesome').comment() end,
+  }
   use { "kyazdani42/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     setup = function() require('plugins.awesome').nvimtree() end,
@@ -44,7 +46,9 @@ return packer.startup(function()
   }
   use {"nvim-lua/plenary.nvim",opt=false}
 
- -- treesitter
+  -- use {'iamcco/markdown-preview.nvim', cmd = 'MarkdownPreview', run = 'cd app && yarn install'}
+
+  -- treesitter
   use {'nvim-treesitter/nvim-treesitter',
     event = "BufRead",
     config = function()
