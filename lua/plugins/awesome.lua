@@ -84,7 +84,7 @@ M.nvimtree_setup = function()
       side = 'left',
       auto_resize = false,
       number = false,
-      relativenumber = false,
+      relativenumber = true,
       mappings = {
         custom_only = false,
         list = {}
@@ -107,7 +107,10 @@ end
 
 -- comment
 M.comment = function()
-  m('n','<leader>cc','<cmd>CommentToggle<cr>',ns)
+  g.NERDSpaceDelims=1
+  g.NERDMenuMode=1
+  -- g.NERDAltDelims_c = 1 -- default delimiter. Not work!! BUG!!!
+  g.NERDCustomDelimiters = {c= {left='//', leftAlt='/*', rightAlt='*/'}}
 end
 
 -- -- treesitter
