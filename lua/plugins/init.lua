@@ -69,10 +69,41 @@ return packer.startup(function()
 
   -- Complete,  snippet
   use {"rafamadriz/friendly-snippets", event = "InsertEnter"}
-  use {"hrsh7th/nvim-cmp", after = "friendly-snippets"}
+  use {"hrsh7th/nvim-cmp", after = "friendly-snippets",
+    config = function()
+      local cmp = require'cmp'
+      cmp.setup({
+        sources = cmp.config.sources({
+          { name = 'nvim_lsp' },
+          { name = 'vsnip' }, -- For vsnip users.
+          -- { name = 'luasnip' }, -- For luasnip users.
+          -- { name = 'snippy' }, -- For snippy users.
+          -- { name = 'ultisnips' }, -- For ultisnips users.
+        }, {
+          { name = 'buffer' },
+        }),
+      }),
+      -- `/` cmdline setup.
+      cmp.setup.cmdline('/', {
+        sources = {
+          { name = 'buffer' }
+        }
+      })
+      -- `:` cmdline setup.
+      cmp.setup.cmdline(':', {
+        sources = cmp.config.sources({
+          { name = 'path' }
+        }, {
+          { name = 'cmdline' }
+        })
+      })
+    end,
+  } -- TODO
   use {"hrsh7th/cmp-nvim-lsp", after = "nvim-cmp"}
   use {"hrsh7th/cmp-buffer", after = "cmp-nvim-lsp"}
   use {"hrsh7th/cmp-path", after = "cmp-buffer"}
+  use {'hrsh7th/cmp-vsnip', after = 'cmp-path'}
+  use {'hrsh7th/vim-vsnip', after = 'cmp-vsnip'}
 
   -- fuzzy finder
   use {"nvim-telescope/telescope.nvim",
