@@ -111,6 +111,7 @@ M.comment = function()
   g.NERDMenuMode=1
   -- g.NERDAltDelims_c = 1 -- default delimiter. Not work!! BUG!!!
   g.NERDCustomDelimiters = {c= {left='//', leftAlt='/*', rightAlt='*/'}}
+  g.NERDAltDelims_dosbatch = 1
 end
 
 -- -- treesitter
