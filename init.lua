@@ -207,3 +207,5 @@ vim.cmd 'colorscheme highlite'
 
 -------------------------------------------------------------------------------
 require 'plugins'
+require('packer').compile()
+

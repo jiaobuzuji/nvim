@@ -29,6 +29,7 @@ return packer.startup(function()
   -- use {'NLKNguyen/papercolor-theme', event='VimEnter *', config=function() vim.g.PaperColor_Theme_Options={ theme={ default={ override={ color00={ '#080808', '232' }, linenumber_bg={ '#080808', '232' } } } } } vim.cmd[[colorscheme PaperColor]] end, }
 
   -- awesome
+  use {"nvim-lua/plenary.nvim",opt=false}
   use {'mhinz/vim-startify',opt=false, config = function() require('plugins.awesome').startify() end}
   use {'tpope/vim-surround', opt=false}
   use {'andymass/vim-matchup', opt=false}
@@ -37,13 +38,12 @@ return packer.startup(function()
   use {'windwp/nvim-autopairs', opt=false, config = function() require('nvim-autopairs').setup{} end}
   use {"norcalli/nvim-colorizer.lua", ft = {'lua','vim'}, config = function() require("colorizer").setup() end}
   use {'mbbill/undotree', cmd = 'UndotreeToggle', setup=function() require('plugins.awesome').undotree() end}
-
+  use {'voldikss/vim-translator'} -- TODO
   use {"kyazdani42/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     setup = function() require('plugins.awesome').nvimtree() end,
     config = function() require('plugins.awesome').nvimtree_setup() end,
   }
-  use {"nvim-lua/plenary.nvim",opt=false}
 
   -- use {'iamcco/markdown-preview.nvim', cmd = 'MarkdownPreview', run = 'cd app && yarn install'}
 
@@ -77,9 +77,10 @@ return packer.startup(function()
     cmd = "Telescope",
     requires = {
       {"nvim-telescope/telescope-fzf-native.nvim",run="make" },
-      {"nvim-telescope/telescope-media-files.nvim",},
+      -- {"nvim-telescope/telescope-media-files.nvim"},
     },
-    setup = function() require('plugins.finder').setup() end
+    setup = function() require('plugins.finder').keymap() end,
+    config = function() require('plugins.finder').setup() end,
   }
 
 --------------------------------------------------------

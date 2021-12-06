@@ -9,8 +9,32 @@ local m = vim.api.nvim_set_keymap
 local ns = {noremap = true, silent = true}
 local g = vim.g
 
--- vim-startify
 M.setup = function()
+  require('telescope').setup {
+    defaults = {
+      vimgrep_arguments = {
+         "rg",
+         "--color=never",
+         "--no-heading",
+         "--with-filename",
+         "--line-number",
+         "--column",
+         "--smart-case",
+      },
+      -- selection_strategy = "reset",
+      sorting_strategy = "ascending",
+      -- layout_strategy = "horizontal",
+      layout_config = {
+        horizontal = {
+          prompt_position = "top",
+        },
+      },
+      color_devicons = true,
+    },
+  }
+end
+
+M.keymap = function()
 -- nnoremap <leader><leader> :Files<cr>
 -- nnoremap <leader>fk :History:<cr>
 -- nnoremap <leader>f/ :History/<cr>
