@@ -33,6 +33,8 @@ return packer.startup(function()
   use {'mhinz/vim-startify',opt=false, config = function() require('plugins.awesome').startify() end}
   use {'tpope/vim-surround', opt=false}
   use {'andymass/vim-matchup', opt=false}
+  use {'vim-scripts/YankRing.vim'} -- TODO
+  use {'junegunn/vim-peekaboo'} -- TODO
   -- use {"terrortylor/nvim-comment"}
   use {'preservim/nerdcommenter', opt=false, config = function() require('plugins.awesome').comment() end}
   use {'windwp/nvim-autopairs', opt=false, config = function() require('nvim-autopairs').setup{} end}
