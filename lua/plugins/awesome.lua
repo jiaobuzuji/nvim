@@ -31,6 +31,13 @@ M.startify = function()
   m('n','<leader>sc','<cmd>SClose<cr>',ns)
 end
 
+-- yankring
+M.yankring = function()
+  g.yankring_history_dir = vim.fn.stdpath('data')
+  g.yankring_window_height = 15
+  m('n','<leader>ys','<cmd>YRShow<cr>',ns)
+end
+
 -- undotree
 M.undotree = function()
   g.undotree_WindowLayout=2

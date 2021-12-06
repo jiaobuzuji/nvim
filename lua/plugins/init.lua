@@ -34,8 +34,8 @@ return packer.startup(function()
   use {'tpope/vim-surround', opt=false}
   use {'andymass/vim-matchup', opt=false}
   -- use {'sheerun/vim-polyglot', opt=false} -- TODO
-  use {'vim-scripts/YankRing.vim'} -- TODO
-  use {'junegunn/vim-peekaboo'} -- TODO
+  use {'vim-scripts/YankRing.vim', opt=false, config = function() require('plugins.awesome').yankring() end} -- yank history
+  use {'junegunn/vim-peekaboo', opt=false} -- extends `"` and `@` in normal mode and `<CTRL-R>` in insert mode
   -- use {"terrortylor/nvim-comment"}
   use {'preservim/nerdcommenter', opt=false, config = function() require('plugins.awesome').comment() end}
   use {'windwp/nvim-autopairs', opt=false, config = function() require('nvim-autopairs').setup{} end}
@@ -80,7 +80,7 @@ return packer.startup(function()
     cmd = "Telescope",
     requires = {
       {"nvim-telescope/telescope-fzf-native.nvim",run="make" },
-      -- {"nvim-telescope/telescope-media-files.nvim"},
+      {"nvim-telescope/telescope-media-files.nvim"},
     },
     setup = function() require('plugins.finder').keymap() end,
     config = function() require('plugins.finder').setup() end,
