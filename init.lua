@@ -73,7 +73,7 @@ opt.confirm = true  -- start a dialog when a command fails
 opt.helplang = "en,cn" -- list of preferred languages for finding help
 
 -- 12 selecting text {2
-opt.clipboard = "unnamedplus" -- "unnamed" to use the * register like unnamed register
+opt.clipboard = 'unnamed,unnamedplus' -- "unnamed" to use the * register like unnamed register
 
 -- 13 editing text {2
 opt.undofile = true -- automatically save and restore undo history

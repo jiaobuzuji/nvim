@@ -169,7 +169,7 @@ local cyan        = {'#00ffff', 14,'cyan'       } -- '#9AEDFE'
 local white       = {'#ffffff', 15,'white'      } -- '#ffffff'
 
 -- Customize Palette
--- aqua olive navy tan orange pink teal purple turquoise
+-- Aqua Olive Navy Tan Orange Pink Teal Purple Turquoise
 local black0      = {'#080808',232,'black'      }
 local black1      = {'#121212',233,'black'      }
 local black2      = {'#1c1c1c',234,'black'      }
@@ -501,7 +501,7 @@ local highlight_groups = {
 	LspDiagnosticsUnderlineWarning = 'DiagnosticUnderlineWarn',
 
 	--[[ 4.2.12. Cursor ]]
-	Cursor   = {fg=black2,bg=white1},
+	Cursor   = {fg=black2,bg=white1,style='none'},
 	CursorIM = 'Cursor',
 	CursorColumn = 'CursorLine',
 
