@@ -36,7 +36,7 @@ return packer.startup(function()
   use {'tpope/vim-surround', opt=false}
   use {'andymass/vim-matchup', opt=false}
   -- use {'sheerun/vim-polyglot', opt=false} -- TODO
-  use {'vim-scripts/YankRing.vim', opt=false, config = function() require('plugins.awesome').yankring() end} -- yank history
+  -- use {'vim-scripts/YankRing.vim', opt=false, config = function() require('plugins.awesome').yankring() end} -- yank history
   use {'junegunn/vim-peekaboo', opt=false} -- extends `"` and `@` in normal mode and `<CTRL-R>` in insert mode
   -- use {"terrortylor/nvim-comment"}
   use {'preservim/nerdcommenter', opt=false, config = function() require('plugins.awesome').comment() end}
@@ -52,6 +52,20 @@ return packer.startup(function()
    use {"lukas-reineke/indent-blankline.nvim", opt=false, config = function() require('plugins.awesome').blankline() end}
 
   -- use {'iamcco/markdown-preview.nvim', cmd = 'MarkdownPreview', run = 'cd app && yarn install'}
+  
+  -- Taglist
+  -- Plug 'liuchengxu/vista.vim'
+  -- TODO
+  -- Plug 'pechorin/any-jump.vim'
+  -- Plug 'easymotion/vim-easymotion'
+  -- Plug 'junegunn/vim-easy-align' " {1 TODO
+  -- Plug 'godlygeek/tabular' " ga, or :Tabularize <regex> to align
+  -- matze/vim-move
+  -- Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }
+  -- Plug 'dyng/ctrlsf.vim' " {1
+  -- Plug 'skywind3000/asynctasks.vim'
+  -- Plug 'skywind3000/asyncrun.vim'
+  -- voldikss/vim-translator
 
   -- git
   use {"lewis6991/gitsigns.nvim",
@@ -88,6 +102,7 @@ return packer.startup(function()
   }
 
   -- treesitter
+-- Plug 'nvim-treesitter/playground'
   use {'nvim-treesitter/nvim-treesitter',
     event = "BufRead",
     config = function()
@@ -102,7 +117,11 @@ return packer.startup(function()
   }
 
   -- lsp dap
-  use {"neovim/nvim-lspconfig"}
+  use {"neovim/nvim-lspconfig",
+    event = "BufRead",
+    config = function()
+    end,
+  }
 
   -- Complete,  snippet
   use {"rafamadriz/friendly-snippets", event = "InsertEnter"}

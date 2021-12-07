@@ -9,6 +9,7 @@ local m = vim.api.nvim_set_keymap
 local ns = {noremap = true, silent = true}
 local g = vim.g
 
+-------------------------------------------------------------------------------
 -- vim-startify
 M.startify = function()
   g.startify_lists = {
@@ -31,6 +32,7 @@ M.startify = function()
   m('n','<leader>sc','<cmd>SClose<cr>',ns)
 end
 
+-------------------------------------------------------------------------------
 M.lightline = function()
   g.lightline = {
     colorscheme='ayu_dark',
@@ -39,21 +41,22 @@ M.lightline = function()
       right={{'lineinfo'}, {'percent'}, {'filetype'}}
     },
     mode_map={
-      --n='N', i='I', R='R', v='V', V='VL', "\<C-v>"='VB',
-      --c='C', s='S', S='SL', "\<C-s>"='SB', t='T'
-      n='N', i='I', R='R', v='V', V='VL',
-      c='C', s='S', S='SL', t='T'
+      n='N', i='I', R='R', v='V', V='VL', ["<C-v>"]='VB',
+      c='C', s='S', S='SL', ["<C-s>"]='SB', t='T'
     },
   }
 end
 
+-------------------------------------------------------------------------------
 -- yankring
 M.yankring = function()
   g.yankring_history_dir = vim.fn.stdpath('data')
   g.yankring_window_height = 15
   m('n','<leader>ys','<cmd>YRShow<cr>',ns)
+  m('n','Y',[[<cmd>YRYankCount 'y$'<cr>]],ns)
 end
 
+-------------------------------------------------------------------------------
 -- undotree
 M.undotree = function()
   g.undotree_WindowLayout=2
@@ -64,6 +67,7 @@ M.undotree = function()
   vim.cmd [[ autocmd FileType undotree setlocal rnu ]]
 end
 
+-------------------------------------------------------------------------------
 -- nvimtree
 M.nvimtree_setup = function()
   require'nvim-tree'.setup {
@@ -124,6 +128,12 @@ M.nvimtree_setup = function()
   }
 end
 
+M.nvimtree = function()
+  m('n','<leader>nf','<cmd>NvimTreeFocus<cr>',ns)
+end
+
+
+-------------------------------------------------------------------------------
 M.blankline = function()
    require("indent_blankline").setup {
       indentLine_enabled = 1,
@@ -143,10 +153,7 @@ M.blankline = function()
    }
 end
 
-M.nvimtree = function()
-  m('n','<leader>nf','<cmd>NvimTreeFocus<cr>',ns)
-end
-
+-------------------------------------------------------------------------------
 -- comment
 M.comment = function()
   g.NERDSpaceDelims=1
@@ -156,6 +163,7 @@ M.comment = function()
   g.NERDAltDelims_dosbatch = 1
 end
 
+-------------------------------------------------------------------------------
 -- -- treesitter
 -- M.treesitter = function()
 -- end

@@ -151,22 +151,22 @@ vim.g.colors_name = 'highlite'
 ]]
 
 -- ANSI color, 16 colors
-local black       = {'#000000',  0,'black'      }
-local darkred     = {'#800000',  1,'darkred'    }
-local darkgreen   = {'#008000',  2,'darkgreen'  }
-local darkyellow  = {'#808000',  3,'darkyellow' }
-local darkblue    = {'#000080',  4,'darkblue'   }
-local darkmagenta = {'#800080',  5,'darkmagenta'}
-local darkcyan    = {'#008080',  6,'darkcyan'   }
-local gray        = {'#c0c0c0',  7,'gray'       }
-local darkgray    = {'#808080',  8,'darkgray'   }
-local red         = {'#ff0000',  9,'red'        }
-local green       = {'#00ff00', 10,'green'      }
-local yellow      = {'#ffff00', 11,'yellow'     }
-local blue        = {'#0000ff', 12,'blue'       }
-local magenta     = {'#ff00ff', 13,'magenta'    }
-local cyan        = {'#00ffff', 14,'cyan'       }
-local white       = {'#ffffff', 15,'white'      }
+local black       = {'#000000',  0,'black'      } -- '#000000'
+local darkred     = {'#800000',  1,'darkred'    } -- '#FF5555'
+local darkgreen   = {'#008000',  2,'darkgreen'  } -- '#50FA7B'
+local darkyellow  = {'#808000',  3,'darkyellow' } -- '#F1FA8C'
+local darkblue    = {'#000080',  4,'darkblue'   } -- '#BD93F9'
+local darkmagenta = {'#800080',  5,'darkmagenta'} -- '#FF79C6'
+local darkcyan    = {'#008080',  6,'darkcyan'   } -- '#8BE9FD'
+local gray        = {'#c0c0c0',  7,'gray'       } -- '#BFBFBF'
+local darkgray    = {'#808080',  8,'darkgray'   } -- '#4D4D4D'
+local red         = {'#ff0000',  9,'red'        } -- '#FF6E67'
+local green       = {'#00ff00', 10,'green'      } -- '#5AF78E'
+local yellow      = {'#ffff00', 11,'yellow'     } -- '#F4F99D'
+local blue        = {'#0000ff', 12,'blue'       } -- '#CAA9FA'
+local magenta     = {'#ff00ff', 13,'magenta'    } -- '#FF92D0'
+local cyan        = {'#00ffff', 14,'cyan'       } -- '#9AEDFE'
+local white       = {'#ffffff', 15,'white'      } -- '#ffffff'
 
 -- Customize Palette
 -- aqua olive navy tan orange pink teal purple turquoise

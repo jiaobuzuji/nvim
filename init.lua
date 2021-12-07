@@ -7,7 +7,7 @@
 
 -------------------------------------------------------------------------------
 -- mapleader -- {1
-vim.g.mapleader=" "
+vim.g.mapleader=" " -- <Space>
 vim.g.maplocalleader=','
 
 -- disable some builtin vim plugins
@@ -31,7 +31,7 @@ end
 
 -------------------------------------------------------------------------------
 -- options -- {1
-local opt = vim.opt
+local opt = vim.opt -- vim.o
 --  2 moving around, searching and patterns {2
 opt.whichwrap:append "<>[]hl" -- list of flags specifying which commands wrap to another line
 opt.startofline = true -- many jump commands move the cursor to the first non-blank
@@ -178,12 +178,14 @@ m('i','<m-k>','<up>',ns)
 m('i','<c-a>','<c-o>^',ns) -- jump to "start"
 m('i','<c-x><c-a>','<c-a>',ns)
 m('i','<c-e>',[[col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<lt>c-e>":"\<lt>end>"]],{noremap=true, silent=true, expr=true}) -- jump to "end"
-m('c','<m-h>','<s-left>',ns)
-m('c','<m-l>','<s-right>',ns)
-m('c','<m-j>','<down>',ns)
-m('c','<m-k>','<up>',ns)
-m('c','<c-a>','<home>',ns) -- jump to "start"
-m('c','<c-x><c-a>','<c-a>',ns)
+m('c','<m-h>','<s-left>',{noremap=true})
+m('c','<m-l>','<s-right>',{noremap=true})
+m('c','<m-k>','<up>',{noremap=true})
+m('c','<m-j>','<down>',{noremap=true})
+m('c','<c-a>','<home>',{noremap=true}) -- jump to "start"
+m('c','<c-x><c-a>','<c-a>',{noremap=true})
+m('c','<c-b>','<left>',{noremap=true}) -- Emacs like
+m('c','<c-f>','<right>',{noremap=true})
 m('c','<c-p>','<up>',{noremap=true}) -- <up> instead of c_CTRL-P
 m('c','<c-n>','<down>',{noremap=true}) -- <down> instead of c_CTRL-N
 
@@ -206,6 +208,6 @@ require('highlite')
 vim.cmd 'colorscheme highlite'
 
 -------------------------------------------------------------------------------
-require 'plugins'
+require 'plugins' -- tmp TODO FIXME
 require('packer').compile()
 
