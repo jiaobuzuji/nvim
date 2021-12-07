@@ -140,8 +140,8 @@ m('i','<c-w>','<c-g>u<c-w>',ns)
 m('n','<leader>/','<cmd>nohlsearch<cr>',ns)
 m('n','tt','o<space><c-u><c-[>',ns) -- Insert new line in normal mode
 m('v','p','"_dP',ns) -- Don't copy the replaced text after pasting in visual mode
-m('v','<','"<gv',ns) -- Reselect visual block after indent/outdent.
-m('v','>','">gv',ns)
+m('v','<','<gv',ns) -- Reselect visual block after indent/outdent.
+m('v','>','>gv',ns)
 m('v','*',[[y/<c-r>=escape(@",'\\/.*$^~[]')<cr><cr>]],ns) -- m('v','*',"y/<c-r>=escape(@\",'\\\\/.*$^~[]')<cr><cr>",ns)
 m('v','#',[[y?<c-r>=escape(@",'\\/.*$^~[]')<cr><cr>]],ns) -- m('v','#',"y?<c-r>=escape(@\",'\\\\/.*$^~[]')<cr><cr>",ns)
 -- 'Save' and 'Esc'

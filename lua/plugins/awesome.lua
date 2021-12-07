@@ -31,6 +31,22 @@ M.startify = function()
   m('n','<leader>sc','<cmd>SClose<cr>',ns)
 end
 
+M.lightline = function()
+  g.lightline = {
+    colorscheme='ayu_dark',
+    active={
+      left={{'mode','paste'},{'relativepath','modified'}},
+      right={{'lineinfo'}, {'percent'}, {'filetype'}}
+    },
+    mode_map={
+      --n='N', i='I', R='R', v='V', V='VL', "\<C-v>"='VB',
+      --c='C', s='S', S='SL', "\<C-s>"='SB', t='T'
+      n='N', i='I', R='R', v='V', V='VL',
+      c='C', s='S', S='SL', t='T'
+    },
+  }
+end
+
 -- yankring
 M.yankring = function()
   g.yankring_history_dir = vim.fn.stdpath('data')
@@ -106,6 +122,25 @@ M.nvimtree_setup = function()
       require_confirm = true,
     }
   }
+end
+
+M.blankline = function()
+   require("indent_blankline").setup {
+      indentLine_enabled = 1,
+      char = "▏",
+      filetype_exclude = {
+         "help",
+         "terminal",
+         "dashboard",
+         "packer",
+         "lspinfo",
+         "TelescopePrompt",
+         "TelescopeResults",
+      },
+      buftype_exclude = { "terminal" },
+      -- show_trailing_blankline_indent = false,
+      show_first_indent_level = false,
+   }
 end
 
 M.nvimtree = function()

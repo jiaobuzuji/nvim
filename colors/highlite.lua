@@ -429,10 +429,10 @@ local highlight_groups = {
 	Folded = {fg=magenta1,bg=red1},
 
 	--[[ 4.2.6. Diffs]]
-	DiffAdd    = {fg=olive1, bg=green0,style='none'},
-	DiffChange = {fg=white0, bg=cyan0,style='none'},
-	DiffDelete = {fg=red2, bg=red0,style='none'}, -- function(self) return {fg=self.DiffAdd.fg, bg=red} end,
-	DiffText   = {fg=cyan4, bg=cyan2,style='none'}, -- function(self) return {fg=self.DiffAdd.fg, bg=yellow} end,
+	DiffAdd    = {fg=green,style='none'},
+	DiffChange = {fg=orange0,style='none'},
+	DiffDelete = {fg=red2,style='none'}, -- function(self) return {fg=self.DiffAdd.fg, bg=red} end,
+	DiffText   = {fg=white,style='none'}, -- function(self) return {fg=self.DiffAdd.fg, bg=yellow} end,
 
 	--[[ 4.2.7. Searching]]
 	IncSearch  = {style='inverse'},

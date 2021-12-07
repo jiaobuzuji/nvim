@@ -54,7 +54,13 @@ M.keymap = function()
 -- " nnoremap <leader>fht :Helptags<cr>
 -- nnoremap <leader>fd  :call <SID>fzfrun_dir()<cr>
 
-  m('n','<leader><leader>','<cmd>Telescope<cr>',ns)
+  m('n','<c-p>','<cmd>Telescope<cr>',ns) -- CtrlP
+  m('n','<leader><leader>','<cmd>Telescope find_files<cr>',ns)
+  m('n','<leader>fk','<cmd>Telescope command_history<cr>',ns)
+  m('n','<leader>f/','<cmd>Telescope search_history<cr>',ns)
+  m('n','<leader>fl','<cmd>Telescope current_buffer_fuzzy_find<cr>',ns)
+  m('n','<leader>ft','<cmd>Telescope current_buffer_tags<cr>',ns)
+  m('n','<leader>fr','<cmd>Telescope grep_string<cr>',ns)
 end
 
 -- return
