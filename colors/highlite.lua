@@ -336,7 +336,7 @@ local highlight_groups = {
 	Comment = {fg=gray1},
 	NonText = {fg=black0},
 	EndOfBuffer = {fg=black3},
-	Whitespace  = {fg=black3},
+	Whitespace  = {fg=gray5},
 
 	--[[ 4.1.1. Literals]]
 	Constant = {fg=magenta0},
@@ -404,7 +404,7 @@ local highlight_groups = {
 	TabLineFill = {fg=black3, bg=black3,style='none'},
 	TabLineSel = {fg=black1, bg=cyan3,style='none'},
 	Title = {fg=gray1,style='bold'},
-	VertSplit = {fg=black2,style='none'},
+	VertSplit = {fg=gray5,style='none'},
 
 	--[[ 4.2.3. Conditional Line Highlighting]]
 	Conceal = 'NonText',
