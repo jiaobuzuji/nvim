@@ -119,7 +119,9 @@ return packer.startup(function()
   -- lsp dap
   use {"neovim/nvim-lspconfig",
     event = "BufRead",
+    ft = {'lua','vim','systemverilog','c','cpp','json'},
     config = function()
+      require('plugins.lspconfig')
     end,
   }
 
@@ -202,7 +204,7 @@ return packer.startup(function()
       --     { name = 'cmdline' }
       --   })
       -- })
-
+      -- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
     end,
   } -- TODO
   use {"hrsh7th/cmp-nvim-lsp", after = "nvim-cmp"}
