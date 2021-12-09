@@ -119,6 +119,7 @@ opt.wildignorecase = true -- ignore case when completing file names
 -- 25 multi-byte characters {2
 opt.encoding = "utf-8" -- character encoding used in Nvim: "utf-8"
 opt.fileencoding = "utf-8" -- character encoding for the current file
+opt.ambiwidth = 'single' -- width of ambiguous width characters
 
 -- 26 various {2
 opt.virtualedit = "block" -- when to use virtual editing: "block", "insert", "all" and/or "onemore"
