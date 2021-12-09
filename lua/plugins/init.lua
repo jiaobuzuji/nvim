@@ -223,6 +223,9 @@ return packer.startup(function()
   use {'hrsh7th/vim-vsnip', after = 'cmp-vsnip'}
 
   -- fuzzy finder
+  -- junegunn/fzf
+  -- junegunn/fzf.vim
+  -- yggdroot/leaderF
   use {"nvim-telescope/telescope.nvim",
     module = "telescope",
     cmd = "Telescope",
