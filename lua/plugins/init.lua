@@ -35,12 +35,23 @@ return packer.startup(function()
   use {'mhinz/vim-startify',opt=false, config = function() require('plugins.awesome').startify() end}
   use {'tpope/vim-surround', opt=false}
   use {'andymass/vim-matchup', opt=false}
+  use {'windwp/nvim-autopairs', opt=false, config = function() require('nvim-autopairs').setup{} end}
+  -- mg979/vim-visual-multi
+
+  -- dkprice/vim-easygrep
+  -- use 'dyng/ctrlsf.vim' " {1
+  use {"brooth/far.vim",cmd={'F', 'Far', 'Fardo'}}
+  -- wsdjeg/FlyGrep.vim
+  -- mhinz/vim-grepper
+
   -- use {'sheerun/vim-polyglot', opt=false} -- TODO
+  
   -- use {'vim-scripts/YankRing.vim', opt=false, config = function() require('plugins.awesome').yankring() end} -- yank history
   use {'junegunn/vim-peekaboo', opt=false} -- extends `"` and `@` in normal mode and `<CTRL-R>` in insert mode
+
   -- use {"terrortylor/nvim-comment"}
   use {'preservim/nerdcommenter', opt=false, config = function() require('plugins.awesome').comment() end}
-  use {'windwp/nvim-autopairs', opt=false, config = function() require('nvim-autopairs').setup{} end}
+
   use {"norcalli/nvim-colorizer.lua", ft = {'lua','vim'}, config = function() require("colorizer").setup() end}
   use {'mbbill/undotree', cmd = 'UndotreeToggle', setup=function() require('plugins.awesome').undotree() end}
   use {'voldikss/vim-translator'} -- TODO
@@ -61,11 +72,9 @@ return packer.startup(function()
   -- Plug 'junegunn/vim-easy-align' " {1 TODO
   -- Plug 'godlygeek/tabular' " ga, or :Tabularize <regex> to align
   -- matze/vim-move
-  -- Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }
-  -- Plug 'dyng/ctrlsf.vim' " {1
   -- Plug 'skywind3000/asynctasks.vim'
   -- Plug 'skywind3000/asyncrun.vim'
-  -- voldikss/vim-translator
+  -- Plug 'thinca/vim-qfreplace'
 
   -- git
   use {"lewis6991/gitsigns.nvim",
