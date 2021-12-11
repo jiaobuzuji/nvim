@@ -17,12 +17,7 @@ packer.init {
 }
 
 return packer.startup(function()
-  -------------------------------------------------------------------------------
-  -- opt=true
   use {'wbthomason/packer.nvim'} -- Packer can manage itself as an optional plugin
-  use {'yianwillis/vimcdoc'}
-  use {'Iron-E/nvim-highlite'} -- colorscheme template
-
 
   -------------------------------------------------------------------------------
   -- theme
@@ -30,8 +25,21 @@ return packer.startup(function()
   -- use {'folke/tokyonight.nvim', event='VimEnter *', config=function() vim.g.tokyonight_style="night" vim.g.tokyonight_transparent=true vim.g.tokyonight_italic_functions=false vim.cmd[[colorscheme tokyonight]] end, }
   -- use {'navarasu/onedark.nvim', event='VimEnter *', config=function() -- vim.g.onedark_style='warm' vim.g.onedark_transparent_background=true vim.g.onedark_toggle_style_keymap='<nop>' require('onedark').setup() end, }
   -- use {'NLKNguyen/papercolor-theme', event='VimEnter *', config=function() vim.g.PaperColor_Theme_Options={ theme={ default={ override={ color00={ '#080808', '232' }, linenumber_bg={ '#080808', '232' } } } } } vim.cmd[[colorscheme PaperColor]] end, }
+  use {'Iron-E/nvim-highlite'} -- colorscheme template
   use {'itchyny/lightline.vim',opt=false, config=function() require('plugins.awesome').lightline() end}
   -- use {'Yggdroot/indentLine'}
+  use {'lukas-reineke/indent-blankline.nvim', opt=false, config=function() require('plugins.awesome').blankline() end}
+
+
+  -------------------------------------------------------------------------------
+  -- translator
+  -- use {'ianva/vim-youdao-translater'}
+  use {'voldikss/vim-translator',
+    cmd={'TranslateW'},
+    keys={'<Plug>TranslateW','<Plug>TranslateWV'},
+    setup=function() require('plugins.awesome').translator() end
+  }
+  use {'yianwillis/vimcdoc'}
 
 
   -------------------------------------------------------------------------------
@@ -48,16 +56,12 @@ return packer.startup(function()
   use {'junegunn/vim-peekaboo', opt=false} -- extends `"` and `@` in normal mode and `<CTRL-R>` in insert mode
   use {"norcalli/nvim-colorizer.lua", ft={'lua','vim','css'}, config=function() require("colorizer").setup() end}
   use {'mbbill/undotree', cmd='UndotreeToggle', setup=function() require('plugins.awesome').undotree() end}
-  use {'voldikss/vim-translator', cmd={'TranslateW'}, keys={'<Plug>TranslateW','<Plug>TranslateWV'}, setup=function() require('plugins.awesome').translator() end}
-  -- use {'ianva/vim-youdao-translater'}
-  use {'lukas-reineke/indent-blankline.nvim', opt=false, config=function() require('plugins.awesome').blankline() end}
-
 
   -------------------------------------------------------------------------------
   -- Find and Replace
   -- Plug 'thinca/vim-qfreplace'
   -- dkprice/vim-easygrep
-  use {'dyng/ctrlsf.vim'}
+  use {'dyng/ctrlsf.vim',}
   use {"brooth/far.vim",cmd={'F', 'Far', 'Fardo'}}
   -- mhinz/vim-grepper
 
@@ -84,8 +88,10 @@ return packer.startup(function()
   
   -- Taglist TODO
   -- Plug 'liuchengxu/vista.vim'
+  
   -- Plug 'pechorin/any-jump.vim'
   -- Plug 'easymotion/vim-easymotion'
+  
   -- Plug 'junegunn/vim-easy-align' " {1 TODO
   -- Plug 'godlygeek/tabular' " ga, or :Tabularize <regex> to align
   -- matze/vim-move
@@ -133,19 +139,7 @@ return packer.startup(function()
   -- Plug 'nvim-treesitter/playground'
   use {'nvim-treesitter/nvim-treesitter',
     event="BufRead",
-    config=function()
-      require('nvim-treesitter.configs').setup {
-        -- ensure_installed={ "lua","c","cpp","verilog"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-        highlight={
-          enable=true,
-          use_languagetree=true,
-        },
-        indent={
-          enable=false,
-          disable={}
-        },
-      }
-    end,
+    config=function() require('plugins.awesome').treesitter() end
   }
 
 
