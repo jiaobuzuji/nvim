@@ -41,8 +41,10 @@ M.lightline = function()
       right={{'lineinfo'}, {'percent'}, {'filetype'}}
     },
     mode_map={
-      n='N', i='I', R='R', v='V', V='VL', ["<C-v>"]='VB',
-      c='C', s='S', S='SL', ["<C-s>"]='SB', t='T'
+      -- n='N', i='I', R='R', v='V', V='VL', ["<C-v>"]='VB',
+      -- c='C', s='S', S='SL', ["<C-s>"]='SB', t='T'
+      n='N', i='I', R='R', v='V', V='VL', ['']='VB',
+      c='C', s='S', S='SL', ['']='SB', t='T'
     },
   }
 end
@@ -54,6 +56,17 @@ M.yankring = function()
   g.yankring_window_height = 15
   m('n','<leader>ys','<cmd>YRShow<cr>',ns)
   m('n','Y',[[<cmd>YRYankCount 'y$'<cr>]],ns)
+end
+-------------------------------------------------------------------------------
+-- translator
+M.translator = function()
+  g.translator_default_engines = {'bing','youdao','haici'}
+  m('n','<leader>w','<Plug>TranslateW',{silent=true})
+  m('v','<leader>w','<Plug>TranslateWV',{silent=true})
+	-- -- Replace the text with translation
+	-- nmap <silent> <Leader>r <Plug>TranslateR
+	-- vmap <silent> <Leader>r <Plug>TranslateRV
+  -- nmap <silent> <Leader>x <Plug>TranslateX
 end
 
 -------------------------------------------------------------------------------
