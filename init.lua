@@ -153,8 +153,8 @@ m('i', 'vv', '<C-[><cmd>update<cr>', ns)
 m('i', 'j<Space>', 'j ', ns)
 m('i', 'v<Space>', 'v ', ns)
 -- replace
-m('n','ss','<cmd>%s/<c-r>//',{noremap=true})
-m('v','ss','<cmd>s/<c-r>//',{noremap=true})
+m('n','ss',':%s/<c-r>//',{noremap=true})
+m('v','ss',':s/<c-r>//',{noremap=true})
 -- Quit Vim
 m('n','<leader>qa','<cmd>qa<cr>',ns)
 m('n','<leader>wd','<c-w>q',ns)

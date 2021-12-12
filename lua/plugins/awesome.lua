@@ -57,6 +57,7 @@ M.yankring = function()
   m('n','<leader>ys','<cmd>YRShow<cr>',ns)
   m('n','Y',[[<cmd>YRYankCount 'y$'<cr>]],ns)
 end
+
 -------------------------------------------------------------------------------
 -- translator
 M.translator = function()
@@ -78,6 +79,38 @@ M.undotree = function()
   m('n','<leader>tu','<cmd>UndotreeToggle<cr>',ns)
   -- autocmd BufWritePre $VIMFILES/undodir/* set noundofile
   vim.cmd [[ autocmd FileType undotree setlocal rnu ]]
+end
+
+-------------------------------------------------------------------------------
+M.ctrlsf = function()
+  -- g.ctrlsf_regex_pattern = 1
+  g.ctrlsf_default_root = 'project+ww'
+  g.ctrlsf_extra_root_markers = {'.git','.svn'}
+  g.ctrlsf_indent = 2
+  g.ctrlsf_auto_focus = {at="start"}
+  g.ctrlsf_confirm_save = 0
+  -- g.ctrlsf_debug_mode = 1
+  g.ctrlsf_ignore_dir = {'.git','.svn','.hg'}
+
+  m('v','<leader>vs','<Plug>CtrlSFVwordPath',{silent=true})
+  m('v','<leader>vv','<Plug>CtrlSFVwordExec',{silent=true})
+  m('n','<leader>vs','<Plug>CtrlSFPrompt',{silent=true})
+  m('n','<leader>vv','<Plug>CtrlSFCwordExec',{silent=true})
+  m('n','<leader>vV','<Plug>CtrlSFCCwordExec',{silent=true})
+end
+
+M.far = function()
+  --g.far#source='rg' -- TODO
+  --g.far#enable_undo=1
+end
+
+-------------------------------------------------------------------------------
+M.easymotion = function()
+  g.EasyMotion_startofline = 0
+  g.EasyMotion_show_prompt = 0
+  g.EasyMotion_verbose = 0
+  m('','W','<Plug>(easymotion-lineforward)',{silent=true})
+  m('','B','<Plug>(easymotion-linebackward)',{silent=true})
 end
 
 -------------------------------------------------------------------------------

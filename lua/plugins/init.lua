@@ -17,6 +17,9 @@ packer.init {
 }
 
 return packer.startup(function()
+  local awe = require('plugins.awesome')
+
+  -------------------------------------------------------------------------------
   use {'wbthomason/packer.nvim'} -- Packer can manage itself as an optional plugin
 
   -------------------------------------------------------------------------------
@@ -26,9 +29,9 @@ return packer.startup(function()
   -- use {'navarasu/onedark.nvim', event='VimEnter *', config=function() -- vim.g.onedark_style='warm' vim.g.onedark_transparent_background=true vim.g.onedark_toggle_style_keymap='<nop>' require('onedark').setup() end, }
   -- use {'NLKNguyen/papercolor-theme', event='VimEnter *', config=function() vim.g.PaperColor_Theme_Options={ theme={ default={ override={ color00={ '#080808', '232' }, linenumber_bg={ '#080808', '232' } } } } } vim.cmd[[colorscheme PaperColor]] end, }
   use {'Iron-E/nvim-highlite'} -- colorscheme template
-  use {'itchyny/lightline.vim',opt=false, config=function() require('plugins.awesome').lightline() end}
+  use {'itchyny/lightline.vim',opt=false, config=function() awe.lightline() end}
   -- use {'Yggdroot/indentLine'}
-  use {'lukas-reineke/indent-blankline.nvim', opt=false, config=function() require('plugins.awesome').blankline() end}
+  use {'lukas-reineke/indent-blankline.nvim', opt=false, config=function() awe.blankline() end}
 
 
   -------------------------------------------------------------------------------
@@ -37,7 +40,7 @@ return packer.startup(function()
   use {'voldikss/vim-translator',
     cmd={'TranslateW'},
     keys={'<Plug>TranslateW','<Plug>TranslateWV'},
-    setup=function() require('plugins.awesome').translator() end
+    setup=function() awe.translator() end
   }
   use {'yianwillis/vimcdoc'}
 
@@ -46,31 +49,42 @@ return packer.startup(function()
   -- awesome
   use {"nvim-lua/plenary.nvim",opt=false}
   use {'glepnir/dashboard-nvim'} -- TODO
-  use {'mhinz/vim-startify',opt=false, config=function() require('plugins.awesome').startify() end}
+  use {'mhinz/vim-startify',opt=false, config=function() awe.startify() end}
   use {'tpope/vim-surround', opt=false}
   use {'andymass/vim-matchup', opt=false}
   use {'windwp/nvim-autopairs', opt=false, config=function() require('nvim-autopairs').setup{} end}
   use {'mg979/vim-visual-multi'} -- TODO
   -- use {'sheerun/vim-polyglot', opt=false} -- TODO
-  -- use {'vim-scripts/YankRing.vim', opt=false, config=function() require('plugins.awesome').yankring() end} -- yank history
+  -- use {'vim-scripts/YankRing.vim', opt=false, config=function() awe.yankring() end} -- yank history
   use {'junegunn/vim-peekaboo', opt=false} -- extends `"` and `@` in normal mode and `<CTRL-R>` in insert mode
   use {"norcalli/nvim-colorizer.lua", ft={'lua','vim','css'}, config=function() require("colorizer").setup() end}
-  use {'mbbill/undotree', cmd='UndotreeToggle', setup=function() require('plugins.awesome').undotree() end}
+  use {'mbbill/undotree', cmd='UndotreeToggle', setup=function() awe.undotree() end}
 
   -------------------------------------------------------------------------------
   -- Find and Replace
   -- Plug 'thinca/vim-qfreplace'
   -- dkprice/vim-easygrep
-  use {'dyng/ctrlsf.vim',}
-  use {"brooth/far.vim",cmd={'F', 'Far', 'Fardo'}}
   -- mhinz/vim-grepper
+  use {"brooth/far.vim",cmd={'F', 'Far', 'Fardo'}, config=function() awe.far() end}
+  use {'dyng/ctrlsf.vim',
+    cmd={'CtrlSF','CtrlSFToggle'},
+    keys={'<Plug>CtrlSFVwordPath', '<Plug>CtrlSFVwordExec', '<Plug>CtrlSFPrompt', '<Plug>CtrlSFCwordExec', '<Plug>CtrlSFCCwordExec',},
+    config=function() awe.ctrlsf() end
+  }
 
 
   -------------------------------------------------------------------------------
   -- Comment
   -- use {"terrortylor/nvim-comment"}
-  use {'preservim/nerdcommenter', opt=false, config=function() require('plugins.awesome').comment() end}
+  use {'preservim/nerdcommenter', opt=false, config=function() awe.comment() end}
   -- use {'tomtom/tcomment_vim'}
+
+  -------------------------------------------------------------------------------
+  -- Plug 'pechorin/any-jump.vim'
+  use {'easymotion/vim-easymotion',
+    keys={'<Plug>(easymotion-lineforward)', '<Plug>(easymotion-linebackward)'},
+    config=function() awe.easymotion() end
+  }
 
 
   -------------------------------------------------------------------------------
@@ -78,9 +92,10 @@ return packer.startup(function()
   -- use {'preservim/nerdtree', cmd='NERDTreeFind'}
   use {"kyazdani42/nvim-tree.lua",
     cmd={ "NvimTreeToggle", "NvimTreeFocus" },
-    setup=function() require('plugins.awesome').nvimtree() end,
-    config=function() require('plugins.awesome').nvimtree_setup() end,
+    setup=function() awe.nvimtree() end,
+    config=function() awe.nvimtree_setup() end,
   }
+
 
   -------------------------------------------------------------------------------
   -- markdown
@@ -88,9 +103,6 @@ return packer.startup(function()
   
   -- Taglist TODO
   -- Plug 'liuchengxu/vista.vim'
-  
-  -- Plug 'pechorin/any-jump.vim'
-  -- Plug 'easymotion/vim-easymotion'
   
   -- Plug 'junegunn/vim-easy-align' " {1 TODO
   -- Plug 'godlygeek/tabular' " ga, or :Tabularize <regex> to align
@@ -139,8 +151,8 @@ return packer.startup(function()
   -- Plug 'nvim-treesitter/playground'
   use {'nvim-treesitter/nvim-treesitter',
     event="BufRead",
-    setup=function() require('plugins.awesome').treesitter_setup() end,
-    config=function() require('plugins.awesome').treesitter() end,
+    setup=function() awe.treesitter_setup() end,
+    config=function() awe.treesitter() end,
   }
 
 
