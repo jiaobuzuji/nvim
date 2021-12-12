@@ -139,7 +139,8 @@ return packer.startup(function()
   -- Plug 'nvim-treesitter/playground'
   use {'nvim-treesitter/nvim-treesitter',
     event="BufRead",
-    config=function() require('plugins.awesome').treesitter() end
+    setup=function() require('plugins.awesome').treesitter_setup() end,
+    config=function() require('plugins.awesome').treesitter() end,
   }
 
 

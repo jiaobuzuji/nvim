@@ -178,9 +178,11 @@ end
 
 -------------------------------------------------------------------------------
 -- -- treesitter
-M.treesitter = function()
-  vim.opt.foldmethod='expr' -- TODO
+M.treesitter_setup = function()
+  vim.opt.foldmethod='expr'
   vim.opt.foldexpr='nvim_treesitter#foldexpr()'
+end
+M.treesitter = function()
   require('nvim-treesitter.configs').setup {
     -- ensure_installed={ "lua","c","cpp","verilog"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     highlight={enable=true, use_languagetree=true, },
