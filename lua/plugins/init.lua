@@ -164,7 +164,7 @@ return packer.startup(function()
       require('plugins.lspconfig')
     end,
   }
-  use {'glepnir/lspsaga.nvim'}
+  use {'glepnir/lspsaga.nvim'} -- TODO
 
   -- Complete,  snippet
   use {"rafamadriz/friendly-snippets", event="InsertEnter"}
