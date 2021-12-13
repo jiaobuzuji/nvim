@@ -10,7 +10,6 @@ local ns = {noremap = true, silent = true}
 local g = vim.g
 
 -------------------------------------------------------------------------------
--- vim-startify
 M.startify = function()
   g.startify_lists = {
     {type='sessions',  header={'   Sessions; [b]uffer, [s]plit, [v]ertical, [t]ab'}},
@@ -32,6 +31,7 @@ M.startify = function()
   m('n','<leader>sc','<cmd>SClose<cr>',ns)
 end
 
+
 -------------------------------------------------------------------------------
 M.lightline = function()
   g.lightline = {
@@ -49,6 +49,28 @@ M.lightline = function()
   }
 end
 
+
+-------------------------------------------------------------------------------
+M.blankline = function()
+   require("indent_blankline").setup {
+      indentLine_enabled = 1,
+      char = "▏",
+      filetype_exclude = {
+         "help",
+         "terminal",
+         "dashboard",
+         "packer",
+         "lspinfo",
+         "TelescopePrompt",
+         "TelescopeResults",
+      },
+      buftype_exclude = { "terminal" },
+      -- show_trailing_blankline_indent = false,
+      show_first_indent_level = false,
+   }
+end
+
+
 -------------------------------------------------------------------------------
 -- yankring
 M.yankring = function()
@@ -64,9 +86,9 @@ M.translator = function()
   g.translator_default_engines = {'bing','youdao','haici'}
   m('n','<leader>w','<Plug>TranslateW',{silent=true})
   m('v','<leader>w','<Plug>TranslateWV',{silent=true})
-	-- -- Replace the text with translation
-	-- nmap <silent> <Leader>r <Plug>TranslateR
-	-- vmap <silent> <Leader>r <Plug>TranslateRV
+  -- -- Replace the text with translation
+  -- nmap <silent> <Leader>r <Plug>TranslateR
+  -- vmap <silent> <Leader>r <Plug>TranslateRV
   -- nmap <silent> <Leader>x <Plug>TranslateX
 end
 
@@ -116,7 +138,7 @@ end
 -------------------------------------------------------------------------------
 -- nvimtree
 M.nvimtree_setup = function()
-  require'nvim-tree'.setup {
+  require('nvim-tree').setup {
     disable_netrw       = true,
     hijack_netrw        = true,
     open_on_setup       = false,
@@ -180,26 +202,6 @@ end
 
 
 -------------------------------------------------------------------------------
-M.blankline = function()
-   require("indent_blankline").setup {
-      indentLine_enabled = 1,
-      char = "▏",
-      filetype_exclude = {
-         "help",
-         "terminal",
-         "dashboard",
-         "packer",
-         "lspinfo",
-         "TelescopePrompt",
-         "TelescopeResults",
-      },
-      buftype_exclude = { "terminal" },
-      -- show_trailing_blankline_indent = false,
-      show_first_indent_level = false,
-   }
-end
-
--------------------------------------------------------------------------------
 -- comment
 M.comment = function()
   g.NERDSpaceDelims=1
@@ -208,6 +210,7 @@ M.comment = function()
   g.NERDCustomDelimiters = {c= {left='//', leftAlt='/*', rightAlt='*/'}}
   g.NERDAltDelims_dosbatch = 1
 end
+
 
 -------------------------------------------------------------------------------
 -- -- treesitter
@@ -226,6 +229,5 @@ M.treesitter = function()
 end
 
 -------------------------------------------------------------------------------
--- return
 return M
 

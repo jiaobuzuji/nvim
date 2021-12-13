@@ -12,6 +12,6 @@ declare -r GITSRVURL="${GITSRVURL:-"github.com.cnpmjs.org"}"  # mirror0: github.
 declare -r NVIMDATA="${NVIMDATA:-"$XDG_DATA_HOME/nvim-data"}"
 
 mkdir -p ${NVIMDATA}/swap
-git clone https://${GITSRVURL}/wbthomason/packer.nvim\
+git clone --depth=1 https://${GITSRVURL}/wbthomason/packer.nvim\
   ${NVIMDATA}/site/pack/packer/start/packer.nvim
 
