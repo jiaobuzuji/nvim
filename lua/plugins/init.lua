@@ -40,10 +40,9 @@ return packer.startup(function()
   use {'tpope/vim-surround', opt=false} -- machakann/vim-sandwich
   use {'andymass/vim-matchup', opt=false}
   use {'windwp/nvim-autopairs', opt=false, config=function() require('nvim-autopairs').setup{} end}
-  use {'mg979/vim-visual-multi'} -- TODO  terryma/vim-multiple-cursors
+  use {'mg979/vim-visual-multi', opt=false} -- terryma/vim-multiple-cursors
   -- use {'sheerun/vim-polyglot', opt=false} -- TODO
   -- use {'vim-scripts/YankRing.vim', opt=false, config=function() require'plugins.awesome'.yankring() end} -- yank history
-  use {'junegunn/vim-peekaboo', opt=false} -- extends `"` and `@` in normal mode and `<CTRL-R>` in insert mode
   use {"norcalli/nvim-colorizer.lua", ft={'lua','vim','css'}, config=function() require("colorizer").setup() end}
   use {'mbbill/undotree', cmd='UndotreeToggle', setup=function() require'plugins.awesome'.undotree() end}
   -- use {'glacambre/firenvim'} -- Turn your browser¹ into a Neovim client
@@ -51,7 +50,7 @@ return packer.startup(function()
   
   -- kevinhwang91/nvim-bqf
   -- kevinhwang91/rnvimr -- ranger, Explorer
-  -- akinsho/toggleterm.nvim -- terminal
+  use {'akinsho/toggleterm.nvim'} -- terminal
 
   -------------------------------------------------------------------------------
   -- help me
@@ -62,8 +61,9 @@ return packer.startup(function()
     setup=function() require'plugins.awesome'.translator() end
   }
   -- use {'yianwillis/vimcdoc'}
-  -- folke/which-key.nvim
   -- liuchengxu/vim-which-key
+  use {'folke/which-key.nvim', opt=false, config=function() require'which-key'.setup{} end}
+  -- use {'junegunn/vim-peekaboo', opt=false} -- extends `"` and `@` in normal mode and `<CTRL-R>` in insert mode
   
 
   -------------------------------------------------------------------------------
@@ -123,7 +123,7 @@ return packer.startup(function()
 
   -------------------------------------------------------------------------------
   -- git
-  -- kdheepak/lazygit.nvim
+  -- use {'kdheepak/lazygit.nvim'}
   use {"lewis6991/gitsigns.nvim",
     opt=false,
     config=function()
@@ -177,7 +177,8 @@ return packer.startup(function()
       require('plugins.lspconfig')
     end,
   }
-  use {'glepnir/lspsaga.nvim'} -- TODO
+  -- use {'glepnir/lspsaga.nvim'} -- TODO
+  use {'williamboman/nvim-lsp-installer'}
 
   -- Complete,  snippet
   use {"rafamadriz/friendly-snippets", event="InsertEnter"}
