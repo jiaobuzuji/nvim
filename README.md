@@ -28,4 +28,10 @@ script
 [] fefe
 
 
-
+## Reference
+1.nvchad
+1.lunarvim
+1.theniceboy/nvim
+1.jdhao/nvim-config
+1.vinux
+1.screenkey

@@ -122,8 +122,8 @@ M.ctrlsf = function()
 end
 
 M.far = function()
-  --g.far#source='rg' -- TODO
-  --g.far#enable_undo=1
+  -- g['far#source']='rg' -- TODO
+  g['far#enable_undo']=1
 end
 
 -------------------------------------------------------------------------------

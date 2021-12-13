@@ -33,7 +33,28 @@ return packer.startup(function()
 
 
   -------------------------------------------------------------------------------
-  -- translator
+  -- awesome
+  use {"nvim-lua/plenary.nvim",opt=false}
+  use {'glepnir/dashboard-nvim'} -- TODO
+  use {'mhinz/vim-startify',opt=false, config=function() require'plugins.awesome'.startify() end}
+  use {'tpope/vim-surround', opt=false} -- machakann/vim-sandwich
+  use {'andymass/vim-matchup', opt=false}
+  use {'windwp/nvim-autopairs', opt=false, config=function() require('nvim-autopairs').setup{} end}
+  use {'mg979/vim-visual-multi'} -- TODO  terryma/vim-multiple-cursors
+  -- use {'sheerun/vim-polyglot', opt=false} -- TODO
+  -- use {'vim-scripts/YankRing.vim', opt=false, config=function() require'plugins.awesome'.yankring() end} -- yank history
+  use {'junegunn/vim-peekaboo', opt=false} -- extends `"` and `@` in normal mode and `<CTRL-R>` in insert mode
+  use {"norcalli/nvim-colorizer.lua", ft={'lua','vim','css'}, config=function() require("colorizer").setup() end}
+  use {'mbbill/undotree', cmd='UndotreeToggle', setup=function() require'plugins.awesome'.undotree() end}
+  -- use {'glacambre/firenvim'} -- Turn your browser¹ into a Neovim client
+  -- use {"max397574/better-escape.nvim"}
+  
+  -- kevinhwang91/nvim-bqf
+  -- kevinhwang91/rnvimr -- ranger, Explorer
+  -- akinsho/toggleterm.nvim -- terminal
+
+  -------------------------------------------------------------------------------
+  -- help me
   -- use {'ianva/vim-youdao-translater'}
   use {'voldikss/vim-translator',
     cmd={'TranslateW'},
@@ -41,23 +62,9 @@ return packer.startup(function()
     setup=function() require'plugins.awesome'.translator() end
   }
   -- use {'yianwillis/vimcdoc'}
-
-
-  -------------------------------------------------------------------------------
-  -- awesome
-  use {"nvim-lua/plenary.nvim",opt=false}
-  use {'glepnir/dashboard-nvim'} -- TODO
-  use {'mhinz/vim-startify',opt=false, config=function() require'plugins.awesome'.startify() end}
-  use {'tpope/vim-surround', opt=false}
-  use {'andymass/vim-matchup', opt=false}
-  use {'windwp/nvim-autopairs', opt=false, config=function() require('nvim-autopairs').setup{} end}
-  use {'mg979/vim-visual-multi'} -- TODO
-  -- use {'sheerun/vim-polyglot', opt=false} -- TODO
-  -- use {'vim-scripts/YankRing.vim', opt=false, config=function() require'plugins.awesome'.yankring() end} -- yank history
-  use {'junegunn/vim-peekaboo', opt=false} -- extends `"` and `@` in normal mode and `<CTRL-R>` in insert mode
-  use {"norcalli/nvim-colorizer.lua", ft={'lua','vim','css'}, config=function() require("colorizer").setup() end}
-  use {'mbbill/undotree', cmd='UndotreeToggle', setup=function() require'plugins.awesome'.undotree() end}
-
+  -- folke/which-key.nvim
+  -- liuchengxu/vim-which-key
+  
 
   -------------------------------------------------------------------------------
   -- Find and Replace
@@ -80,6 +87,8 @@ return packer.startup(function()
 
   -------------------------------------------------------------------------------
   -- Plug 'pechorin/any-jump.vim'
+  -- phaazon/hop.nvim
+  -- justinmk/vim-sneak
   use {'easymotion/vim-easymotion',
     keys={'<Plug>(easymotion-lineforward)', '<Plug>(easymotion-linebackward)'},
     setup=function() require'plugins.awesome'.easymotion() end
@@ -98,11 +107,14 @@ return packer.startup(function()
 
   -------------------------------------------------------------------------------
   -- markdown
+  -- plasticboy/vim-markdown
   -- use {'iamcco/markdown-preview.nvim', cmd='MarkdownPreview', run='cd app && yarn install'}
 
+  -------------------------------------------------------------------------------
   -- Taglist TODO
   -- Plug 'liuchengxu/vista.vim'
 
+  -------------------------------------------------------------------------------
   -- Plug 'junegunn/vim-easy-align' " {1 TODO
   -- Plug 'godlygeek/tabular' " ga, or :Tabularize <regex> to align
   -- matze/vim-move
@@ -111,6 +123,7 @@ return packer.startup(function()
 
   -------------------------------------------------------------------------------
   -- git
+  -- kdheepak/lazygit.nvim
   use {"lewis6991/gitsigns.nvim",
     opt=false,
     config=function()
@@ -260,6 +273,7 @@ return packer.startup(function()
   -- junegunn/fzf
   -- junegunn/fzf.vim
   -- yggdroot/leaderF
+  -- liuchengxu/vim-clap
   use {"nvim-telescope/telescope.nvim",
     module="telescope",
     cmd="Telescope",

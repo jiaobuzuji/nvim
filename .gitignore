@@ -8,4 +8,4 @@
 /tmp/
 
 /nvim-data/
-/plugin/
+/plugin/packer_compiled.lua
