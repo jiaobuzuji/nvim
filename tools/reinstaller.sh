@@ -18,7 +18,7 @@ sudo rm -rf /usr/share/nvim/
 # rm -rf $HOME/.local/share/icons/hicolor/128x128/apps/nvim.png
 # rm -rf $HOME/.local/share/locale/*/*/nvim.mo
 # rm -rf $HOME/.local/share/man/man1/nvim.1
-# rm -rf $HOME/.local/share/nvim/
+# rm -rf $HOME/.local/share/nvim/runtime
 # # rm -rf $HOME/.local/bin/nvim-qt
 # # rm -rf $HOME/.local/share/nvim/runtime/plugin/nvim_gui_shim.vim
 

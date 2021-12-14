@@ -135,7 +135,7 @@ local ns = {noremap = true, silent = true}
 
 -- misc
 m('n','Q','gq',ns) -- Don't use Ex mode, use Q for formatting.  Revert with ":unmap Q".
-m('n','Y','y$',ns)
+-- m('n','Y','y$',ns) -- neovim default keymapping
 m('i','<c-u>','<c-g>u<c-u>',ns) -- CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 m('i','<c-w>','<c-g>u<c-w>',ns)
 m('n','<leader>/','<cmd>nohlsearch<cr>',ns)
