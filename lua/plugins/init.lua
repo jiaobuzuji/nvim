@@ -47,7 +47,7 @@ return packer.startup(function()
   use {'mbbill/undotree', cmd='UndotreeToggle', setup=function() require'plugins.awesome'.undotree() end}
   -- use {'glacambre/firenvim'} -- Turn your browser¹ into a Neovim client
   -- use {"max397574/better-escape.nvim"}
-  
+
   -- kevinhwang91/nvim-bqf
   -- kevinhwang91/rnvimr -- ranger, Explorer
   use {'akinsho/toggleterm.nvim'} -- terminal
@@ -109,6 +109,9 @@ return packer.startup(function()
   -- markdown
   -- plasticboy/vim-markdown
   -- use {'iamcco/markdown-preview.nvim', cmd='MarkdownPreview', run='cd app && yarn install'}
+
+  -- use {'vhda/verilog_systemverilog.vim',opt=false}
+  -- suoto/hdl_checker
 
   -------------------------------------------------------------------------------
   -- Taglist TODO
