@@ -15,3 +15,4 @@ mkdir -p ${NVIMDATA}/swap
 git clone --depth=1 https://${GITSRVURL}/wbthomason/packer.nvim\
   ${NVIMDATA}/site/pack/packer/start/packer.nvim
 
+ln -sf "$HOME/repos/nvim.git" "$XDG_CONFIG_HOME/nvim"
