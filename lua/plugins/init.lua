@@ -181,6 +181,7 @@ return packer.startup(function()
   use {'williamboman/nvim-lsp-installer'}
 
   -- Complete,  snippet
+  -- Plug 'SirVer/ultisnips', { 'on': [] }
   use {"rafamadriz/friendly-snippets", event="InsertEnter"}
   use {"hrsh7th/nvim-cmp", after="friendly-snippets",
     config=function()
