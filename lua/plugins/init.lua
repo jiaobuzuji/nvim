@@ -61,7 +61,7 @@ return packer.startup(function()
     setup=function() require'plugins.awesome'.translator() end
   }
   -- use {'yianwillis/vimcdoc'}
-  -- liuchengxu/vim-which-key
+  -- use {'liuchengxu/vim-which-key'}
   -- use {'folke/which-key.nvim', opt=false, config=function() require'which-key'.setup{} end}
   -- use {'junegunn/vim-peekaboo', opt=false} -- extends `"` and `@` in normal mode and `<CTRL-R>` in insert mode
   
