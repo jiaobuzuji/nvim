@@ -22,21 +22,24 @@ return packer.startup(function()
 
   -------------------------------------------------------------------------------
   -- theme
+  use {"kyazdani42/nvim-web-devicons", opt=false}
+  use {'Iron-E/nvim-highlite'} -- colorscheme template
   -- use {'projekt0n/github-nvim-theme', event='VimEnter *', config=function() require("github-theme").setup({ theme_style="dark_default", transparent=true, }) end, }
   -- use {'folke/tokyonight.nvim', event='VimEnter *', config=function() vim.g.tokyonight_style="night" vim.g.tokyonight_transparent=true vim.g.tokyonight_italic_functions=false vim.cmd[[colorscheme tokyonight]] end}
   -- use {'navarasu/onedark.nvim', event='VimEnter *', config=function() -- vim.g.onedark_style='warm' vim.g.onedark_transparent_background=true vim.g.onedark_toggle_style_keymap='<nop>' require('onedark').setup() end}
   use {'NLKNguyen/papercolor-theme', event='VimEnter *', config=function() vim.g.PaperColor_Theme_Options={ theme={ default={ override={ color00={ '#080808', '232' }, linenumber_bg={ '#080808', '232' } } } } } end}
-  use {'Iron-E/nvim-highlite'} -- colorscheme template
   use {'itchyny/lightline.vim',opt=false, config=function() require'plugins.awesome'.lightline() end}
   -- use {'Yggdroot/indentLine'}
   use {'lukas-reineke/indent-blankline.nvim', opt=false, config=function() require'plugins.awesome'.blankline() end}
+  -- "famiu/feline.nvim",
+  -- "akinsho/bufferline.nvim",
+  -- "romgrk/barbar.nvim",
+  -- "nvim-lualine/lualine.nvim",
 
 
   -------------------------------------------------------------------------------
   -- awesome
   use {"nvim-lua/plenary.nvim",opt=false}
-  use {'glepnir/dashboard-nvim'} -- TODO
-  use {'mhinz/vim-startify',opt=false, config=function() require'plugins.awesome'.startify() end}
   use {'tpope/vim-surround', opt=false} -- machakann/vim-sandwich
   use {'andymass/vim-matchup', opt=false}
   use {'windwp/nvim-autopairs', opt=false, config=function() require('nvim-autopairs').setup{} end}
@@ -47,6 +50,7 @@ return packer.startup(function()
   use {'mbbill/undotree', cmd='UndotreeToggle', setup=function() require'plugins.awesome'.undotree() end}
   -- use {'glacambre/firenvim'} -- Turn your browser¹ into a Neovim client
   -- use {"max397574/better-escape.nvim"}
+  -- "rcarriga/nvim-notify",
 
   -- kevinhwang91/nvim-bqf
   -- kevinhwang91/rnvimr -- ranger, Explorer
@@ -64,7 +68,14 @@ return packer.startup(function()
   -- use {'liuchengxu/vim-which-key'}
   -- use {'folke/which-key.nvim', opt=false, config=function() require'which-key'.setup{} end}
   -- use {'junegunn/vim-peekaboo', opt=false} -- extends `"` and `@` in normal mode and `<CTRL-R>` in insert mode
-  
+
+
+  -------------------------------------------------------------------------------
+  -- project and startup
+  -- use {'glepnir/dashboard-nvim'} -- TODO
+  use {'mhinz/vim-startify',opt=false, config=function() require'plugins.awesome'.startify() end}
+  -- "ahmedkhalf/project.nvim",
+
 
   -------------------------------------------------------------------------------
   -- Find and Replace
@@ -84,6 +95,8 @@ return packer.startup(function()
   -- use {"terrortylor/nvim-comment"}
   use {'preservim/nerdcommenter', opt=false, config=function() require'plugins.awesome'.comment() end}
   -- use {'tomtom/tcomment_vim'}
+  -- "numToStr/Comment.nvim",
+
 
   -------------------------------------------------------------------------------
   -- Plug 'pechorin/any-jump.vim'
@@ -182,6 +195,9 @@ return packer.startup(function()
   }
   -- use {'glepnir/lspsaga.nvim'} -- TODO
   use {'williamboman/nvim-lsp-installer'}
+
+  -- "mfussenegger/nvim-dap",
+  -- "Pocco81/DAPInstall.nvim",
 
   -- Complete,  snippet
   -- Plug 'SirVer/ultisnips', { 'on': [] }
