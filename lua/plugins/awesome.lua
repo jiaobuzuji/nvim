@@ -26,9 +26,9 @@ M.startify = function()
   g.startify_session_persistence = 1
   g.startify_enable_special = 0 -- Show <empty buffer> and <quit>.
   m('n','<leader>sl','<cmd>Startify<cr>',ns)
-  m('n','<leader>ss','<cmd>SSave<cr>',ns)
+  m('n','<leader>sc','<cmd>SSave<cr>',ns) -- creat
   m('n','<leader>sd','<cmd>SDelete<cr>',ns)
-  m('n','<leader>sc','<cmd>SClose<cr>',ns)
+  -- m('n','<leader>sc','<cmd>SClose<cr>',ns)
 end
 
 

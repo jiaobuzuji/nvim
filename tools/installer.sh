@@ -15,4 +15,5 @@ mkdir -p ${NVIMDATA}/swap
 git clone --depth=1 https://${GITSRVURL}/wbthomason/packer.nvim\
   ${NVIMDATA}/site/pack/packer/start/packer.nvim
 
+python3 -m pip install --user --upgrade pynvim
 ln -sf "$HOME/repos/nvim.git" "$XDG_CONFIG_HOME/nvim"
