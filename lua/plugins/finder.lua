@@ -29,6 +29,15 @@ M.setup = function()
           prompt_position = "top",
         },
       },
+      mappings = {
+        i = {
+          ["<esc>"] = require('telescope.actions').close,
+          ["<c-j>"] = require('telescope.actions').move_selection_next,
+          ["<c-k>"] = require('telescope.actions').move_selection_previous,
+          ["<c-n>"] = require('telescope.actions').cycle_history_next,
+          ["<c-p>"] = require('telescope.actions').cycle_history_prev,
+        },
+      },
       color_devicons = true,
     },
   }
