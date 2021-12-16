@@ -298,6 +298,8 @@ return packer.startup(function()
   -- junegunn/fzf.vim
   -- yggdroot/leaderF
   -- liuchengxu/vim-clap
+  -- nvim-telescope/telescope-frecency.nvim
+  -- nvim-telescope/telescope-project.nvim
   use {"nvim-telescope/telescope.nvim",
     module="telescope",
     cmd="Telescope",

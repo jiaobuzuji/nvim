@@ -45,34 +45,30 @@ M.setup = function()
 end
 
 M.keymap = function()
--- nnoremap <leader><leader> :Files<cr>
--- nnoremap <leader>fk :History:<cr>
--- nnoremap <leader>f/ :History/<cr>
--- nnoremap <leader>fh :History<cr>
--- nnoremap <leader>fb :Buffers<cr>
--- nnoremap <leader>fr :Rg<cr>
--- nnoremap <leader>fs :Snippets<cr>
--- nnoremap <leader>fw :Windows<cr>
--- nnoremap <leader>fm :Marks<cr>
--- nnoremap <leader>fl :Lines<cr>
--- nnoremap <leader>ft :Tags<cr>
 -- nnoremap <leader>fc :Commands<cr>
 -- nnoremap <leader>fgc :Commits<cr>
 -- nnoremap <leader>fgf :GFiles<cr>
 -- nnoremap <leader>ff  :FzfFunky<cr>
 -- " nnoremap <leader>fmp :Maps<cr>
 -- " nnoremap <leader>fht :Helptags<cr>
--- nnoremap <leader>fd  :call <SID>fzfrun_dir()<cr>
 
   m('n','<c-p>','<cmd>Telescope<cr>',ns) -- CtrlP
   -- m('n','<leader><leader>','<cmd>Telescope find_files<cr>',ns)
   m('n','<leader><leader>','<cmd>Telescope fd<cr>',ns) -- fastest find
+  m('n','<leader>fi','<cmd>Telescope fd no_ignore=true}<cr>',ns) -- include "ignore" files
   m('n','<leader>fk','<cmd>Telescope command_history<cr>',ns)
   m('n','<leader>f/','<cmd>Telescope search_history<cr>',ns)
-  m('n','<leader>fl','<cmd>Telescope current_buffer_fuzzy_find<cr>',ns)
+  m('n','<leader>fl','<cmd>Telescope current_buffer_fuzzy_find<cr>',ns) -- curren buffer line
   m('n','<leader>ft','<cmd>Telescope current_buffer_tags<cr>',ns)
+  m('n','<leader>fm','<cmd>Telescope marks<cr>',ns)
+  m('n','<leader>fs','<cmd>Telescope treesitter<cr>',ns)
+  m('n','<leader>fo','<cmd>Telescope oldfiles<cr>',ns)
+  m('n','<leader>fb','<cmd>Telescope buffers<cr>',ns)
   -- m('n','<leader>fr','<cmd>Telescope grep_string<cr>',ns)
   m('n','<leader>fr','<cmd>Telescope live_grep<cr>',ns) -- grep on the fly
+  m('n','<leader>fw','<cmd>Telescope registers<cr>',ns) -- word
+  m('n','<leader>fx','<cmd>Telescope quickfix<cr>',ns)
+  m('n','<leader>fe','<cmd>Telescope file_browser<cr>',ns) -- Explorer
 end
 
 -- return
