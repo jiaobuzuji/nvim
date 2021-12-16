@@ -348,7 +348,7 @@ local highlight_groups = {
 
 	--[[ 4.1.2. Identifiers]]
 	Identifier = {fg=orange2},
-	Function = {fg=white0},
+	Function = {fg=cyan, style=bold},
 
 	--[[ 4.1.3. Syntax]]
 	Statement   = {fg=olive0,style='none'},
@@ -766,6 +766,10 @@ local highlight_groups = {
 	--[[ 4.3.27. VimScript ]]
 	vimCmdSep   = 'Delimiter',
 	vimFunction = 'Function',
+  vimFuncName = {fg=magenta1},
+  vimFuncVar = {fg=cyan5},
+  vimNotFunc = {fg=olive1},
+  -- vimCommand = {fg=green},
 	vimFgBgAttrib = 'Constant',
 	vimHiCterm = 'Label',
 	vimHiCtermFgBg = 'vimHiCterm',
@@ -776,10 +780,25 @@ local highlight_groups = {
 	vimIsCommand = 'Identifier',
 	vimOption = 'Keyword',
 	vimScriptDelim = 'Ignore',
-	vimSet = 'String',
+  vimMap = {fg=green2},
+  vimMapModKey = {fg=cyan5},
+  vimNotation = {fg=cyan5},
+  vimLet = {fg=green2},
+	vimSet = {fg=green2},
 	vimSetEqual = 'Operator',
 	vimSetSep   = 'Delimiter',
 	vimUserFunc = 'vimFunction',
+  vimContinue = {fg=cyan5},
+  vimAutoEvent = {fg=cyan5, style='bold'},
+  vimSynType = {fg=magenta1},
+  vimSynReg = {fg=green, style='none'},
+  vimSynRegion = {fg=gray},
+  vimSynMtchGrp = {fg=green},
+  vimSynNextgroup = {fg=green},
+  vimSynKeyRegion = {fg=yellow1},
+  vimSynRegOpt = {fg=cyan},
+  vimSynMtchOpt = {fg=cyan},
+  vimSynContains = {fg=green},
 
 	--[[ 4.3.28. XML ]]
 	xmlAttrib = 'htmlArg',

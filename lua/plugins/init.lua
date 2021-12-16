@@ -51,6 +51,9 @@ return packer.startup(function()
   -- use {'glacambre/firenvim'} -- Turn your browser¹ into a Neovim client
   -- use {"max397574/better-escape.nvim"}
   -- "rcarriga/nvim-notify",
+  -- vim-scripts/DrawIt'
+  -- qpkorr/vim-renamer'
+
 
   -- kevinhwang91/nvim-bqf
   -- kevinhwang91/rnvimr -- ranger, Explorer
@@ -176,7 +179,7 @@ return packer.startup(function()
 
   -------------------------------------------------------------------------------
   -- treesitter
-  -- Plug 'nvim-treesitter/playground'
+  -- Plug 'nvim-treesitter/playground' -- <cmd>TSHighlightCaptureUnderCurso<cr>
   use {'nvim-treesitter/nvim-treesitter',
     event="BufRead",
     setup=function() require'plugins.awesome'.treesitter_setup() end,
