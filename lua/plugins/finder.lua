@@ -60,7 +60,8 @@ M.keymap = function()
   m('n','<leader>f/','<cmd>Telescope search_history<cr>',ns)
   m('n','<leader>fl','<cmd>Telescope current_buffer_fuzzy_find<cr>',ns)
   m('n','<leader>ft','<cmd>Telescope current_buffer_tags<cr>',ns)
-  m('n','<leader>fr','<cmd>Telescope grep_string<cr>',ns)
+  -- m('n','<leader>fr','<cmd>Telescope grep_string<cr>',ns)
+  m('n','<leader>fr','<cmd>Telescope live_grep<cr>',ns) -- grep on the fly
 end
 
 -- return

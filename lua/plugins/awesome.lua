@@ -174,7 +174,7 @@ M.nvimtree_setup = function()
       ignore = true,
     },
     view = {
-      width = 30,
+      width = 50,
       height = 30,
       side = 'left',
       auto_resize = false,
