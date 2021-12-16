@@ -909,14 +909,17 @@ local highlight_groups = {
   xxdDot = 'Ignore',
   xxdSep = 'Delimiter',
 
+  --[[ 4.3.41 verilog ]]
+  verilogOperator = {fg=cyan5},
+
   --[[ 4.4. Plugins
     Everything in this section is OPTIONAL. Feel free to remove everything
     here if you don't want to define it, or add more if there's something
     missing.
   ]]
-  --[[ 4.4.1. ALE ]]
-  ALEErrorSign   = 'DiagnosticSignError',
-  ALEWarningSign = 'DiagnosticSignWarn',
+  -- [> 4.4.1. ALE <]
+  -- ALEErrorSign   = 'DiagnosticSignError',
+  -- ALEWarningSign = 'DiagnosticSignWarn',
 
   --[[ 4.4.2. coc.nvim ]]
   CocErrorHighlight = 'DiagnosticUnderlineError',
@@ -951,15 +954,15 @@ local highlight_groups = {
   IndentGuidesOdd  = {bg=gray0},
   IndentGuidesEven = {bg=gray},
 
-  --[[ 4.4.7. NERDTree ]]
-  NERDTreeCWD = 'Label',
-  NERDTreeUp  = 'Operator',
-  NERDTreeDir = 'Directory',
-  NERDTreeDirSlash = 'Delimiter',
-  NERDTreeOpenable = 'NERDTreeDir',
-  NERDTreeClosable = 'NERDTreeOpenable',
-  NERDTreeExecFile = 'Function',
-  NERDTreeLinkTarget = 'Tag',
+  -- [> 4.4.7. NERDTree <]
+  -- NERDTreeCWD = 'Label',
+  -- NERDTreeUp  = 'Operator',
+  -- NERDTreeDir = 'Directory',
+  -- NERDTreeDirSlash = 'Delimiter',
+  -- NERDTreeOpenable = 'NERDTreeDir',
+  -- NERDTreeClosable = 'NERDTreeOpenable',
+  -- NERDTreeExecFile = 'Function',
+  -- NERDTreeLinkTarget = 'Tag',
 
   --[[ 4.4.8. nvim-treesitter ]]
   TSConstBuiltin = 'Constant',
