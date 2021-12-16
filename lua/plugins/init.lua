@@ -53,7 +53,7 @@ return packer.startup(function()
   -- "rcarriga/nvim-notify",
   -- vim-scripts/DrawIt'
   -- qpkorr/vim-renamer'
-
+  -- nvim-lua/popup.nvim
 
   -- kevinhwang91/nvim-bqf
   -- kevinhwang91/rnvimr -- ranger, Explorer

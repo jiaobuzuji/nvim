@@ -21,6 +21,7 @@ M.setup = function()
          "--column",
          "--smart-case",
       },
+      file_ignore_patterns = { "node_modules" },
       -- selection_strategy = "reset",
       sorting_strategy = "ascending",
       -- layout_strategy = "horizontal",
