@@ -55,7 +55,8 @@ M.keymap = function()
 -- nnoremap <leader>fd  :call <SID>fzfrun_dir()<cr>
 
   m('n','<c-p>','<cmd>Telescope<cr>',ns) -- CtrlP
-  m('n','<leader><leader>','<cmd>Telescope find_files<cr>',ns)
+  -- m('n','<leader><leader>','<cmd>Telescope find_files<cr>',ns)
+  m('n','<leader><leader>','<cmd>Telescope fd<cr>',ns) -- fastest find
   m('n','<leader>fk','<cmd>Telescope command_history<cr>',ns)
   m('n','<leader>f/','<cmd>Telescope search_history<cr>',ns)
   m('n','<leader>fl','<cmd>Telescope current_buffer_fuzzy_find<cr>',ns)
