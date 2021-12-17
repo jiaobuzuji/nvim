@@ -348,7 +348,7 @@ local highlight_groups = {
 
   --[[ 4.1.2. Identifiers]]
   Identifier = {fg=orange2},
-  Function = {fg=cyan, style=bold},
+  Function = {fg=magenta1, style=bold},
 
   --[[ 4.1.3. Syntax]]
   Statement   = {fg=olive0,style='none'},
@@ -744,7 +744,7 @@ local highlight_groups = {
 
   --[[ 4.3.24. shell ]]
   shDerefSimple = 'SpecialChar',
-  shFunctionKey = 'Function',
+  shFunctionKey = {fg=olive0},
   shLoop  = 'Repeat',
   shParen = 'Delimiter',
   shQuote = 'Delimiter',
@@ -766,7 +766,7 @@ local highlight_groups = {
   --[[ 4.3.27. VimScript ]]
   vimCmdSep   = 'Delimiter',
   vimFunction = 'Function',
-  vimFuncName = {fg=magenta1},
+  vimFuncName = 'Function',
   vimFuncVar = {fg=cyan5},
   vimNotFunc = {fg=olive1},
   -- vimCommand = {fg=green},

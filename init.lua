@@ -187,8 +187,8 @@ m('c','<c-a>','<home>',{noremap=true}) -- jump to "start"
 m('c','<c-x><c-a>','<c-a>',{noremap=true})
 m('c','<c-b>','<left>',{noremap=true}) -- Emacs like
 m('c','<c-f>','<right>',{noremap=true})
--- m('c','<c-p>','<up>',{noremap=true}) -- <up> instead of c_CTRL-P
--- m('c','<c-n>','<down>',{noremap=true}) -- <down> instead of c_CTRL-N
+m('c','<c-p>','<up>',{noremap=true}) -- <up> instead of c_CTRL-P
+m('c','<c-n>','<down>',{noremap=true}) -- <down> instead of c_CTRL-N
 
 
 -------------------------------------------------------------------------------
