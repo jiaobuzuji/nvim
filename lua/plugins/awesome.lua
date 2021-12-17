@@ -231,6 +231,7 @@ M.nvimtree_setup = function()
 end
 
 M.nvimtree = function()
+  g.nvim_tree_quit_on_open = 1
   -- m('n','<leader>nf','<cmd>NvimTreeFocus<cr>',ns)
   m('n','<leader>nf','<cmd>NvimTreeFindFile<cr>',ns)
 end
