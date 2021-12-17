@@ -112,13 +112,47 @@ M.ctrlsf = function()
   g.ctrlsf_auto_focus = {at="start"}
   g.ctrlsf_confirm_save = 0
   -- g.ctrlsf_debug_mode = 1
-  g.ctrlsf_ignore_dir = {'.git','.svn','.hg'}
+  g.ctrlsf_ignore_dir = {'.git','.svn','.hg','node_modules'}
+  g.ctrlsf_mapping = {
+    open    = {"<cr>", "o", "<2-LeftMouse>"},
+    openb   = "O",
+    split   = "<m-o>",
+    vsplit  = "",
+    tab     = "t",
+    tabb    = "T",
+    popen   = "<m-p>",
+    popenf  = "",
+    quit    = "q",
+    stop    = "<c-c>",
+    ['next']= "<m-j>",
+    prev    = "<m-k>",
+    nfile   = "<c-n>",
+    pfile   = "<c-p>",
+    chgmode = "M",
+    pquit   = "q",
+    loclist = "",
+    fzf     = "<m-f>",
+  }
+  -- let g:ctrlsf_extra_backend_args = {
+    -- \ 'ag':'--ignore "*.[odODaA]" --ignore "*.out" --ignore "*.hex" --ignore "*.bin"
+    -- \ --ignore "*.exe" --ignore "*.so" --ignore "*.dll"
+    -- \ --ignore "cscope*"',
+    -- \ 'rg':'-g "!*.[odODaA]" -g "!*.out" -g "!*.hex" -g "!*.bin"
+    -- \ -g "!*.exe" -g "!*.so" -g "!*.dll"
+    -- \ -g "!cscope*"'
+    -- \ }
 
   m('v','<leader>vs','<Plug>CtrlSFVwordPath',{silent=true})
   m('v','<leader>vv','<Plug>CtrlSFVwordExec',{silent=true})
   m('n','<leader>vs','<Plug>CtrlSFPrompt',{silent=true})
   m('n','<leader>vv','<Plug>CtrlSFCwordExec',{silent=true})
   m('n','<leader>vV','<Plug>CtrlSFCCwordExec',{silent=true})
+  m('n','<leader>vt','<cmd>CtrlSFToggle<cr>',ns)
+  -- nnoremap <leader>vh :call ctrlsf#Search('-hidden '.expand('<cword>'))<cr>
+  -- nnoremap <leader>vH :call ctrlsf#Search('-hidden -R \b'.expand('<cword>').'\b')<cr>
+  -- current Direction
+  -- nnoremap <leader>vd :call ctrlsf#Search(expand('<cword>').' .')<cr>
+  -- nnoremap <leader>vD :call ctrlsf#Search('-R \b'.expand('<cword>').'\b'.' .')<cr>
 end
 
 M.far = function()

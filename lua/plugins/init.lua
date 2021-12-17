@@ -295,7 +295,7 @@ return packer.startup(function()
   -------------------------------------------------------------------------------
   -- fuzzy finder
   -- junegunn/fzf
-  -- junegunn/fzf.vim
+  -- use {"junegunn/fzf.vim",opt=false}
   -- yggdroot/leaderF
   -- liuchengxu/vim-clap
   -- nvim-telescope/telescope-frecency.nvim

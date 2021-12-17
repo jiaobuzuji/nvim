@@ -33,10 +33,10 @@ M.setup = function()
       mappings = {
         i = {
           ["<esc>"] = require('telescope.actions').close,
-          ["<c-j>"] = require('telescope.actions').move_selection_next,
-          ["<c-k>"] = require('telescope.actions').move_selection_previous,
-          ["<c-n>"] = require('telescope.actions').cycle_history_next,
-          ["<c-p>"] = require('telescope.actions').cycle_history_prev,
+          ["<m-j>"] = require('telescope.actions').move_selection_next,
+          ["<m-k>"] = require('telescope.actions').move_selection_previous,
+          ["<m-n>"] = require('telescope.actions').cycle_history_next,
+          ["<m-p>"] = require('telescope.actions').cycle_history_prev,
         },
       },
       color_devicons = true,
@@ -45,12 +45,10 @@ M.setup = function()
 end
 
 M.keymap = function()
--- nnoremap <leader>fc :Commands<cr>
 -- nnoremap <leader>fgc :Commits<cr>
 -- nnoremap <leader>fgf :GFiles<cr>
 -- nnoremap <leader>ff  :FzfFunky<cr>
 -- " nnoremap <leader>fmp :Maps<cr>
--- " nnoremap <leader>fht :Helptags<cr>
 
   m('n','<c-p>','<cmd>Telescope<cr>',ns) -- CtrlP
   -- m('n','<leader><leader>','<cmd>Telescope find_files<cr>',ns)
@@ -70,6 +68,8 @@ M.keymap = function()
   m('n','<leader>fw','<cmd>Telescope registers<cr>',ns) -- word
   m('n','<leader>fx','<cmd>Telescope quickfix<cr>',ns)
   m('n','<leader>fe','<cmd>Telescope file_browser<cr>',ns) -- Explorer
+  m('n','<leader>fc','<cmd>Telescope commands<cr>',ns) -- Explorer
+  m('n','<leader>fh','<cmd>Telescope help_tags<cr>',ns) -- Explorer
 end
 
 -- return

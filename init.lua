@@ -156,8 +156,8 @@ m('i', 'v<Space>', 'v ', ns)
 m('n','<leader>ss',':%s/<c-r>//',{noremap=true})
 m('v','<leader>ss',':s/<c-r>//',{noremap=true})
 -- Quit Vim
-m('n','<leader>qa','<cmd>qa<cr>',ns)
-m('n','<leader>wd','<c-w>q',ns)
+m('n','<leader>ww','<cmd>qa<cr>',ns) -- windowS delete
+m('n','<leader>wd','<c-w>q',ns) -- window delete
 -- tab,windows, cursor move
 m('n','<leader>1','1gt',ns)
 m('n','<leader>2','2gt',ns) -- tab 2
@@ -187,8 +187,8 @@ m('c','<c-a>','<home>',{noremap=true}) -- jump to "start"
 m('c','<c-x><c-a>','<c-a>',{noremap=true})
 m('c','<c-b>','<left>',{noremap=true}) -- Emacs like
 m('c','<c-f>','<right>',{noremap=true})
-m('c','<c-p>','<up>',{noremap=true}) -- <up> instead of c_CTRL-P
-m('c','<c-n>','<down>',{noremap=true}) -- <down> instead of c_CTRL-N
+-- m('c','<c-p>','<up>',{noremap=true}) -- <up> instead of c_CTRL-P
+-- m('c','<c-n>','<down>',{noremap=true}) -- <down> instead of c_CTRL-N
 
 
 -------------------------------------------------------------------------------
