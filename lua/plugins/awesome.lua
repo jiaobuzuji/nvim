@@ -156,7 +156,7 @@ M.ctrlsf = function()
 end
 
 M.far = function()
-  g['far#source']='rg' -- TODO
+  g['far#source']='rg'
   g['far#enable_undo']=1
 end
 
@@ -231,7 +231,8 @@ M.nvimtree_setup = function()
 end
 
 M.nvimtree = function()
-  m('n','<leader>nf','<cmd>NvimTreeFocus<cr>',ns)
+  -- m('n','<leader>nf','<cmd>NvimTreeFocus<cr>',ns)
+  m('n','<leader>nf','<cmd>NvimTreeFindFile<cr>',ns)
 end
 
 

@@ -115,7 +115,7 @@ return packer.startup(function()
   -- Files Explorer
   -- use {'preservim/nerdtree', cmd='NERDTreeFind'}
   use {"kyazdani42/nvim-tree.lua",
-    cmd={ "NvimTreeToggle", "NvimTreeFocus" },
+    cmd={'NvimTreeFindFile',"NvimTreeToggle", "NvimTreeFocus"},
     setup=function() require'plugins.awesome'.nvimtree() end,
     config=function() require'plugins.awesome'.nvimtree_setup() end
   }
