@@ -106,7 +106,9 @@ return packer.startup(function()
   -- phaazon/hop.nvim
   -- justinmk/vim-sneak
   use {'easymotion/vim-easymotion',
-    keys={'<Plug>(easymotion-lineforward)', '<Plug>(easymotion-linebackward)'},
+    keys={'<Plug>(easymotion-lineforward)', '<Plug>(easymotion-linebackward)',
+      '<Plug>(easymotion-overwin-w)', '<Plug>(easymotion-overwin-line)', '<Plug>(easymotion-overwin-f)', '<Plug>(easymotion-sn)', '<Plug>(easymotion-tn)', '<Plug>(easymotion-bd-jk)', '<Plug>(easymotion-bd-f)',
+    },
     setup=function() require'plugins.awesome'.easymotion() end
   }
 

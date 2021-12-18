@@ -158,6 +158,10 @@ m('v','<leader>ss',':s/<c-r>//',{noremap=true})
 -- Quit Vim
 m('n','<leader>ww','<cmd>qa<cr>',ns) -- windowS delete
 m('n','<leader>wd','<c-w>q',ns) -- window delete
+m('n','<leader>wh','<c-w>h',ns)
+m('n','<leader>wl','<c-w>l',ns)
+m('n','<leader>wj','<c-w>j',ns)
+m('n','<leader>wk','<c-w>k',ns)
 -- tab,windows, cursor move
 m('n','<leader>1','1gt',ns)
 m('n','<leader>2','2gt',ns) -- tab 2
@@ -168,10 +172,10 @@ m('n','<leader>6','6gt',ns)
 m('n','<leader>7','7gt',ns)
 m('n','<leader>8','8gt',ns)
 m('n','<leader>9','9gt',ns)
-m('n','<m-h>','<c-w>h',ns)
-m('n','<m-l>','<c-w>l',ns)
-m('n','<m-j>','<c-w>j',ns)
-m('n','<m-k>','<c-w>k',ns)
+m('n','<m-h>','5h',ns)
+m('n','<m-l>','5l',ns) -- faster scroll
+m('n','<m-j>','5j',ns)
+m('n','<m-k>','5k',ns)
 m('i','<m-h>','<left>',ns)
 m('i','<m-l>','<right>',ns)
 m('i','<m-j>','<down>',ns)
