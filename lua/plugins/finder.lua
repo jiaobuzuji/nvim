@@ -71,6 +71,7 @@ M.keymap = function()
   m('n','<leader>fx','<cmd>Telescope quickfix<cr>',ns)
   m('n','<leader>fe','<cmd>Telescope file_browser<cr>',ns) -- Explorer
   m('n','<leader>fc','<cmd>Telescope commands<cr>',ns)
+  m('n','<leader>fj','<cmd>Telescope jumplist<cr>',ns)
 end
 
 -- return
