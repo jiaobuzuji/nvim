@@ -127,13 +127,10 @@ return packer.startup(function()
   -- markdown
   -- plasticboy/vim-markdown
   use {'iamcco/markdown-preview.nvim',
-    -- cmd={'MarkdownPreviewToggle','MarkdownPreview', 'MarkdownPreviewStop'}
+    -- cmd={'MarkdownPreviewToggle','MarkdownPreview', 'MarkdownPreviewStop'} -- fail
     ft='markdown',
     run=':call mkdp#util#install()', -- run='cd app && yarn install'}
-    -- setup=function()
-    --   vim.g.mkdp_browser='firefox'
-    --   -- vim.g.mkdp_port=8787
-    -- end,
+    -- setup=function() vim.g.mkdp_browser='firefox' vim.g.mkdp_port=8787 end,
   }
 
   -------------------------------------------------------------------------------

@@ -84,8 +84,8 @@ end
 -- translator
 M.translator = function()
   g.translator_default_engines = {'bing','youdao','haici'}
-  m('n','<leader>w','<Plug>TranslateW',{silent=true})
-  m('v','<leader>w','<Plug>TranslateWV',{silent=true})
+  m('n','<leader>ot','<Plug>TranslateW',{silent=true})
+  m('v','<leader>ot','<Plug>TranslateWV',{silent=true})
   -- -- Replace the text with translation
   -- nmap <silent> <Leader>r <Plug>TranslateR
   -- vmap <silent> <Leader>r <Plug>TranslateRV
