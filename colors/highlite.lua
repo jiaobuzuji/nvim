@@ -1131,24 +1131,23 @@ local highlight_groups = {
   While you are certainly free to make colors 0 to 7 shades of blue,
   this will inevitably cause usability issues so… be careful.
 ]]
-
 local terminal_colors = {
-  [1]  = black,
-  [2]  = darkred,
-  [3]  = darkgreen,
-  [4]  = darkyellow,
-  [5]  = darkblue,
-  [6]  = darkmagenta,
-  [7]  = darkcyan,
-  [8]  = gray,
-  [9]  = darkgray,
-  [10] = red,
-  [11] = green,
-  [12] = yellow,
-  [13] = blue,
-  [14] = magenta,
-  [15] = cyan,
-  [16] = white
+  [1]  = {'#000000',  0,'black'      },
+  [2]  = {'#FF5555',  1,'darkred'    },
+  [3]  = {'#50FA7B',  2,'darkgreen'  },
+  [4]  = {'#F1FA8C',  3,'darkyellow' },
+  [5]  = {'#BD93F9',  4,'darkblue'   },
+  [6]  = {'#FF79C6',  5,'darkmagenta'},
+  [7]  = {'#8BE9FD',  6,'darkcyan'   },
+  [8]  = {'#BFBFBF',  7,'gray'       },
+  [9]  = {'#4D4D4D',  8,'darkgray'   },
+  [10] = {'#FF6E67',  9,'red'        },
+  [11] = {'#5AF78E', 10,'green'      },
+  [12] = {'#F4F99D', 11,'yellow'     },
+  [13] = {'#CAA9FA', 12,'blue'       },
+  [14] = {'#FF92D0', 13,'magenta'    },
+  [15] = {'#9AEDFE', 14,'cyan'       },
+  [16] = {'#ffffff', 15,'white'      },
 }
 
 --[[ Step 5: Sourcing

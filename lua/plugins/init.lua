@@ -126,10 +126,26 @@ return packer.startup(function()
   -------------------------------------------------------------------------------
   -- markdown
   -- plasticboy/vim-markdown
-  -- use {'iamcco/markdown-preview.nvim', cmd='MarkdownPreview', run='cd app && yarn install'}
+  use {'iamcco/markdown-preview.nvim',
+    -- cmd={'MarkdownPreviewToggle','MarkdownPreview', 'MarkdownPreviewStop'}
+    ft='markdown',
+    run=':call mkdp#util#install()', -- run='cd app && yarn install'}
+    -- setup=function()
+    --   vim.g.mkdp_browser='firefox'
+    --   -- vim.g.mkdp_port=8787
+    -- end,
+  }
 
+  -------------------------------------------------------------------------------
+  -- Verilo Systemverilog
   -- use {'vhda/verilog_systemverilog.vim',opt=false}
+  -- dense-analysis/ale
+  -- steveicarus/iverilog -- verilator Verible
   -- suoto/hdl_checker
+  -- dalance/svlint
+  -- dalance/svls
+  -- imc-trading/svlangserver
+  
 
   -------------------------------------------------------------------------------
   -- Taglist TODO
@@ -193,7 +209,7 @@ return packer.startup(function()
   -- lsp dap
   use {"neovim/nvim-lspconfig",
     event="BufRead",
-    ft={'lua','vim','systemverilog','c','cpp','json'},
+    ft={'lua','vim','verilog','systemverilog','c','cpp','json'},
     config=function()
       require('plugins.lspconfig')
     end,

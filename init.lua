@@ -136,8 +136,8 @@ local ns = {noremap = true, silent = true}
 -- misc
 m('n','Q','gq',ns) -- Don't use Ex mode, use Q for formatting.  Revert with ":unmap Q".
 -- m('n','Y','y$',ns) -- neovim default keymapping
-m('i','<c-u>','<c-g>u<c-u>',ns) -- CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-m('i','<c-w>','<c-g>u<c-w>',ns)
+-- m('i','<c-u>','<c-g>u<c-u>',ns) -- CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+-- m('i','<c-w>','<c-g>u<c-w>',ns) -- neovim default keymapping
 m('n','<leader>/','<cmd>nohlsearch<cr>',ns)
 m('n','tt','o<space><c-u><c-[>',ns) -- Insert new line in normal mode
 m('v','p','"_dP',ns) -- Don't copy the replaced text after pasting in visual mode
@@ -148,7 +148,7 @@ m('v','#',[[y?<c-r>=escape(@",'\\/.*$^~[]')<cr><cr>]],ns) -- m('v','#',"y?<c-r>=
 -- 'Save' and 'Esc'
 m('i', 'jj', '<c-[>',            ns)
 m('n', 'vv', '<cmd>update<cr>',      ns)
-m('v', 'vv', '<C-C><cmd>update<cr>', ns)
+m('x', 'vv', '<C-C><cmd>update<cr>', ns)
 m('i', 'vv', '<C-[><cmd>update<cr>', ns)
 m('i', 'j<Space>', 'j ', ns)
 m('i', 'v<Space>', 'v ', ns)

@@ -15,5 +15,8 @@ mkdir -p ${NVIMDATA}/swap
 git clone --depth=1 https://${GITSRVURL}/wbthomason/packer.nvim\
   ${NVIMDATA}/site/pack/packer/start/packer.nvim
 
+# curl -OfSL https://${GITSRVURL}/iamcco/markdown-preview.nvim/releases/download/v0.0.9/markdown-preview-linux.tar.gz
+# xxxxx TODO
+
 python3 -m pip install --user --upgrade pynvim
 ln -sf "$HOME/repos/nvim.git" "$XDG_CONFIG_HOME/nvim"
