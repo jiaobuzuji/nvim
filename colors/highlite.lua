@@ -950,9 +950,9 @@ local highlight_groups = {
   GitSignsChange = 'GitGutterChange',
   GitSignsDelete = 'GitGutterDelete',
 
-  --[[ 4.4.5. vim-indent-guides ]]
-  IndentGuidesOdd  = {bg=gray0},
-  IndentGuidesEven = {bg=gray},
+  -- [> 4.4.5. vim-indent-guides <]
+  -- IndentGuidesOdd  = {bg=gray0},
+  -- IndentGuidesEven = {bg=gray},
 
   -- [> 4.4.7. NERDTree <]
   -- NERDTreeCWD = 'Label',
@@ -1094,6 +1094,11 @@ local highlight_groups = {
 
   --[[ 4.4.19. ctrlsf ]]
   ctrlsfMatch = {fg=black,bg=orange1},
+
+  --[[ 4.4.20. nvim-telescope ]]
+  TelescopeSelection = 'CursorLine',
+  -- TelescopeMatching = 
+
 }
 
 --[[ Step 5: Terminal Colors

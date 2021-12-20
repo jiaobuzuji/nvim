@@ -15,6 +15,7 @@ mkdir -p ${NVIMDATA}/swap
 git clone --depth=1 https://${GITSRVURL}/wbthomason/packer.nvim\
   ${NVIMDATA}/site/pack/packer/opt/packer.nvim
 
+curl -OfSL https://${GITSRVURL}/iamcco/markdown-preview.nvim/releases/download/v0.0.9/markdown-preview-win.zip
 curl -OfSL https://${GITSRVURL}/iamcco/markdown-preview.nvim/releases/download/v0.0.9/markdown-preview-linux.tar.gz
 tar xvf markdown-preview-linux.tar.gz -C ${NVIMDATA}/site/pack/packer/opt/markdown-preview.nvim/app/bin
 rm markdown-preview-linux.tar.gz

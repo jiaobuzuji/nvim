@@ -26,7 +26,7 @@ return packer.startup(function()
   use {'Iron-E/nvim-highlite'} -- colorscheme template
   -- use {'projekt0n/github-nvim-theme', event='VimEnter *', config=function() require("github-theme").setup({ theme_style="dark_default", transparent=true, }) end, }
   -- use {'folke/tokyonight.nvim', event='VimEnter *', config=function() vim.g.tokyonight_style="night" vim.g.tokyonight_transparent=true vim.g.tokyonight_italic_functions=false vim.cmd[[colorscheme tokyonight]] end}
-  -- use {'navarasu/onedark.nvim', event='VimEnter *', config=function() -- vim.g.onedark_style='warm' vim.g.onedark_transparent_background=true vim.g.onedark_toggle_style_keymap='<nop>' require('onedark').setup() end}
+  -- use {'navarasu/onedark.nvim', event='VimEnter *', config=function() vim.g.onedark_style='warm' vim.g.onedark_transparent_background=true vim.g.onedark_toggle_style_keymap='<nop>' require('onedark').setup() end}
   use {'NLKNguyen/papercolor-theme', event='VimEnter *', config=function() vim.g.PaperColor_Theme_Options={ theme={ default={ override={ color00={ '#080808', '232' }, linenumber_bg={ '#080808', '232' } } } } } end}
   use {'itchyny/lightline.vim',opt=false, config=function() require'plugins.awesome'.lightline() end}
   -- use {'Yggdroot/indentLine'}
@@ -127,7 +127,7 @@ return packer.startup(function()
   -- markdown
   -- plasticboy/vim-markdown
   use {'iamcco/markdown-preview.nvim',
-    -- cmd={'MarkdownPreviewToggle','MarkdownPreview', 'MarkdownPreviewStop'} -- fail
+    -- cmd={'MarkdownPreviewToggle','MarkdownPreview', 'MarkdownPreviewStop'}, -- fail for 'mkdp#util#install()'
     ft='markdown',
     run=':call mkdp#util#install()', -- run='cd app && yarn install'}
     -- setup=function() vim.g.mkdp_browser='firefox' vim.g.mkdp_port=8787 end,
@@ -205,11 +205,9 @@ return packer.startup(function()
   -------------------------------------------------------------------------------
   -- lsp dap
   use {"neovim/nvim-lspconfig",
-    event="BufRead",
+    -- event="BufRead",
     ft={'lua','vim','verilog','systemverilog','c','cpp','json'},
-    config=function()
-      require('plugins.lspconfig')
-    end,
+    config=function() require('plugins.lspconfig') end,
   }
   -- use {'glepnir/lspsaga.nvim'} -- TODO
   use {'williamboman/nvim-lsp-installer'}
