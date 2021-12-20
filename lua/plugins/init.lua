@@ -215,6 +215,7 @@ return packer.startup(function()
   }
   -- use {'glepnir/lspsaga.nvim'} -- TODO
   use {'williamboman/nvim-lsp-installer'}
+  -- usr {'RRethy/vim-illuminate'}
 
   -- "mfussenegger/nvim-dap",
   -- "Pocco81/DAPInstall.nvim",
