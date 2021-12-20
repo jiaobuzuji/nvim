@@ -198,7 +198,9 @@ return packer.startup(function()
 
   -------------------------------------------------------------------------------
   -- treesitter
-  -- Plug 'nvim-treesitter/playground' -- <cmd>TSHighlightCaptureUnderCurso<cr>
+  -- use {'nvim-treesitter/playground', cmd='TSHighlightCaptureUnderCursor',
+  --   config=function() require'xxx'.setup() end,
+  -- } TODO
   use {'nvim-treesitter/nvim-treesitter',
     event="BufRead",
     setup=function() require'plugins.awesome'.treesitter_setup() end,
