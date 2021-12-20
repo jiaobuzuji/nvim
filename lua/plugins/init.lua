@@ -137,12 +137,16 @@ return packer.startup(function()
   -- Verilo Systemverilog
   -- use {'vhda/verilog_systemverilog.vim',opt=false}
   -- dense-analysis/ale
-  -- steveicarus/iverilog -- verilator Verible
+  -- steveicarus/iverilog
+  -- chipsalliance/verible
+  -- https://github.com/verilator/verilator
   -- suoto/hdl_checker
   -- dalance/svlint
   -- dalance/svls
+  -- dalance/sv-parser
+  -- sgherbst/svinst
   -- imc-trading/svlangserver
-  
+
 
   -------------------------------------------------------------------------------
   -- Taglist TODO
