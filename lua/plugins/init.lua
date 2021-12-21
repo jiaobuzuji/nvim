@@ -311,6 +311,8 @@ return packer.startup(function()
   use {'hrsh7th/cmp-vsnip', after='cmp-path'}
   use {'hrsh7th/vim-vsnip', after='cmp-vsnip'}
   -- use {'hrsh7th/cmp-yank', after='cmp-vsnip'} TODO
+  -- hrsh7th/vim-vsnip-integ
+
 
   -------------------------------------------------------------------------------
   -- fuzzy finder
