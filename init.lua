@@ -134,7 +134,7 @@ local m = vim.api.nvim_set_keymap
 local ns = {noremap = true, silent = true}
 
 -- misc
-m('n',',',':',ns) -- save finger
+m('n',',',':',{noremap = true}) -- save finger
 m('n','Q','gq',ns) -- Don't use Ex mode, use Q for formatting.  Revert with ":unmap Q".
 -- m('n','Y','y$',ns) -- neovim default keymapping
 -- m('i','<c-u>','<c-g>u<c-u>',ns) -- CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
