@@ -1,4 +1,4 @@
-syn keyword systemverilogType   logic
+syn keyword systemverilogType   logic integer string
 
 " The default highlighting.
 " hi def link systemverilogType  Type
