@@ -911,7 +911,8 @@ local highlight_groups = {
 
   --[[ 4.3.41 verilog ]]
   verilogOperator = {fg=cyan5},
-  verilogType = {fg=orange1},
+  verilogType = {fg=cyan5},
+  systemverilogType = {fg=cyan5},
 
   --[[ 4.4. Plugins
     Everything in this section is OPTIONAL. Feel free to remove everything
