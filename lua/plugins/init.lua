@@ -54,10 +54,11 @@ return packer.startup(function()
   -- vim-scripts/DrawIt'
   -- qpkorr/vim-renamer'
   -- nvim-lua/popup.nvim
-
   -- kevinhwang91/nvim-bqf
   -- kevinhwang91/rnvimr -- ranger, Explorer
   use {'akinsho/toggleterm.nvim'} -- terminal
+  use {'junegunn/vim-easy-align', keys='<Plug>(EasyAlign)', setup=function() require'plugins.awesome'.easyalign() end}
+  -- Plug 'godlygeek/tabular' " ga, or :Tabularize <regex> to align
 
   -------------------------------------------------------------------------------
   -- help me
@@ -153,8 +154,6 @@ return packer.startup(function()
   -- Plug 'liuchengxu/vista.vim'
 
   -------------------------------------------------------------------------------
-  -- Plug 'junegunn/vim-easy-align' " {1 TODO
-  -- Plug 'godlygeek/tabular' " ga, or :Tabularize <regex> to align
   -- matze/vim-move
   -- Plug 'skywind3000/asynctasks.vim'
   -- Plug 'skywind3000/asyncrun.vim'

@@ -81,6 +81,13 @@ M.yankring = function()
 end
 
 -------------------------------------------------------------------------------
+-- align 
+M.easyalign = function()
+  m('n','ga','<Plug>(EasyAlign)',{silent=true})
+  m('x','ga','<Plug>(EasyAlign)',{silent=true})
+end
+
+-------------------------------------------------------------------------------
 -- translator
 M.translator = function()
   g.translator_default_engines = {'bing','youdao','haici'}
