@@ -190,7 +190,7 @@ m('i','<m-k>','<up>',ns)
 m('i','<c-a>','<c-o>^',ns) -- jump to "start"
 m('i','<c-x><c-a>','<c-a>',ns)
 m('i','<c-e>',[[col('.')>strlen(getline('.'))<bar><bar>pumvisible()?"\<lt>c-e>":"\<lt>end>"]],{noremap=true, silent=true, expr=true}) -- jump to "end"
-m('c','<m-h>','<s-left>',{noremap=true})
+m('c','<m-h>','<s-left>',{noremap=true}) -- jump word
 m('c','<m-l>','<s-right>',{noremap=true})
 m('c','<m-k>','<up>',{noremap=true})
 m('c','<m-j>','<down>',{noremap=true})
@@ -203,11 +203,11 @@ m('c','<c-n>','<down>',{noremap=true}) -- <down> instead of c_CTRL-N
 -- terminal
 -- m('n','<leader>tt','<cmd>tab terminal<cr>',ns) -- open terminal-emulator fail
 m('n','<leader>ts','<cmd>vsplit<cr><cmd>terminal<cr>',ns) -- open terminal-emulator
-m('t','<m-h>','<s-left>',{noremap=true})
-m('t','<m-l>','<s-right>',{noremap=true})
-m('t','<m-k>','<up>',{noremap=true})
-m('t','<m-j>','<down>',{noremap=true})
-m('t','<m-j><m-j>',[[<c-\><c-n>]],{noremap=true}) -- leave terminal-mode
+m('t','<m-h>','<c-left>',ns) -- jump word
+m('t','<m-l>','<c-right>',ns)
+m('t','<m-k>','<up>',ns)
+m('t','<m-j>','<down>',ns)
+m('t','<m-v><m-v>',[[<c-\><c-n>]],ns) -- leave terminal-mode
 
 
 -- usr TODO
