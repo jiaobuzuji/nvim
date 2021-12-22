@@ -63,6 +63,9 @@ opt.splitright = true -- a new window is put right of the current one
 
 --  7 multiple tab pages {2
 --  8 terminal {2
+opt.title = true -- show info in the window title
+opt.icon = true -- set the text of the icon for this window
+
 --  9 using the mouse {2
 opt.mouse = "a" -- list of flags for using the mouse
 
@@ -197,12 +200,19 @@ m('c','<c-b>','<left>',{noremap=true}) -- Emacs like
 m('c','<c-f>','<right>',{noremap=true})
 m('c','<c-p>','<up>',{noremap=true}) -- <up> instead of c_CTRL-P
 m('c','<c-n>','<down>',{noremap=true}) -- <down> instead of c_CTRL-N
+-- terminal
+-- m('n','<leader>tt','<cmd>tab terminal<cr>',ns) -- open terminal-emulator fail
+m('n','<leader>ts','<cmd>vsplit<cr><cmd>terminal<cr>',ns) -- open terminal-emulator
+m('t','<m-h>','<s-left>',{noremap=true})
+m('t','<m-l>','<s-right>',{noremap=true})
+m('t','<m-k>','<up>',{noremap=true})
+m('t','<m-j>','<down>',{noremap=true})
+m('t','<m-j><m-j>',[[<c-\><c-n>]],{noremap=true}) -- leave terminal-mode
+
 
 -- usr TODO
 -- Format Current File
 m('n','<c-f3>',[[:set ff=unix<CR>:%s/\s\+$//<CR>']],ns)
--- verilog instance
-m('v','<c-f4>',[[:s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<CR>gv:s#^\s*\(\/\/.*\)#    \1#e<CR>gv:s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<CR>]],ns)
 
 
 -------------------------------------------------------------------------------

@@ -76,8 +76,23 @@ end
 M.yankring = function()
   g.yankring_history_dir = vim.fn.stdpath('data')
   g.yankring_window_height = 15
-  m('n','<leader>ys','<cmd>YRShow<cr>',ns)
+  m('n','<leader>oy','<cmd>YRShow<cr>',ns)
   m('n','Y',[[<cmd>YRYankCount 'y$'<cr>]],ns)
+end
+
+-------------------------------------------------------------------------------
+-- which-key
+M.whichkey = function()
+  require'which-key'.setup{
+    spelling = {enabled = true},
+    triggers_blacklist = {
+      -- list of mode / prefixes that should never be hooked by WhichKey
+      -- this is mostly relevant for key maps that start with a native binding
+      -- most people should not need to change this
+      i = { "j", "k" , "v" },
+      v = { "j", "k" , "v" },
+    },
+  }
 end
 
 -------------------------------------------------------------------------------
@@ -105,7 +120,7 @@ M.undotree = function()
   g.undotree_WindowLayout=2
   g.undotree_DiffpanelHeight=8
   g.undotree_SetFocusWhenToggle=1
-  m('n','<leader>tu','<cmd>UndotreeToggle<cr>',ns)
+  m('n','<leader>ou','<cmd>UndotreeToggle<cr>',ns)
   -- autocmd BufWritePre $VIMFILES/undodir/* set noundofile
   vim.cmd [[ autocmd FileType undotree setlocal rnu ]]
 end

@@ -16,17 +16,16 @@ augroup vimStartup
         \ |   exe "normal! g`\""
         \ | endif
 
+  " highlight on yank
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=150}
+
+  " terminal
+  autocmd TermOpen * startinsert
 augroup END
 
 " -------------------------------------------------------------------------------
 augroup edaGroup
   autocmd!
   autocmd BufRead,BufNewFile *.ucf,*.xdc, setlocal filetype=sdc
-augroup END
-
-" -------------------------------------------------------------------------------
-augroup highlight_yank
-    autocmd!
-    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=150}
 augroup END
 
