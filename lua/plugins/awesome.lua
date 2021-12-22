@@ -172,12 +172,12 @@ M.easymotion = function()
   g.EasyMotion_startofline = 0
   g.EasyMotion_show_prompt = 0
   g.EasyMotion_verbose = 0
-  m('','W','<Plug>(easymotion-lineforward)',{silent=true})
-  m('','B','<Plug>(easymotion-linebackward)',{silent=true})
-  -- MultiWindow easymotion for word
-  m('n','<leader>jw','<Plug>(easymotion-overwin-w)',{silent=true})
-  m('x','<leader>jw','<Plug>(easymotion-bd-w)',{silent=true})
-  m('o','<leader>jw','<Plug>(easymotion-bd-w)',{silent=true})
+  m('','<leader>jw','<Plug>(easymotion-lineforward)',{silent=true})
+  m('','<leader>jb','<Plug>(easymotion-linebackward)',{silent=true})
+  -- -- MultiWindow easymotion for word
+  -- m('n','<leader>jw','<Plug>(easymotion-overwin-w)',{silent=true})
+  -- m('x','<leader>jw','<Plug>(easymotion-bd-w)',{silent=true})
+  -- m('o','<leader>jw','<Plug>(easymotion-bd-w)',{silent=true})
   -- Multi Input Find Motion:s
   m('n','<leader>js','<Plug>(easymotion-sn)',{silent=true})
   m('x','<leader>js','<Plug>(easymotion-sn)',{silent=true})
