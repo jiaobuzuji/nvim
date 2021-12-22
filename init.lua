@@ -172,14 +172,14 @@ m('n','<leader>6','6gt',ns)
 m('n','<leader>7','7gt',ns)
 m('n','<leader>8','8gt',ns)
 m('n','<leader>9','9gt',ns)
-m('n','<m-h>','5h',ns)
-m('n','<m-l>','5l',ns) -- faster scroll
-m('n','<m-j>','5j',ns)
-m('n','<m-k>','5k',ns)
-m('x','<m-h>','5h',ns)
-m('x','<m-l>','5l',ns) -- faster scroll
-m('x','<m-j>','5j',ns)
-m('x','<m-k>','5k',ns)
+m('n','<m-h>','8h',ns)
+m('n','<m-l>','8l',ns) -- faster scroll
+m('n','<m-j>','8j',ns)
+m('n','<m-k>','8k',ns)
+m('x','<m-h>','8h',ns)
+m('x','<m-l>','8l',ns) -- faster scroll
+m('x','<m-j>','8j',ns)
+m('x','<m-k>','8k',ns)
 m('i','<m-h>','<left>',ns)
 m('i','<m-l>','<right>',ns)
 m('i','<m-j>','<down>',ns)
