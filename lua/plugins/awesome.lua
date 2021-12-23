@@ -84,12 +84,14 @@ end
 -- which-key
 M.whichkey = function()
   require'which-key'.setup{
-    spelling = {enabled = true},
+    plugins = {
+      spelling = {enabled = true}, -- how many suggestions should be shown in the list?
+    },
     triggers_blacklist = {
       -- list of mode / prefixes that should never be hooked by WhichKey
       -- this is mostly relevant for key maps that start with a native binding
       -- most people should not need to change this
-      i = { "j", "k" , "v" },
+      i = { "j", "k" , "v" }, -- fix conflict : m('i', 'vv', '<C-[><cmd>update<cr>', ns)
       v = { "j", "k" , "v" },
     },
   }

@@ -154,7 +154,7 @@ m('v','#',[[y?<c-r>=escape(@",'\\/.*$^~[]')<cr><cr>]],ns) -- m('v','#',"y?<c-r>=
 m('i', 'jj', '<c-[>',            ns)
 m('n', 'vv', '<cmd>update<cr>',      ns)
 m('x', 'vv', '<C-C><cmd>update<cr>', ns)
-m('i', 'vv', '<C-[><cmd>update<cr>', ns) -- telescope conflict TODO
+m('i', 'vv', '<C-[><cmd>update<cr>', ns)
 -- replace
 m('n','<leader>ss',':%s/<c-r>//',{noremap=true})
 m('v','<leader>ss',':s/<c-r>//',{noremap=true})
