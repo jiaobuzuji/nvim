@@ -168,7 +168,7 @@ M.ctrlsf = function()
 
   m('v','<leader>vs','<Plug>CtrlSFVwordPath',{silent=true})
   m('v','<leader>vv','<Plug>CtrlSFVwordExec',{silent=true})
-  m('n','<leader>vs','<Plug>CtrlSFPrompt',{silent=true})
+  m('n','<leader>vs','<Plug>CtrlSFPrompt',{})
   m('n','<leader>vv','<Plug>CtrlSFCwordExec',{silent=true})
   m('n','<leader>vV','<Plug>CtrlSFCCwordExec',{silent=true})
   m('n','<leader>vt','<cmd>CtrlSFToggle<cr>',ns)
