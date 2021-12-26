@@ -83,7 +83,8 @@ end
 -------------------------------------------------------------------------------
 -- which-key
 M.whichkey = function()
-  require'which-key'.setup{
+  local wk = require("which-key")
+  wk.setup{
     plugins = {
       spelling = {enabled = true}, -- how many suggestions should be shown in the list?
     },
@@ -95,6 +96,14 @@ M.whichkey = function()
       v = { "j", "k" , "v" },
     },
   }
+  wk.register({
+    c = {name = "Comment"},
+    f = {name = "FuzzyFind"},
+    o = {name = "Others"},
+    t = {name = "Terminal"},
+    v = {name = "Find and Replace"},
+    w = {name = "Windows"},
+  }, { prefix = "<leader>" })
 end
 
 -------------------------------------------------------------------------------
