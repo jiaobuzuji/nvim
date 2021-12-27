@@ -209,6 +209,7 @@ return packer.startup(function()
 
   -------------------------------------------------------------------------------
   -- lsp dap
+  use {'RRethy/vim-illuminate',opt=false}
   use {"neovim/nvim-lspconfig",
     -- event="BufRead",
     ft={'lua','vim','verilog','systemverilog','c','cpp','json'},
@@ -216,7 +217,6 @@ return packer.startup(function()
   }
   -- use {'glepnir/lspsaga.nvim'} -- TODO
   use {'williamboman/nvim-lsp-installer'}
-  -- usr {'RRethy/vim-illuminate'}
 
   -- "mfussenegger/nvim-dap",
   -- "Pocco81/DAPInstall.nvim",
