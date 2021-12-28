@@ -1047,7 +1047,7 @@ local highlight_groups = {
   CmpDocumentationBorder = 'FloatBorder',
   CmpItemAbbrDefault = {fg=FG},
   CmpItemAbbrMatchDefault = {fg=cyan4},
-  CmpItemAbbrMatchFuzzyDefault = {style={'nocombine'}},
+  CmpItemAbbrMatchFuzzyDefault = {fg=cyan4},
   CmpItemKindDefault = 'Type',
   CmpItemKindClassDefault = 'CmpItemKindStructDefault',
   CmpItemKindColorDefault = 'Label',

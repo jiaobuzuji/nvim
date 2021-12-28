@@ -82,6 +82,7 @@ opt.clipboard = 'unnamed,unnamedplus' -- "unnamed" to use the * register like un
 opt.undofile = true -- automatically save and restore undo history
 opt.showmatch = true -- when inserting a bracket, briefly jump to its match
 opt.matchtime = 2 -- tenth of a second to show a match for 'showmatch'
+opt.completeopt = "menuone,preview,noselect" -- whether to use a popup menu for Insert mode completion
 
 -- 14 tabs and indenting {2
 opt.tabstop = 2 -- number of spaces a <Tab> in the text stands for

@@ -24,9 +24,9 @@ return packer.startup(function()
   -- theme
   use {"kyazdani42/nvim-web-devicons", opt=false}
   use {'Iron-E/nvim-highlite'} -- colorscheme template
-  -- use {'projekt0n/github-nvim-theme', event='VimEnter *', config=function() require("github-theme").setup({ theme_style="dark_default", transparent=true, }) end, }
+  -- use {'projekt0n/github-nvim-theme', event='VimEnter *', config=function() require"github-theme".setup({ theme_style="dark_default", transparent=true, }) end, }
   -- use {'folke/tokyonight.nvim', event='VimEnter *', config=function() vim.g.tokyonight_style="night" vim.g.tokyonight_transparent=true vim.g.tokyonight_italic_functions=false vim.cmd[[colorscheme tokyonight]] end}
-  -- use {'navarasu/onedark.nvim', event='VimEnter *', config=function() vim.g.onedark_style='warm' vim.g.onedark_transparent_background=true vim.g.onedark_toggle_style_keymap='<nop>' require('onedark').setup() end}
+  -- use {'navarasu/onedark.nvim', event='VimEnter *', config=function() vim.g.onedark_style='warm' vim.g.onedark_transparent_background=true vim.g.onedark_toggle_style_keymap='<nop>' require'onedark'.setup() end}
   -- use {'NLKNguyen/papercolor-theme', event='VimEnter *', config=function() vim.g.PaperColor_Theme_Options={ theme={ default={ override={ color00={ '#080808', '232' }, linenumber_bg={ '#080808', '232' } } } } } end}
   use {'itchyny/lightline.vim',opt=false, config=function() require'plugins.awesome'.lightline() end}
   -- use {'Yggdroot/indentLine'}
@@ -42,11 +42,11 @@ return packer.startup(function()
   use {"nvim-lua/plenary.nvim",opt=false}
   use {'tpope/vim-surround', opt=false} -- machakann/vim-sandwich
   use {'andymass/vim-matchup', opt=false}
-  use {'windwp/nvim-autopairs', opt=false, config=function() require('nvim-autopairs').setup{} end}
+  use {'windwp/nvim-autopairs', opt=false, config=function() require'nvim-autopairs'.setup{} end}
   use {'mg979/vim-visual-multi', opt=false} -- terryma/vim-multiple-cursors
   -- use {'sheerun/vim-polyglot', opt=false} -- TODO
   -- use {'vim-scripts/YankRing.vim', opt=false, config=function() require'plugins.awesome'.yankring() end} -- yank history
-  use {"norcalli/nvim-colorizer.lua", ft={'lua','vim','css'}, config=function() require("colorizer").setup() end}
+  use {"norcalli/nvim-colorizer.lua", ft={'lua','vim','css'}, config=function() require'colorizer'.setup() end}
   use {'mbbill/undotree', cmd='UndotreeToggle', setup=function() require'plugins.awesome'.undotree() end}
   -- use {'glacambre/firenvim'} -- Turn your browser¹ into a Neovim client
   -- use {"max397574/better-escape.nvim"}
@@ -86,7 +86,7 @@ return packer.startup(function()
   -- Plug 'thinca/vim-qfreplace'
   -- dkprice/vim-easygrep
   -- mhinz/vim-grepper
-  use {"brooth/far.vim",cmd={'F', 'Far', 'Fardo'}, config=function() require'plugins.awesome'.far() end}
+  use {"brooth/far.vim",cmd={'Far', 'Fardo'}, config=function() require'plugins.awesome'.far() end}
   use {'dyng/ctrlsf.vim',
     cmd={'CtrlSF','CtrlSFToggle'},
     keys={'<Plug>CtrlSFVwordPath', '<Plug>CtrlSFVwordExec', '<Plug>CtrlSFPrompt', '<Plug>CtrlSFCwordExec', '<Plug>CtrlSFCCwordExec',},
@@ -116,6 +116,8 @@ return packer.startup(function()
 
   -------------------------------------------------------------------------------
   -- Files Explorer
+  -- shougo/defx.nvim
+  -- weirongxu/coc-explorer
   -- use {'preservim/nerdtree', cmd='NERDTreeFind'}
   use {"kyazdani42/nvim-tree.lua",
     cmd={'NvimTreeFindFile','NvimTreeFindFileToggle',"NvimTreeToggle", "NvimTreeFocus"},
@@ -162,18 +164,18 @@ return packer.startup(function()
   use {"lewis6991/gitsigns.nvim",
     opt=false,
     config=function()
-      require("gitsigns").setup {
+      require'gitsigns'.setup {
         keymaps={
             -- Default keymap options
             buffer=true,
             noremap=true,
             ["n ]c"]={ expr=true, "&diff ? ']c' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'" },
             ["n [c"]={ expr=true, "&diff ? '[c' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'" },
-            ["n <leader>hs"]='<cmd>lua require"gitsigns".stage_hunk()<CR>',
-            ["n <leader>hu"]='<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
-            ["n <leader>hr"]='<cmd>lua require"gitsigns".reset_hunk()<CR>',
-            ["n <leader>hp"]='<cmd>lua require"gitsigns".preview_hunk()<CR>',
-            ["n <leader>hb"]='<cmd>lua require"gitsigns".blame_line()<CR>',
+            ["n <leader>gs"]='<cmd>lua require"gitsigns".stage_hunk()<CR>',
+            ["n <leader>gu"]='<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
+            ["n <leader>gr"]='<cmd>lua require"gitsigns".reset_hunk()<CR>',
+            ["n <leader>gp"]='<cmd>lua require"gitsigns".preview_hunk()<CR>',
+            ["n <leader>gb"]='<cmd>lua require"gitsigns".blame_line()<CR>',
         },
         numhl=false,
         sign_priority=5,
@@ -217,21 +219,22 @@ return packer.startup(function()
     module="telescope",
     cmd="Telescope",
     requires={
-      {"nvim-telescope/telescope-fzf-native.nvim",run="make" }, -- TODO windows make
+      {"nvim-telescope/telescope-fzf-native.nvim",run="make" },
       {"nvim-telescope/telescope-media-files.nvim"},
     },
-    setup=function() require('plugins.finder').keymap() end,
-    config=function() require('plugins.finder').setup() end,
+    setup=function() require'plugins.finder'.keymap() end,
+    config=function() require'plugins.finder'.setup() end,
   }
 
 
   -------------------------------------------------------------------------------
   -- lsp dap
+  -- neoclide/coc.nvim
   use {'RRethy/vim-illuminate',opt=false}
   use {"neovim/nvim-lspconfig",
     -- event="BufRead",
     ft={'lua','vim','verilog','systemverilog','c','cpp','json'},
-    config=function() require('plugins.lspconfig') end,
+    config=function() require'plugins.lspconfig' end,
   }
   -- use {'glepnir/lspsaga.nvim'} -- TODO
   use {'williamboman/nvim-lsp-installer'}
@@ -239,96 +242,31 @@ return packer.startup(function()
   -- "mfussenegger/nvim-dap",
   -- "Pocco81/DAPInstall.nvim",
 
-  -- Complete,  snippet
-  -- Plug 'SirVer/ultisnips', { 'on': [] }
-  use {"rafamadriz/friendly-snippets", event="InsertEnter"}
-  use {"hrsh7th/nvim-cmp", after="friendly-snippets",
-    config=function()
-      local cmp=require'cmp'
-      cmp.setup({
-        snippet={
-            expand=function(args)
-              require("luasnip").lsp_expand(args.body)
-            end,
-        },
-        -- formatting={
-        --     format=function(entry, vim_item)
-        --       -- load lspkind icons
-        --       vim_item.kind=string.format(
-        --           "%s %s",
-        --           require("plugins.configs.lspkind_icons").icons[vim_item.kind],
-        --           vim_item.kind
-        --       )
-        --       vim_item.menu=({
-        --           nvim_lsp="[LSP]",
-        --           nvim_lua="[Lua]",
-        --           buffer="[BUF]",
-        --       })[entry.source.name]
-        --       return vim_item
-        --     end,
-        -- },
-        mapping={
-            ["<C-p>"]=cmp.mapping.select_prev_item(),
-            ["<C-n>"]=cmp.mapping.select_next_item(),
-            ["<C-d>"]=cmp.mapping.scroll_docs(-4),
-            ["<C-f>"]=cmp.mapping.scroll_docs(4),
-            ["<C-Space>"]=cmp.mapping.complete(),
-            ["<C-e>"]=cmp.mapping.close(),
-            ["<CR>"]=cmp.mapping.confirm {
-              behavior=cmp.ConfirmBehavior.Replace,
-              select=true,
-            },
-            ["<Tab>"]=function(fallback)
-              if cmp.visible() then
-                  cmp.select_next_item()
-              -- elseif require("luasnip").expand_or_jumpable() then
-              --     vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-              else
-                  fallback()
-              end
-            end,
-            ["<S-Tab>"]=function(fallback)
-              if cmp.visible() then
-                  cmp.select_prev_item()
-              -- elseif require("luasnip").jumpable(-1) then
-              --     vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
-              else
-                  fallback()
-              end
-            end,
-        },
-        sources={
-            { name="nvim_lsp" },
-            { name="luasnip" },
-            { name="buffer" },
-            { name="nvim_lua" },
-            { name="path" },
-        },
-      })
-      -- `/` cmdline setup.
-      cmp.setup.cmdline('/', {
-        sources={
-          { name='buffer' }
-        }
-      })
-      -- -- `:` cmdline setup.
-      -- cmp.setup.cmdline(':', {
-      --   sources=cmp.config.sources({
-      --     { name='path' }
-      --   }, {
-      --     { name='cmdline' }
-      --   })
-      -- })
-      -- local capabilities=require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-    end,
-  } -- TODO
-  use {"hrsh7th/cmp-nvim-lsp", after="nvim-cmp"}
-  use {"hrsh7th/cmp-buffer", after="cmp-nvim-lsp"}
-  use {"hrsh7th/cmp-path", after="cmp-buffer"}
-  use {'hrsh7th/cmp-vsnip', after='cmp-path'}
-  use {'hrsh7th/vim-vsnip', after='cmp-vsnip'}
-  -- use {'hrsh7th/cmp-yank', after='cmp-vsnip'} TODO
-  -- hrsh7th/vim-vsnip-integ
+  -- Complete,  Snippet
+  use {"rafamadriz/friendly-snippets", event={"InsertEnter",'CmdlineEnter'}}
+  use {"hrsh7th/nvim-cmp", after="friendly-snippets", config=function() require'plugins.cmp'.setup() end}
+  use {"hrsh7th/cmp-nvim-lsp", after='nvim-cmp'} -- lsp source
+  use {"hrsh7th/cmp-nvim-lua", after='cmp-nvim-lsp'} -- neovim built-in api source
+  use {"hrsh7th/cmp-buffer", after='cmp-nvim-lua'} -- buffer source
+  use {"hrsh7th/cmp-path", after='cmp-buffer'} -- path source
+  -- -- For luasnip users. -- TODO conflict startify !!
+  -- use {"L3MON4D3/LuaSnip", after='cmp-path', config=function() require'plugins.cmp'.luasnip() end}
+  -- use {"saadparwaiz1/cmp_luasnip",after='LuaSnip'}
+  -- -- For ultisnips users.
+  -- Plug 'SirVer/ultisnips'
+  -- Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+  -- -- For snippy users.
+  -- Plug 'dcampos/nvim-snippy'
+  -- Plug 'dcampos/cmp-snippy'
+  -- -- For vsnip users.
+  -- use {'hrsh7th/vim-vsnip', after='cmp-vsnip'}
+  -- use {'hrsh7th/cmp-vsnip', after='cmp-path'}
+  -- use {'hrsh7th/vim-vsnip-integ'}
+
+  -- Other source
+  -- use {'hrsh7th/cmp-omni', after='cmp-path'}
+  -- use {'hrsh7th/cmp-git', after='cmp-path'}
+  -- use {'hrsh7th/cmp-look', after='cmp-path'}
 
 --------------------------------------------------------
 end)

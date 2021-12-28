@@ -7,7 +7,7 @@ local M = {}
 
 local m = vim.api.nvim_set_keymap
 local ns = {noremap = true, silent = true}
-local g = vim.g
+-- local g = vim.g
 
 M.setup = function()
   require('telescope').setup {

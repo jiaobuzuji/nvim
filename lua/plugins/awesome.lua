@@ -99,6 +99,7 @@ M.whichkey = function()
   wk.register({
     c = {name = "Comment"},
     f = {name = "FuzzyFind"},
+    g = {name = "Git"},
     o = {name = "Others"},
     t = {name = "Terminal"},
     v = {name = "Find and Replace"},
@@ -298,31 +299,31 @@ M.nvimtree = function()
   }
   g.nvim_tree_icons = {
     default =        '',
-    symlink =        '',
-    git = {
-      unstaged =     "✗",
-      staged =       "✓",
-      unmerged =     "",
-      renamed =      "➜",
-      untracked =    "★",
-      deleted =      "",
-    },
-    folder = {
-      arrow_open =   "",
-      arrow_closed = "",
-      default =      "",
-      open =         "",
-      empty =        "",
-      empty_open =   "",
-      symlink =      "",
-      symlink_open = "",
-    },
-    lsp = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    }
+    -- symlink =        '',
+    -- git = {
+      -- unstaged =     "✗",
+      -- staged =       "✓",
+      -- unmerged =     "",
+      -- renamed =      "➜",
+      -- untracked =    "★",
+      -- deleted =      "",
+    -- },
+    -- folder = {
+      -- arrow_open =   "",
+      -- arrow_closed = "",
+      -- default =      "",
+      -- open =         "",
+      -- empty =        "",
+      -- empty_open =   "",
+      -- symlink =      "",
+      -- symlink_open = "",
+    -- },
+    -- lsp = {
+      -- hint = "",
+      -- info = "",
+      -- warning = "",
+      -- error = "",
+    -- }
   }
   g.nvim_tree_git_hl = 1
   g.nvim_tree_highlight_opened_files = 1
@@ -360,6 +361,7 @@ M.treesitter = function()
     incremental_selection = {enable = true },
     textobjects = { enable = true },
     indent={enable=true, disable={}},
+    -- TODO vim-matchup
   }
 end
 
