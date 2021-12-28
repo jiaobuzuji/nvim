@@ -225,6 +225,7 @@ end
 -------------------------------------------------------------------------------
 -- nvimtree
 M.nvimtree_setup = function()
+  local tree_cb = require'nvim-tree.config'.nvim_tree_callback
   require('nvim-tree').setup {
     disable_netrw       = true,
     hijack_netrw        = true,
@@ -249,7 +250,7 @@ M.nvimtree_setup = function()
     },
     update_focused_file = {
       enable      = false,
-      update_cwd  = false,
+      update_cwd  = true,
       ignore_list = {}
     },
     system_open = {
@@ -261,7 +262,7 @@ M.nvimtree_setup = function()
       ignore = true,
     },
     view = {
-      width = 50,
+      width = '40%',
       height = 30,
       side = 'left',
       auto_resize = false,
@@ -269,7 +270,11 @@ M.nvimtree_setup = function()
       relativenumber = true,
       mappings = {
         custom_only = false,
-        list = {}
+        list = {
+          { key = {"<m-l>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
+          { key = "<m-h>",  cb = tree_cb("parent_node") },
+          { key = "<m-l>",  cb = tree_cb("tabnew") },
+        }
       }
     },
     filters = {
@@ -284,9 +289,49 @@ M.nvimtree_setup = function()
 end
 
 M.nvimtree = function()
+  g.nvim_tree_show_icons = {
+    git = 1,
+    folders = 1,
+    files = 1,
+    folder_arrows = 0,
+  }
+  g.nvim_tree_icons = {
+    default =        '',
+    symlink =        '',
+    git = {
+      unstaged =     "✗",
+      staged =       "✓",
+      unmerged =     "",
+      renamed =      "➜",
+      untracked =    "★",
+      deleted =      "",
+    },
+    folder = {
+      arrow_open =   "",
+      arrow_closed = "",
+      default =      "",
+      open =         "",
+      empty =        "",
+      empty_open =   "",
+      symlink =      "",
+      symlink_open = "",
+    },
+    lsp = {
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
+    }
+  }
+
+  g.nvim_tree_highlight_opened_files = 1
   g.nvim_tree_quit_on_open = 1
-  -- m('n','<leader>nf','<cmd>NvimTreeFocus<cr>',ns)
-  m('n','<leader>nf','<cmd>NvimTreeFindFile<cr>',ns)
+  g.nvim_tree_group_empty = 1
+  g.nvim_tree_respect_buf_cwd = 1
+
+  -- m('n','<leader>of','<cmd>NvimTreeFocus<cr>',ns)
+  m('n','<leader>oe','<cmd>NvimTreeToggle<cr>',ns) -- explorer
+  m('n','<leader>of','<cmd>NvimTreeFindFileToggle<cr>',ns) -- find file
 end
 
 

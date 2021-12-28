@@ -118,7 +118,7 @@ return packer.startup(function()
   -- Files Explorer
   -- use {'preservim/nerdtree', cmd='NERDTreeFind'}
   use {"kyazdani42/nvim-tree.lua",
-    cmd={'NvimTreeFindFile',"NvimTreeToggle", "NvimTreeFocus"},
+    cmd={'NvimTreeFindFile','NvimTreeFindFileToggle',"NvimTreeToggle", "NvimTreeFocus"},
     setup=function() require'plugins.awesome'.nvimtree() end,
     config=function() require'plugins.awesome'.nvimtree_setup() end
   }
@@ -152,8 +152,6 @@ return packer.startup(function()
   -------------------------------------------------------------------------------
   -- Taglist TODO
   -- Plug 'liuchengxu/vista.vim'
-
-  -------------------------------------------------------------------------------
   -- matze/vim-move
   -- Plug 'skywind3000/asynctasks.vim'
   -- Plug 'skywind3000/asyncrun.vim'
@@ -204,6 +202,26 @@ return packer.startup(function()
     event="BufRead",
     setup=function() require'plugins.awesome'.treesitter_setup() end,
     config=function() require'plugins.awesome'.treesitter() end,
+  }
+
+
+  -------------------------------------------------------------------------------
+  -- fuzzy finder
+  -- junegunn/fzf
+  -- use {"junegunn/fzf.vim",opt=false}
+  -- yggdroot/leaderF
+  -- liuchengxu/vim-clap
+  -- nvim-telescope/telescope-frecency.nvim
+  -- nvim-telescope/telescope-project.nvim
+  use {"nvim-telescope/telescope.nvim",
+    module="telescope",
+    cmd="Telescope",
+    requires={
+      {"nvim-telescope/telescope-fzf-native.nvim",run="make" }, -- TODO windows make
+      {"nvim-telescope/telescope-media-files.nvim"},
+    },
+    setup=function() require('plugins.finder').keymap() end,
+    config=function() require('plugins.finder').setup() end,
   }
 
 
@@ -311,26 +329,6 @@ return packer.startup(function()
   use {'hrsh7th/vim-vsnip', after='cmp-vsnip'}
   -- use {'hrsh7th/cmp-yank', after='cmp-vsnip'} TODO
   -- hrsh7th/vim-vsnip-integ
-
-
-  -------------------------------------------------------------------------------
-  -- fuzzy finder
-  -- junegunn/fzf
-  -- use {"junegunn/fzf.vim",opt=false}
-  -- yggdroot/leaderF
-  -- liuchengxu/vim-clap
-  -- nvim-telescope/telescope-frecency.nvim
-  -- nvim-telescope/telescope-project.nvim
-  use {"nvim-telescope/telescope.nvim",
-    module="telescope",
-    cmd="Telescope",
-    requires={
-      {"nvim-telescope/telescope-fzf-native.nvim",run="make" }, -- TODO windows make
-      {"nvim-telescope/telescope-media-files.nvim"},
-    },
-    setup=function() require('plugins.finder').keymap() end,
-    config=function() require('plugins.finder').setup() end,
-  }
 
 --------------------------------------------------------
 end)

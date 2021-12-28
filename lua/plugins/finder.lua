@@ -1,4 +1,4 @@
--- Awesome Plugins
+-- Fuzzy Finder Plugins
 -- Author: jiaobuzuji@163.com
 -- Github: https://github.com/jiaobuzuji
 -------------------------------------------------------------------------------
