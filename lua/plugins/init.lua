@@ -52,7 +52,7 @@ return packer.startup(function()
   -- use {'glacambre/firenvim'} -- Turn your browser¹ into a Neovim client
   -- use {"max397574/better-escape.nvim"}
   -- "rcarriga/nvim-notify",
-  -- vim-scripts/DrawIt'
+  use {'vim-scripts/DrawIt', cmd='DrawIt'}
   -- qpkorr/vim-renamer'
   -- nvim-lua/popup.nvim
   -- kevinhwang91/nvim-bqf
