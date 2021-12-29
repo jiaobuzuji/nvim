@@ -202,9 +202,9 @@ M.easymotion = function()
   g.EasyMotion_verbose = 0
   m('','W','<Plug>(easymotion-lineforward)',{silent=true})
   m('','B','<Plug>(easymotion-linebackward)',{silent=true})
-  m('n','<leader><leader>','<Plug>(easymotion-prefix)',{silent=true})
-  m('x','<leader><leader>','<Plug>(easymotion-prefix)',{silent=true})
-  m('o','<leader><leader>','<Plug>(easymotion-prefix)',{silent=true})
+  m('n','<leader>jk','<Plug>(easymotion-prefix)',{silent=true})
+  m('x','<leader>jk','<Plug>(easymotion-prefix)',{silent=true})
+  m('o','<leader>jk','<Plug>(easymotion-prefix)',{silent=true})
   -- -- MultiWindow easymotion for word
   -- m('n','<leader>jw','<Plug>(easymotion-overwin-w)',{silent=true})
   -- m('x','<leader>jw','<Plug>(easymotion-bd-w)',{silent=true})

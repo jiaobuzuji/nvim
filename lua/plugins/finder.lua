@@ -52,8 +52,8 @@ M.keymap = function()
 
   m('n','<c-p>','<cmd>Telescope<cr>',ns) -- CtrlP
   -- m('n','<leader><leader>','<cmd>Telescope find_files<cr>',ns)
-  -- m('n','<leader><leader>','<cmd>Telescope fd<cr>',ns) -- fastest find -- conflict 'witch-key' plugin
-  m('n','<leader>ff','<cmd>Telescope fd<cr>',ns) -- fastest find
+  m('n','<leader><leader>','<cmd>Telescope fd<cr>',ns) -- fastest find
+  -- m('n','<leader>ff','<cmd>Telescope function<cr>',ns)
   m('n','<leader>fi','<cmd>Telescope fd no_ignore=true}<cr>',ns) -- include "ignore" files
   m('n','<leader>fh','<cmd>Telescope fd hidden=true<cr>',ns) -- include "hidden" files
   m('n','<leader>fk','<cmd>Telescope command_history<cr>',ns)
