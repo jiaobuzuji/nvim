@@ -85,7 +85,7 @@ return packer.startup(function()
   -- Find and Replace
   -- Plug 'thinca/vim-qfreplace'
   -- dkprice/vim-easygrep
-  -- mhinz/vim-grepper
+  use {'mhinz/vim-grepper'}
   use {"brooth/far.vim",cmd={'Far', 'Fardo'}, config=function() require'plugins.awesome'.far() end}
   use {'dyng/ctrlsf.vim',
     cmd={'CtrlSF','CtrlSFToggle'},
@@ -243,10 +243,11 @@ return packer.startup(function()
   -- "Pocco81/DAPInstall.nvim",
 
   -- Complete,  Snippet
+  use {"rafamadriz/friendly-snippets", event={"InsertEnter"}} -- lsp snippet format
+  -- use {'honza/vim-snippets', event={"InsertEnter"}} -- snipMate & UltiSnip Snippets 
   -- For luasnip users. TODO
-  -- use {"L3MON4D3/LuaSnip", event={"InsertEnter"}, config=function() require'plugins.cmp'.lsnip() end}
-  -- use {"rafamadriz/friendly-snippets", after='LuaSnip'} -- lsp snippet format
-  -- use {"saadparwaiz1/cmp_luasnip",after='nvim-cmp'}
+  use {"L3MON4D3/LuaSnip", after='friendly-snippets', config=function() require'plugins.cmp'.lsnip() end}
+  use {"saadparwaiz1/cmp_luasnip",after='nvim-cmp'}
   -- -- For ultisnips users.
   -- Plug 'SirVer/ultisnips'
   -- Plug 'quangnguyen30192/cmp-nvim-ultisnips'
@@ -257,11 +258,12 @@ return packer.startup(function()
   -- use {'hrsh7th/vim-vsnip', after='cmp-vsnip'}
   -- use {'hrsh7th/cmp-vsnip', after='cmp-path'}
   -- use {'hrsh7th/vim-vsnip-integ'}
-  use {"hrsh7th/nvim-cmp", event={"InsertEnter",'CmdlineEnter'}, config=function() require'plugins.cmp'.setup() end}
+  use {"hrsh7th/nvim-cmp", after='LuaSnip',  config=function() require'plugins.cmp'.setup() end} -- event={"InsertEnter",'CmdlineEnter'},
   use {"hrsh7th/cmp-nvim-lsp", after='nvim-cmp'} -- lsp source
   use {"hrsh7th/cmp-nvim-lua", after='cmp-nvim-lsp'} -- neovim built-in api source
   use {"hrsh7th/cmp-buffer", after='cmp-nvim-lua'} -- buffer source
   use {"hrsh7th/cmp-path", after='cmp-buffer'} -- path source
+  use {"hrsh7th/cmp-cmdline", after='cmp-path'} -- cmdline source
   -- Other source
   -- use {'hrsh7th/cmp-omni', after='cmp-path'}
   -- use {'hrsh7th/cmp-git', after='cmp-path'}
