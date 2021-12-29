@@ -41,6 +41,7 @@ return packer.startup(function()
   -- awesome
   use {"nvim-lua/plenary.nvim",opt=false}
   use {'tpope/vim-surround', opt=false} -- machakann/vim-sandwich
+  -- use {'tpope/vim-repeat', opt=false} -- TODO
   use {'andymass/vim-matchup', opt=false}
   use {'windwp/nvim-autopairs', opt=false, config=function() require'nvim-autopairs'.setup{} end}
   use {'mg979/vim-visual-multi', opt=false} -- terryma/vim-multiple-cursors
@@ -83,15 +84,19 @@ return packer.startup(function()
 
   -------------------------------------------------------------------------------
   -- Find and Replace
-  -- Plug 'thinca/vim-qfreplace'
   -- dkprice/vim-easygrep
-  use {'mhinz/vim-grepper'}
+  use {'mhinz/vim-grepper',
+    cmd={'Grepper'},
+    keys={}, --TODO
+    -- setup=function() require'plugins.awesome'.grepper() end
+  }
   use {"brooth/far.vim",cmd={'Far', 'Fardo'}, config=function() require'plugins.awesome'.far() end}
   use {'dyng/ctrlsf.vim',
     cmd={'CtrlSF','CtrlSFToggle'},
     keys={'<Plug>CtrlSFVwordPath', '<Plug>CtrlSFVwordExec', '<Plug>CtrlSFPrompt', '<Plug>CtrlSFCwordExec', '<Plug>CtrlSFCCwordExec',},
     setup=function() require'plugins.awesome'.ctrlsf() end
   }
+  use {'thinca/vim-qfreplace', cmd='Qfreplace'}
 
 
   -------------------------------------------------------------------------------
@@ -107,7 +112,7 @@ return packer.startup(function()
   -- phaazon/hop.nvim
   -- justinmk/vim-sneak
   use {'easymotion/vim-easymotion',
-    keys={'<Plug>(easymotion-lineforward)', '<Plug>(easymotion-linebackward)',
+    keys={'<Plug>(easymotion-lineforward)', '<Plug>(easymotion-linebackward)', '<Plug>(easymotion-prefix)',
       '<Plug>(easymotion-overwin-w)', '<Plug>(easymotion-overwin-line)', '<Plug>(easymotion-overwin-f)', '<Plug>(easymotion-sn)', '<Plug>(easymotion-tn)', '<Plug>(easymotion-bd-jk)', '<Plug>(easymotion-bd-f)',
     },
     setup=function() require'plugins.awesome'.easymotion() end

@@ -413,7 +413,7 @@ local highlight_groups = {
   debugBreakpoint = 'ErrorMsg',
   debugPC = 'ColorColumn',
   LineNr  = {fg=gray2},
-  QuickFixLine = {bg=gray0},
+  QuickFixLine = {style='inverse'},
   Visual    = {fg=black,bg=magenta3},
   VisualNOS = {bg=gray0},
 

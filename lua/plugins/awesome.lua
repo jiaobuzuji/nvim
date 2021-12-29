@@ -145,6 +145,7 @@ M.ctrlsf = function()
   g.ctrlsf_indent = 2
   g.ctrlsf_auto_focus = {at="start"}
   g.ctrlsf_confirm_save = 0
+  g.ctrlsf_populate_qflist = 1 -- for Qfreplace
   -- g.ctrlsf_debug_mode = 1
   g.ctrlsf_ignore_dir = {'.git','.svn','.hg','node_modules'}
   g.ctrlsf_mapping = {
@@ -201,6 +202,9 @@ M.easymotion = function()
   g.EasyMotion_verbose = 0
   m('','W','<Plug>(easymotion-lineforward)',{silent=true})
   m('','B','<Plug>(easymotion-linebackward)',{silent=true})
+  m('n','<leader><leader>','<Plug>(easymotion-prefix)',{silent=true})
+  m('x','<leader><leader>','<Plug>(easymotion-prefix)',{silent=true})
+  m('o','<leader><leader>','<Plug>(easymotion-prefix)',{silent=true})
   -- -- MultiWindow easymotion for word
   -- m('n','<leader>jw','<Plug>(easymotion-overwin-w)',{silent=true})
   -- m('x','<leader>jw','<Plug>(easymotion-bd-w)',{silent=true})
