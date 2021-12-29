@@ -52,7 +52,8 @@ return packer.startup(function()
   -- use {'glacambre/firenvim'} -- Turn your browser¹ into a Neovim client
   -- use {"max397574/better-escape.nvim"}
   -- "rcarriga/nvim-notify",
-  use {'vim-scripts/DrawIt', cmd='DrawIt'}
+  -- use {'liuchengxu/graphviz.vim'}
+  use {'vim-scripts/DrawIt', cmd='DIstart'}
   -- qpkorr/vim-renamer'
   -- nvim-lua/popup.nvim
   -- kevinhwang91/nvim-bqf
@@ -132,7 +133,7 @@ return packer.startup(function()
 
 
   -------------------------------------------------------------------------------
-  -- markdown
+  -- markdown latex
   -- plasticboy/vim-markdown
   use {'iamcco/markdown-preview.nvim',
     -- cmd={'MarkdownPreviewToggle','MarkdownPreview', 'MarkdownPreviewStop'}, -- fail for 'mkdp#util#install()'
@@ -140,6 +141,7 @@ return packer.startup(function()
     run=':call mkdp#util#install()', -- run='cd app && yarn install'}
     -- setup=function() vim.g.mkdp_browser='firefox' vim.g.mkdp_port=8787 end,
   }
+  -- lervag/vimtex
 
   -------------------------------------------------------------------------------
   -- Verilo Systemverilog
