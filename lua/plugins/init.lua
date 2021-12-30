@@ -60,6 +60,8 @@ return packer.startup(function()
   use {'akinsho/toggleterm.nvim'} -- terminal
   use {'junegunn/vim-easy-align', keys='<Plug>(EasyAlign)', setup=function() require'plugins.awesome'.easyalign() end}
   -- Plug 'godlygeek/tabular' " ga, or :Tabularize <regex> to align
+  -- Plug 'skywind3000/asynctasks.vim'
+  -- Plug 'skywind3000/asyncrun.vim'
 
   -------------------------------------------------------------------------------
   -- help me
@@ -74,7 +76,7 @@ return packer.startup(function()
   use {'folke/which-key.nvim', opt=false, config=function() require'plugins.awesome'.whichkey() end}
   -- use {'junegunn/vim-peekaboo', opt=false} -- extends `"` and `@` in normal mode and `<CTRL-R>` in insert mode
   -- vim-signify
-
+  -- dstein64/vim-startuptime
 
   -------------------------------------------------------------------------------
   -- project and startup
@@ -134,37 +136,10 @@ return packer.startup(function()
 
 
   -------------------------------------------------------------------------------
-  -- markdown latex
-  -- plasticboy/vim-markdown
-  use {'iamcco/markdown-preview.nvim',
-    -- cmd={'MarkdownPreviewToggle','MarkdownPreview', 'MarkdownPreviewStop'}, -- fail for 'mkdp#util#install()'
-    ft='markdown',
-    run=':call mkdp#util#install()', -- run='cd app && yarn install'}
-    -- setup=function() vim.g.mkdp_browser='firefox' vim.g.mkdp_port=8787 end,
-  }
-  -- lervag/vimtex
-
-  -------------------------------------------------------------------------------
-  -- Verilo Systemverilog
-  -- use {'vhda/verilog_systemverilog.vim',opt=false}
-  -- dense-analysis/ale
-  -- steveicarus/iverilog
-  -- chipsalliance/verible
-  -- https://github.com/verilator/verilator
-  -- suoto/hdl_checker
-  -- dalance/svlint
-  -- dalance/svls
-  -- dalance/sv-parser
-  -- sgherbst/svinst
-  -- imc-trading/svlangserver
-
-
-  -------------------------------------------------------------------------------
   -- Taglist TODO
   -- Plug 'liuchengxu/vista.vim'
   -- matze/vim-move
-  -- Plug 'skywind3000/asynctasks.vim'
-  -- Plug 'skywind3000/asyncrun.vim'
+
 
   -------------------------------------------------------------------------------
   -- git
@@ -278,6 +253,33 @@ return packer.startup(function()
   -- use {'hrsh7th/cmp-omni', after='cmp-path'}
   -- use {'hrsh7th/cmp-git', after='cmp-path'}
   -- use {'hrsh7th/cmp-look', after='cmp-path'}
+
+
+  -------------------------------------------------------------------------------
+  -- markdown latex
+  -- plasticboy/vim-markdown
+  use {'iamcco/markdown-preview.nvim',
+    -- cmd={'MarkdownPreviewToggle','MarkdownPreview', 'MarkdownPreviewStop'}, -- fail for 'mkdp#util#install()'
+    ft='markdown',
+    run=':call mkdp#util#install()', -- run='cd app && yarn install'}
+    -- setup=function() vim.g.mkdp_browser='firefox' vim.g.mkdp_port=8787 end,
+  }
+  -- lervag/vimtex
+
+  -------------------------------------------------------------------------------
+  -- Verilo Systemverilog
+  -- use {'vhda/verilog_systemverilog.vim',opt=false}
+  -- dense-analysis/ale
+  -- steveicarus/iverilog
+  -- chipsalliance/verible
+  -- https://github.com/verilator/verilator
+  -- suoto/hdl_checker
+  -- dalance/svlint
+  -- dalance/svls
+  -- dalance/sv-parser
+  -- sgherbst/svinst
+  -- imc-trading/svlangserver
+
 
 --------------------------------------------------------
 end)

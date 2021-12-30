@@ -22,7 +22,8 @@ sudo rm -rf /usr/share/nvim/
 # # rm -rf $HOME/.local/bin/nvim-qt
 # # rm -rf $HOME/.local/share/nvim/runtime/plugin/nvim_gui_shim.vim
 
-curl -OfSL https://github.com.cnpmjs.org/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
+# curl -OfSL https://github.com.cnpmjs.org/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
+curl -OfSL https://github.com.cnpmjs.org/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
 tar xvf nvim-linux64.tar.gz
 sudo \cp -a nvim-linux64/* /usr/
 sudo \mv nvim_gui_shim.vim /usr/share/nvim/runtime/plugin/
