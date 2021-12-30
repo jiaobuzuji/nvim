@@ -54,10 +54,9 @@ return packer.startup(function()
   -- "rcarriga/nvim-notify",
   -- use {'liuchengxu/graphviz.vim'}
   use {'vim-scripts/DrawIt', cmd='DIstart'}
-  -- qpkorr/vim-renamer'
+  use {'qpkorr/vim-renamer', cmd='Ren'}
   -- nvim-lua/popup.nvim
   -- kevinhwang91/nvim-bqf
-  -- kevinhwang91/rnvimr -- ranger, Explorer
   use {'akinsho/toggleterm.nvim'} -- terminal
   use {'junegunn/vim-easy-align', keys='<Plug>(EasyAlign)', setup=function() require'plugins.awesome'.easyalign() end}
   -- Plug 'godlygeek/tabular' " ga, or :Tabularize <regex> to align
@@ -74,6 +73,7 @@ return packer.startup(function()
   -- use {'liuchengxu/vim-which-key'}
   use {'folke/which-key.nvim', opt=false, config=function() require'plugins.awesome'.whichkey() end}
   -- use {'junegunn/vim-peekaboo', opt=false} -- extends `"` and `@` in normal mode and `<CTRL-R>` in insert mode
+  -- vim-signify
 
 
   -------------------------------------------------------------------------------
@@ -125,6 +125,7 @@ return packer.startup(function()
   -- shougo/defx.nvim
   -- weirongxu/coc-explorer
   -- use {'preservim/nerdtree', cmd='NERDTreeFind'}
+  -- kevinhwang91/rnvimr -- ranger, Explorer
   use {"kyazdani42/nvim-tree.lua",
     cmd={'NvimTreeFindFile','NvimTreeFindFileToggle',"NvimTreeToggle", "NvimTreeFocus"},
     setup=function() require'plugins.awesome'.nvimtree() end,
@@ -167,6 +168,8 @@ return packer.startup(function()
 
   -------------------------------------------------------------------------------
   -- git
+  -- vim-gitgutter
+  -- use {'tpope/vim-fugitive'}
   -- use {'kdheepak/lazygit.nvim'}
   use {"lewis6991/gitsigns.nvim",
     opt=false,
