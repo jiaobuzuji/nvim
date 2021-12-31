@@ -147,7 +147,7 @@ m('n','Q','gq',ns) -- Don't use Ex mode, use Q for formatting.  Revert with ":un
 -- m('i','<c-w>','<c-g>u<c-w>',ns) -- neovim default keymapping
 m('n','<leader>/','<cmd>nohlsearch<cr>',ns)
 m('n','tt','o<space><c-u><c-[>',ns) -- Insert new line in normal mode
-m('v','p','"_dP',ns) -- Don't copy the replaced text after pasting in visual mode
+m('v','p','"_dp',ns) -- Don't copy the replaced text after pasting in visual mode
 m('v','<','<gv',ns) -- Reselect visual block after indent/outdent.
 m('v','>','>gv',ns)
 m('v','*',[[y/<c-r>=escape(@",'\\/.*$^~[]')<cr><cr>]],ns) -- m('v','*',"y/<c-r>=escape(@\",'\\\\/.*$^~[]')<cr><cr>",ns)
