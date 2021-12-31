@@ -118,12 +118,14 @@ end
 -- translator
 M.translator = function()
   g.translator_default_engines = {'bing','youdao','haici'}
-  m('n','<leader>ot','<Plug>TranslateW',{silent=true})
-  m('v','<leader>ot','<Plug>TranslateWV',{silent=true})
+  -- m('n','<leader>ot','<Plug>TranslateW',{silent=true}) -- popup window
+  -- m('v','<leader>ot','<Plug>TranslateWV',{silent=true})
+  m('n','<leader>ot','<Plug>Translate',{silent=true})
+  m('v','<leader>ot','<Plug>TranslateV',{silent=true})
   -- -- Replace the text with translation
   -- nmap <silent> <Leader>r <Plug>TranslateR
   -- vmap <silent> <Leader>r <Plug>TranslateRV
-  -- nmap <silent> <Leader>x <Plug>TranslateX
+  -- nmap <silent> <Leader>x <Plug>TranslateX -- clipboard
 end
 
 -------------------------------------------------------------------------------

@@ -74,6 +74,7 @@ opt.mouse = "a" -- list of flags for using the mouse
 opt.report = 0 -- threshold for reporting number of changed lines
 opt.confirm = true  -- start a dialog when a command fails
 opt.helplang = "en,cn" -- list of preferred languages for finding help
+opt.showmode = false -- display the current mode in the status line
 
 -- 12 selecting text {2
 opt.clipboard = 'unnamed,unnamedplus' -- "unnamed" to use the * register like unnamed register

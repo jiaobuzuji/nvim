@@ -67,8 +67,8 @@ return packer.startup(function()
   -- help me
   -- use {'ianva/vim-youdao-translater'}
   use {'voldikss/vim-translator',
-    cmd={'TranslateW'},
-    keys={'<Plug>TranslateW','<Plug>TranslateWV'},
+    cmd={'Translate','TranslateX','TranslateW'},
+    keys={'<Plug>Translate','<Plug>TranslateV'},
     setup=function() require'plugins.awesome'.translator() end
   }
   -- use {'yianwillis/vimcdoc'}
