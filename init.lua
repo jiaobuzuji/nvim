@@ -77,7 +77,7 @@ opt.helplang = "en,cn" -- list of preferred languages for finding help
 opt.showmode = false -- display the current mode in the status line
 
 -- 12 selecting text {2
-opt.clipboard = 'unnamed,unnamedplus' -- "unnamed" to use the * register like unnamed register
+opt.clipboard = 'unnamed' -- ,unnamedplus' -- "unnamed" to use the * register like unnamed register
 
 -- 13 editing text {2
 opt.undofile = true -- automatically save and restore undo history
@@ -129,7 +129,7 @@ opt.ambiwidth = 'single' -- width of ambiguous width characters
 
 -- 26 various {2
 opt.virtualedit = "block" -- when to use virtual editing: "block", "insert", "all" and/or "onemore"
-opt.sessionoptions = "curdir,unix,slash,tabpages,terminal,winsize,resize"
+opt.sessionoptions = "curdir,unix,slash,tabpages,winsize,resize" -- terminal
 opt.viewoptions = "cursor,unix,slash" -- Better Unix / Windows compatibility
 opt.signcolumn = "yes" -- whether to show the signcolumn
 
