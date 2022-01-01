@@ -228,10 +228,10 @@ return packer.startup(function()
   -- "Pocco81/DAPInstall.nvim",
 
   -- Complete,  Snippet
-  use {"rafamadriz/friendly-snippets", event={"InsertEnter"}} -- lsp snippet format
+  use {"rafamadriz/friendly-snippets"} -- lsp snippet format
   -- use {'honza/vim-snippets', event={"InsertEnter"}} -- snipMate & UltiSnip Snippets 
   -- For luasnip users. TODO
-  use {"L3MON4D3/LuaSnip", after='friendly-snippets', config=function() require'plugins.cmp'.lsnip() end}
+  use {"L3MON4D3/LuaSnip"}
   use {"saadparwaiz1/cmp_luasnip",after='nvim-cmp'}
   -- -- For ultisnips users.
   -- Plug 'SirVer/ultisnips'
@@ -240,10 +240,10 @@ return packer.startup(function()
   -- Plug 'dcampos/nvim-snippy'
   -- Plug 'dcampos/cmp-snippy'
   -- -- For vsnip users.
-  -- use {'hrsh7th/vim-vsnip', after='cmp-vsnip'}
-  -- use {'hrsh7th/cmp-vsnip', after='cmp-path'}
+  -- use {'hrsh7th/vim-vsnip'}
+  -- use {'hrsh7th/cmp-vsnip', after='nvim-cmp'}
   -- use {'hrsh7th/vim-vsnip-integ'}
-  use {"hrsh7th/nvim-cmp", after='LuaSnip',  config=function() require'plugins.cmp'.setup() end} -- event={"InsertEnter",'CmdlineEnter'},
+  use {"hrsh7th/nvim-cmp", event={"InsertEnter",'CmdlineEnter'},  config=function() require'plugins.cmp'.setup() end}
   use {"hrsh7th/cmp-nvim-lsp", after='nvim-cmp'} -- lsp source
   use {"hrsh7th/cmp-nvim-lua", after='cmp-nvim-lsp'} -- neovim built-in api source
   use {"hrsh7th/cmp-buffer", after='cmp-nvim-lua'} -- buffer source
@@ -268,7 +268,12 @@ return packer.startup(function()
 
   -------------------------------------------------------------------------------
   -- Verilo Systemverilog
-  -- use {'vhda/verilog_systemverilog.vim',opt=false}
+  use {'vhda/verilog_systemverilog.vim'}
+  -- * Omni completion.
+  -- * Configurable syntax folding.
+  -- * Matchit settings to support Verilog 2001 and SystemVerilog.
+  -- * Error format definitions for common Verilog tools.
+  -- * Commands for code navigation.
   -- dense-analysis/ale
   -- steveicarus/iverilog
   -- chipsalliance/verible
