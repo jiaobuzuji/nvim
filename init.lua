@@ -77,7 +77,7 @@ opt.helplang = "en,cn" -- list of preferred languages for finding help
 opt.showmode = false -- display the current mode in the status line
 
 -- 12 selecting text {2
-opt.clipboard = 'unnamed' -- ,unnamedplus' -- "unnamed" to use the * register like unnamed register
+opt.clipboard = 'unnamed,unnamedplus' -- "unnamed" to use the * register like unnamed register
 
 -- 13 editing text {2
 opt.undofile = true -- automatically save and restore undo history
