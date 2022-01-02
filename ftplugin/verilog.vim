@@ -3,3 +3,5 @@ vnoremap <silent> <c-F4> :s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\
 
 lua require('nvim-autopairs').remove_rule("'")
 lua require('nvim-autopairs').remove_rule("`")
+
+let b:verilog_indent_modules = 1
