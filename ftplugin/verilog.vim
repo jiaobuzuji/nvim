@@ -27,4 +27,5 @@ set errorformat+=%WWarning-\[%.%\\+\]\ %m
 set errorformat+=%I%tint-\[%.%\\+\]\ %m
 
 " set makeprg = make
+nnoremap <buffer><silent> <f5> <cmd>cd sim<cr><cmd>make<cr><cmd>cd ..<cr>
 
