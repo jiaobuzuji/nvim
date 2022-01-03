@@ -76,7 +76,7 @@ return packer.startup(function()
   use {'folke/which-key.nvim', opt=false, config=function() require'plugins.awesome'.whichkey() end}
   -- use {'junegunn/vim-peekaboo', opt=false} -- extends `"` and `@` in normal mode and `<CTRL-R>` in insert mode
   -- vim-signify
-  -- dstein64/vim-startuptime
+  use {'dstein64/vim-startuptime',cmd='StartupTime'}
 
   -------------------------------------------------------------------------------
   -- project and startup
