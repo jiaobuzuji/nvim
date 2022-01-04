@@ -14,4 +14,4 @@
 local m = vim.api.nvim_buf_set_keymap
 local opts = {noremap = true, silent = true}
 
-m(0,'n','<m-l>','<c-w>q<cmd>cw<cr><cmd>Qfreplace<cr>',opts) -- quit ctrlsf, open Quickfix, Open Qfreplace
+m(0,'n','<m-l>','<c-w>q<cmd>cw<cr><cmd>silent Qfreplace<cr>',opts) -- quit ctrlsf, open Quickfix, Open Qfreplace
