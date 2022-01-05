@@ -6,7 +6,7 @@ lua require('nvim-autopairs').remove_rule("`")
 
 let b:verilog_indent_modules = 1
 
-" let g:verilog_spyglass
+" let g:verilog_spyglass=1
 if (exists("g:verilog_spyglass"))
   "------------------------------------------------------------------------------------
   " spyglass
