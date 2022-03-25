@@ -1,5 +1,6 @@
 " verilog instance {1
 vnoremap <silent> <c-F4> :s#^\s*\(input\\|output\)\(\s\+\(wire\\|reg\)\)\?\s*\(\[.\{-1,}\]\s*\)\?#.<CR>gv:s#^\s*\(\/\/.*\)#    \1#e<CR>gv:s#^\.\(\<\w\+\>\)\(\s*\)#    .\1\2   (\1\2   )<CR>
+" nnoremap <silent> <c-F2> a<C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 
 lua require('nvim-autopairs').remove_rule("'")
 lua require('nvim-autopairs').remove_rule("`")

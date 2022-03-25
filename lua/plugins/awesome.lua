@@ -114,6 +114,17 @@ end
 M.easyalign = function()
   m('n','ga','<Plug>(EasyAlign)',{silent=true})
   m('x','ga','<Plug>(EasyAlign)',{silent=true})
+  g.easy_align_delimiters = {
+    ['#'] = {
+      pattern = '#',
+      ignore_groups = {'String'},
+    },
+    ['/'] = {
+      pattern         = [[//\+\|/\*\|\*/]],
+      delimiter_align = "l",
+      ignore_groups   = {'!Comment'},
+    },
+  }
 end
 
 -------------------------------------------------------------------------------
