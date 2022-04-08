@@ -126,13 +126,17 @@ return packer.startup(function()
   -- Files Explorer
   -- shougo/defx.nvim
   -- weirongxu/coc-explorer
-  -- use {'preservim/nerdtree', cmd='NERDTreeFind'}
-  -- kevinhwang91/rnvimr -- ranger, Explorer
-  use {"kyazdani42/nvim-tree.lua",
-    cmd={'NvimTreeFindFile','NvimTreeFindFileToggle',"NvimTreeToggle", "NvimTreeFocus"},
-    setup=function() require'plugins.awesome'.nvimtree() end,
-    config=function() require'plugins.awesome'.nvimtree_setup() end
+  use {'preservim/nerdtree',
+    cmd='NERDTreeFind',
+    setup=function() require'plugins.awesome'.nerdtree_setup() end,
   }
+
+  -- -- kevinhwang91/rnvimr -- ranger, Explorer
+  -- use {"kyazdani42/nvim-tree.lua",
+  --   cmd={'NvimTreeFindFile','NvimTreeFindFileToggle',"NvimTreeToggle", "NvimTreeFocus"},
+  --   setup=function() require'plugins.awesome'.nvimtree() end,
+  --   config=function() require'plugins.awesome'.nvimtree_setup() end
+  -- }
 
 
   -------------------------------------------------------------------------------

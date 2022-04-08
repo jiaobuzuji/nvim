@@ -243,6 +243,22 @@ M.easymotion = function()
 end
 
 -------------------------------------------------------------------------------
+-- nerdtree
+M.nerdtree_setup = function()
+  g.NERDTreeShowLineNumbers=1 -- show line number
+  g.NERDTreeWinPos='left' -- show nerdtree in the rigth side
+  g.NERDTreeIgnore={[[\.py[cd]$]], [[\~$]], [[\.swo$]], [[\.swp$]], [[^\.git$]], [[^\.hg$]], [[^\.svn$]], [[\.bzr$]]}
+  g.NERDTreeWinSize='80'
+  g.NERDTreeShowBookmarks=1
+  g.NERDTreeChDirMode=2
+  g.NERDTreeQuitOnOpen=1
+  g.NERDTreeMouseMode=2
+
+  m('n','<leader>of','<cmd>NERDTreeFind<cr>',ns) -- find file
+  m('n','<leader>oq','<cmd>let g:NERDTreeQuitOnOpen = g:NERDTreeQuitOnOpen ? 0 : 1<cr>',ns)
+end
+
+-------------------------------------------------------------------------------
 -- nvimtree
 M.nvimtree_setup = function()
   local tree_cb = require'nvim-tree.config'.nvim_tree_callback

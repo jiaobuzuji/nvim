@@ -235,6 +235,6 @@ cmd "silent! command PackerUpdate lua require 'plugins' require('packer').update
 vim.cmd 'colorscheme highlite'
 
 -------------------------------------------------------------------------------
-require 'plugins' -- tmp TODO FIXME
-require('packer').compile()
+-- require 'plugins' -- tmp TODO FIXME
+-- require('packer').compile()
 
