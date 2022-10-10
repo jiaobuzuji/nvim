@@ -30,22 +30,22 @@ sudo \cp -a nvim-linux64/* /usr/
 sudo \mv nvim_gui_shim.vim /usr/share/nvim/runtime/plugin/
 # \cp -a nvim-linux64/* $HOME/.local/
 # \mv nvim_gui_shim.vim $HOME/.local/share/nvim/runtime/plugin/
-\rm -rf nvim-linux64.tar.gz
+\rm -ri nvim-linux64.tar.gz
 \rm -rf nvim-linux64
 
 # Remove default plugins
 if [ -d /usr/share/nvim/runtime/plugin ]; then
-  # rm /usr/share/nvim/runtime/plugin/gzip.vim
-  # rm /usr/share/nvim/runtime/plugin/health.vim
-  # rm /usr/share/nvim/runtime/plugin/man.vim
-  rm /usr/share/nvim/runtime/plugin/matchit.vim
-  rm /usr/share/nvim/runtime/plugin/matchparen.vim
-  rm /usr/share/nvim/runtime/plugin/netrwPlugin.vim
-  # rm /usr/share/nvim/runtime/plugin/shada.vim
-  rm /usr/share/nvim/runtime/plugin/spellfile.vim
-  rm /usr/share/nvim/runtime/plugin/tarPlugin.vim
-  rm /usr/share/nvim/runtime/plugin/tohtml.vim
-  rm /usr/share/nvim/runtime/plugin/tutor.vim
-  # rm /usr/share/nvim/runtime/plugin/zipPlugin.vim
+  # \rm -f /usr/share/nvim/runtime/plugin/gzip.vim
+  # \rm -f /usr/share/nvim/runtime/plugin/health.vim
+  # \rm -f /usr/share/nvim/runtime/plugin/man.vim
+  \rm -f /usr/share/nvim/runtime/plugin/matchit.vim
+  \rm -f /usr/share/nvim/runtime/plugin/matchparen.vim
+  \rm -f /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+  # \rm -f /usr/share/nvim/runtime/plugin/shada.vim
+  \rm -f /usr/share/nvim/runtime/plugin/spellfile.vim
+  \rm -f /usr/share/nvim/runtime/plugin/tarPlugin.vim
+  \rm -f /usr/share/nvim/runtime/plugin/tohtml.vim
+  \rm -f /usr/share/nvim/runtime/plugin/tutor.vim
+  # \rm -f /usr/share/nvim/runtime/plugin/zipPlugin.vim
 fi
 
