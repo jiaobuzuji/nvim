@@ -23,7 +23,8 @@ sudo rm -rf /usr/share/nvim/
 # # rm -rf $HOME/.local/share/nvim/runtime/plugin/nvim_gui_shim.vim
 
 # curl -OfSL https://github.com.cnpmjs.org/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
-curl -OfSL https://github.com.cnpmjs.org/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
+# curl -OfSL https://github.com.cnpmjs.org/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
+curl -OfSL https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
 tar xvf nvim-linux64.tar.gz
 sudo \cp -a nvim-linux64/* /usr/
 sudo \mv nvim_gui_shim.vim /usr/share/nvim/runtime/plugin/
@@ -34,7 +35,7 @@ sudo \mv nvim_gui_shim.vim /usr/share/nvim/runtime/plugin/
 
 # Remove default plugins
 if [ -d /usr/share/nvim/runtime/plugin ]; then
-  rm /usr/share/nvim/runtime/plugin/gzip.vim
+  # rm /usr/share/nvim/runtime/plugin/gzip.vim
   # rm /usr/share/nvim/runtime/plugin/health.vim
   # rm /usr/share/nvim/runtime/plugin/man.vim
   rm /usr/share/nvim/runtime/plugin/matchit.vim
@@ -45,6 +46,6 @@ if [ -d /usr/share/nvim/runtime/plugin ]; then
   rm /usr/share/nvim/runtime/plugin/tarPlugin.vim
   rm /usr/share/nvim/runtime/plugin/tohtml.vim
   rm /usr/share/nvim/runtime/plugin/tutor.vim
-  rm /usr/share/nvim/runtime/plugin/zipPlugin.vim
+  # rm /usr/share/nvim/runtime/plugin/zipPlugin.vim
 fi
 
